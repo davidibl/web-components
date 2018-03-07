@@ -1,0 +1,9 @@
+<div [@expanded]="expanded" (@expanded.done)="openMenu($event)" class="{{bgColorClass}}  container">
+    <div class="flex flex-column flex-center">
+        <ng-content [@showMenuItem] *ngIf="showMenuItem" select=".button-content"></ng-content>
+        <ng-content [@showIcon] *ngIf="showIcon" select="i"></ng-content>
+    </div>
+</div>
+<xn-block-ui [show]="showSpinner" [bright]="true" [elementLevel]="true">
+    <xn-material-spinner [small]="true"></xn-material-spinner>
+</xn-block-ui>

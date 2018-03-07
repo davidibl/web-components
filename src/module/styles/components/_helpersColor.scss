@@ -1,0 +1,27 @@
+@import "variables.scss";
+
+// colors
+
+.bg-brand-light {
+    background-color: $brand-light-color;
+}
+
+.bg-brand {
+    background-color: $brand-color;
+}
+
+.brand-light {
+    color: $brand-light-color;
+}
+
+.brand {
+    color: $brand-color;
+}
+
+.bg-white {
+    background-color:                       #fff;
+}
+
+.white {
+    color:                                  #fff;
+}

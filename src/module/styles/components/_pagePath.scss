@@ -1,0 +1,28 @@
+path {
+
+    ul {
+        padding-left: 20px;
+    }
+
+    li {
+        list-style: none;
+        display: inline-block;
+        margin-left: 5px;
+        font-family: $primary-font;
+    }
+
+    li::before {
+        content: '/';
+        margin-right: 5px;
+        color: $brand-teritiary;
+    }
+
+    li:first-child {
+        margin-left: 0;
+    }
+
+    li:first-child::before {
+        content: '';
+    }
+
+}

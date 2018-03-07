@@ -1,0 +1,25 @@
+<div class="pagination pr-2">
+    <span (click)="lastPage()"
+        class="page right outer-page pt-1"
+        [class.disabled]="currentPage == pageCountNumber - 1"
+        *ngIf="pageCountNumber > 1">
+            <i class="fa fa-chevron-right"></i>
+            <i class="fa fa-chevron-right"></i></span>
+    <span (click)="nextPage()"
+        class="page right pt-1 mr-05"
+        [class.disabled]="currentPage == pageCountNumber - 1"
+        *ngIf="pageCountNumber > 1"><i class="fa fa-chevron-right"></i></span>
+    <span (click)="previousPage()"
+          class="page right pt-1 mr-2"
+          [class.disabled]="currentPage == 0"
+          *ngIf="pageCountNumber > 1"><i class="fa fa-chevron-left"></i></span>
+    <span (click)="firstPage()"
+        class="page right outer-page pt-1 mr-05 ml-2"
+        [class.disabled]="currentPage == 0"
+        *ngIf="pageCountNumber > 1">
+            <i class="fa fa-chevron-left"></i>
+            <i class="fa fa-chevron-left"></i></span>
+    <small class="right count-text pt-1">
+        {{currentItemStart}} - {{currentItemEnd}} von {{itemCount}}
+    </small>
+</div>

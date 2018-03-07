@@ -1,0 +1,48 @@
+@import 'variables';
+
+.infobox {
+    display: flex;
+    min-height: 60px;
+    border: 1px solid #333;
+}
+
+.infobox-icon {
+    width: 40px;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    > i {
+        color: #fff;
+    }
+}
+
+.infobox-content {
+    display: flex;
+    align-items: center;
+}
+
+:host.info {
+    .infobox {
+        border-color: $infobox-info-color;
+    }
+
+    .infobox-icon {
+        background-color: $infobox-info-color;
+    }
+}
+
+:host {
+    display: block;
+}
+
+:host.error {
+    .infobox {
+        border-color: $infobox-error-color;
+    }
+
+    .infobox-icon {
+        background-color: $infobox-error-color;
+    }
+}

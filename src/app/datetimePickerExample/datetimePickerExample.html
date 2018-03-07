@@ -1,0 +1,20 @@
+<h2 class="ml-2">Datetime Picker</h2>
+<div class="pl-2 pt-2 pr-2">
+    <xn-section-divider [label]="'simple Datetime Picker'"></xn-section-divider>
+    <xn-datetime-picker [(ngModel)]="currentDate"
+                        [placeholder]="'ein Datum eben'"
+                        [label]="'Geburtsdatum'">
+    </xn-datetime-picker>
+    <p>Datum gewählt: {{currentDate | toDateString}}</p>
+    <xn-section-divider [label]="'required Datetime Picker'"></xn-section-divider>
+    <form #dateform="ngForm">
+        <xn-datetime-picker [(ngModel)]="unsetDate"
+                            [placeholder]="'ein Datum eben'"
+                            xnRequired
+                            name="datepickerA"
+                            [requiredMessage]="'Bitte geben Sie ein Datum ein!'"
+                            [label]="'Geburtsdatum'">
+        </xn-datetime-picker>
+    </form>
+    <xn-button class="button" [default]="true" [class.disabled]="!dateform.valid">Datum absenden</xn-button>
+</div>

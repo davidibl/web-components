@@ -1,0 +1,14 @@
+<div class="full-height flex-grow flex flex-column">
+    <div class="flex-grow flex flex-column">
+        <ng-content></ng-content>
+    </div>
+    <xn-workflow-nav-bar class="mt-1"
+                         [(currentStep)]="currentStep"
+                         [totalSteps]="stepCount"
+                         [nextLabel]="nextLabel"
+                         [previousLabel]="previousLabel"
+                         [finishLabel]="finishLabel"
+                         (finish)="finish()"
+                         [currentStepValid]="currentStepValid"
+                         [preventStepWhenInvalid]="prepreventStepWhenInvalid"></xn-workflow-nav-bar>
+</div>

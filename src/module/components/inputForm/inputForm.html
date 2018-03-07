@@ -1,0 +1,56 @@
+<div *ngIf="showLabel" class="input-group flex">
+    <div class="input-icon-space" [class.none]="_iconClass == 'none'"></div>
+    <small class="input-label animated slideInUp slideOutDown" [class.hidden]="!isModelSet()">{{label}}</small>
+</div>
+
+<div class="input-group input-box flex">
+    <i class="input-icon fa" (click)="onIconClick()" [ngClass]="_iconClass" aria-hidden="true"></i>
+    <div class="input-group-wrapper flex flex-grow">
+        <input *ngIf="!multiline"
+            [placeholder]="placeholder | switchString:label:placeholder"
+            [(ngModel)]="internalModel"
+            (focus)="onFocus()"
+            (blur)="onBlur()"
+            [class.required]="required"
+            [autofocus]="autofocus"
+            [name]="name"
+            #input
+            [attr.readonly]="readonly"
+            [class.pointer]="showPointer"
+            class=""
+            ngModel />
+
+        <textarea *ngIf="multiline" [rows]="rows"
+            [placeholder]="placeholder | switchString:placeholder:label"
+            [(ngModel)]="internalModel"
+            (focus)="onFocus()"
+            (blur)="onBlur()"
+            [class.required]="required"
+            [name]="name"
+            #input
+            [attr.readonly]="readonly"
+            [class.pointer]="showPointer"
+            class=""
+            ngModel></textarea>
+
+        <i (click)="onClearClick()"
+            class="input-icon info fa fa-times mr-05"
+            *ngIf="showClearButton"
+            aria-hidden="true"></i>
+
+        <i (click)="onIconAfterClick()"
+            class="input-icon info fa {{iconAfterClass}}"
+            *ngIf="!!iconAfterClass"
+            aria-hidden="true"></i>
+    </div>
+</div>
+<div *ngIf="validatable" class="input-group flex error-labels" [class.hidden]="!hasError() || !touched || !ngControl?.touched">
+    <div class="input-icon-space" [class.none]="_iconClass == 'none'"></div>
+    <div class="error-labels-content">
+        <ng-container *ngFor="let val of ngControl?.errors | joinObjects:outerErrors | properties | sort:'DESCENDING':'value.order'">
+            <small class="validation-message small" *ngIf="val.value.type !== 'unvisible'">
+                {{val.value.message | translate:val.value.message:val.value.tokens | async}}
+            </small>
+        </ng-container>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+@import 'variables';
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    border-bottom: $tab-header-border-bottom;
+}
+
+li {
+    color: $tab-header-col-font-color;
+    width: 140px;
+    padding: 8px;
+    text-align: center;
+    cursor: pointer;
+    display: block;
+
+    i {
+        color: $tab-header-col-font-color;
+    }
+}
+
+li.active {
+    color: $tab-header-col-active-font-color;
+    border-bottom: $tab-header-col-active-border-bottom;
+    background-color: $tab-header-col-active-bg-color;
+    transition: background-color 0.3s linear;
+    -webkit-transition: background-color 0.3s linear;
+    -moz-transition: background-color 0.3s linear;
+
+    i {
+        color: $tab-header-col-active-font-color;
+    }
+}

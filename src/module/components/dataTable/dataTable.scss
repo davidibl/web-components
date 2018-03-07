@@ -1,0 +1,35 @@
+@import '../../styles/variables.scss';
+
+$table-sort-indicator-active-color:                     $brand-secondary;
+
+:host ::ng-deep .sortable {
+    cursor: pointer;
+
+    &:after {
+        content: "\f0dc";
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        margin-left: 5px;
+    }
+
+    &.sorted-descending:after {
+        content: "\f0dd";
+        color: $table-sort-indicator-active-color;
+    }
+
+    &.sorted-ascending:after {
+        content: "\f0de";
+        color: $table-sort-indicator-active-color;
+    }
+}
+
+::ng-deep table.condensed {
+    td, th {
+        padding: 5px;
+    }
+}
+

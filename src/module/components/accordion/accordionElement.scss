@@ -1,0 +1,76 @@
+@import 'variables';
+
+$step_number-bg: lighten($brand-teritiary, 30);
+$step_number-notpassed-bg: $very-light-gray;
+$step_number-open-bg: $brand-teritiary;
+$step_number-invalid-bg: $danger;
+$step-number-color: lighten($base-font-color, 30);
+
+:host {
+    display: flex;
+    flex-direction: column;
+}
+
+.step-number {
+    background-color: $step_number-notpassed-bg;
+    border-radius: 100%;
+    width: 35px;
+    text-align: center;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $step-number-color;
+
+    transition: background-color 0.3s linear;
+    -webkit-transition: background-color 0.3s linear;
+    -moz-transition: background-color 0.3s linear;
+}
+
+.step-line {
+    border-left: 3px dotted $step_number-notpassed-bg;
+    margin-left: 1rem;
+}
+
+xn-collapsable-panel {
+    padding-right: 1px;
+    padding-bottom: 1px;
+}
+
+:host.passed {
+    .step-line {
+        border-left-style: solid;
+        border-left-width: 2px;
+        border-left-color: $step_number-bg;
+    }
+
+    .step-number {
+        background-color: $step_number-bg;
+    }
+}
+
+:host.open {
+    .step-line {
+        border-left-color: $step_number-open-bg;
+    }
+
+    .step-number {
+        background-color: $step_number-open-bg;
+        h4 {
+            color: #fff;
+        }
+    }
+}
+
+:host.passed.invalid:not(.open) {
+    .step-number {
+        background-color: $step_number-invalid-bg;
+        h4 {
+            color: #fff;
+        }
+    }
+
+    .title {
+        color: $step_number-invalid-bg;
+    }
+}

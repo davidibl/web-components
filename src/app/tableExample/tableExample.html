@@ -1,0 +1,20 @@
+<h2 class="ml-2">Datentabelle</h2>
+<div class="pl-2 pt-2 pr-2">
+    <xn-section-divider [label]="'Tabelle mit Filterung und Pagination'"></xn-section-divider>
+    <input [(ngModel)]="filter" />
+    <xn-data-table [pageSize]="2"
+                [currentPage]="currentPage"
+                [data]="items"
+                [filter]="filter"
+                [templateRef]="columnDefinition">
+        <th xnHeaderColumn [propertyPath]="'name'">Name</th>
+        <th xnHeaderColumn [propertyPath]="'alter'">Alter</th>
+        <th xnHeaderColumn>Geburtstag</th>
+    </xn-data-table>
+
+    <ng-template #columnDefinition let-item="item">
+        <td>{{item?.name}}</td>
+        <td>{{item?.alter | pad:'left':'00000'}}</td>
+        <td>{{item?.geburtstag | toDateString}}</td>
+    </ng-template>
+</div>

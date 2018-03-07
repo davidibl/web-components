@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto:900');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+
+// base variables
+
+$base-background-color:                         #fff !default;
+$base-font-family:                              sans-serif !default;
+$base-font-size:                                16 !default;
+$base-line-height:                              22 !default;
+$base-font-weight:                              400 !default;
+$base-font-color:                               #000 !default;
+$base-link-color:                               #000 !default;
+$base-link-hover-color:                         #000 !default;
+
+$base-input-height:                             36px !default;
+$base-input-placeholder-color:                  #999 !default;
+$base-input-color:                              #000 !default;
+$base-input-background-color:                   #fff !default;
+$base-input-background-focus-color:             #fff !default;
+$base-input-border-color:                       #ccc !default;
+$base-input-border-focus-color:                 #f7c723 !default;
+$base-select-box-height:                        36px;
+
+// Brand
+
+$brand-primary:                                 #333 !default;
+$brand-secondary:                               #78909C !default;
+$brand-teritiary:                               #1E88E5 !default;
+$brand-teritiary-color-20:                       lighten($brand-teritiary, 80) !default;
+$brand-teritiary-color-40:                       lighten($brand-teritiary, 60) !default;
+$brand-teritiary-color-60:                       lighten($brand-teritiary, 40) !default;
+$brand-teritiary-color-80:                       lighten($brand-teritiary, 20) !default;
+
+// Colors
+
+$brand-white:                                   #fff !default;
+$color-white:                                   #fff !default;
+$dark-gray:                                     #333 !default;
+$light-gray:                                    lighten($dark-gray, 20) !default;
+$very-light-gray:                               #E3E5E6 !default;
+$danger:                                        #d44950 !default;
+$info:                                          #1E88E5 !default;
+$default-icon-color:                            $brand-primary !default;
+
+$brand-color:                                   #1E88E5 !default;
+$brand-color-20:                                lighten($brand-color, 80) !default;
+$brand-color-40:                                lighten($brand-color, 60) !default;
+$brand-color-60:                                lighten($brand-color, 40) !default;
+$brand-color-80:                                lighten($brand-color, 20) !default;
+
+$brand-light-color:                             rgba(130, 187, 45, 0.55) !default;
+
+$black:                                         #000 !default;
+$black-20:                                      lighten($black, 80) !default;
+$black-40:                                      lighten($black, 60) !default;
+$black-60:                                      lighten($black, 40) !default;
+$black-80:                                      lighten($black, 20) !default;
+
+// Font
+
+$primary-font:                                  'Roboto Condensed', sans-serif !default;
+$secondary-font:                                'Roboto', sans-serif !default;
+$tertiary-font:                                 'Roboto Slab', serif !default;
+
+$base-font-family:                              $primary-font !default;
+$base-heading-font-family:                      $primary-font !default;
+$base-blockquote-font-family:                   $primary-font !default;
+
+$base-heading-font-family-alternate:            $secondary-font !default;
+
+$base-font-color:                               #333;
+
+$small-font-size:                               0.7rem !default;
+
+// Headings
+
+$base-header-weight:                            400 !default;
+$base-bold-header-weight:                       700 !default;
+$base-bold-alternate-weight:                    900 !default;
+
+$base-h1-font-weight:                           $base-header-weight !default;
+$base-h1-color:                                 $base-font-color !default;
+$base-h2-font-weight:                           $base-header-weight !default;
+$base-h2-color:                                 $base-font-color !default;
+$base-h3-font-weight:                           $base-header-weight !default;
+$base-h3-color:                                 $base-font-color !default;
+$base-h4-font-weight:                           $base-bold-alternate-weight !default;
+$base-h4-color:                                 $base-font-color !default;
+$base-h5-font-weight:                           $base-header-weight !default;
+$base-h5-color:                                 $base-font-color !default;
+$base-h6-font-weight:                           $base-header-weight !default;
+$base-h6-color:                                 $base-font-color !default;
+
+// Links
+
+$base-link-color:                               $brand-teritiary !default;
+$base-link-hover-color:                         darken($base-link-color, 20%) !default;
+
+// Layout
+
+$container-xl:                                  960px !default;
+$header-height:                                 70px !default;
+$responsive-header-height:                      35px !default;
+
+
+// Scroll to top
+
+$scroll-to-top-button-shadow:                           0px 0px 18px 2px rgba(68, 68, 68, 0.5) !default;
+$scroll-to-top-button-position-bottom:                  50px !default;
+$scroll-to-top-button-position-right:                   20px !default;
+$scroll-to-top-button-border-radius:                    50% !default;
+$scroll-to-top-button-width:                            80px !default;
+$scroll-to-top-button-height:                           80px !default;
+$scroll-to-top-button-background-color:                 $brand-teritiary !default;
+
+$scroll-to-top-button-text-line-height:                 5rem !default;
+$scroll-to-top-button-text-margin-left:                 8px !default;
+$scroll-to-top-button-text-align:                       center !default;
+$scroll-to-top-button-text-font-size:                   5rem !default;
+$scroll-to-top-button-text-font-weight:                 bold !default;
+$scroll-to-top-button-text-color:                       #fff !default;
+
+// flyin mobile menu
+
+$flyin-mobile-menu-color:                           darken($very-light-gray, 20%) !default;
+$flyin-mobile-menu-hover-color:                     lighten($flyin-mobile-menu-color, 100%) !default;
+$flyin-mobile-menu-background-color:                $brand-primary !default;
+$flyin-mobile-menu-button-background-color:         $flyin-mobile-menu-background-color !default;
+$flyin-mobile-menu-item-font:                       $base-heading-font-family-alternate !default;
+$flyin-mobile-menu-button-font:                     $flyin-mobile-menu-item-font !default;
+$responsive-menu-shadow:                            0px 0px 10px 3px rgba(68, 68, 68, 0.45) !default;
+$responsive-menu-button-shadow:                     0px 0px 10px 3px rgba(68, 68, 68, 0.45) !default;
+
+$flyin-mobile-menu-background-color-inverted:       #fff !default;
+$flyin-mobile-menu-color-inverted:                  $brand-primary !default;
+$flyin-mobile-menu-hover-color-inverted:            lighten($flyin-mobile-menu-color-inverted, 20%) !default;
+
+// like component
+
+$like-color:                                        $brand-white !default;
+$like-icon-color:                                   $like-color !default;
+$like-icon-color-hover:                             $like-color !default;
+$like-text-color:                                   $like-color !default;
+$like-text-color-hover:                             $like-color !default;
+$like-box-width:                                    100px !default;
+$like-box-padding-top:                              5px !default;
+$like-box-padding-bottom:                           5px !default;
+$like-box-padding-left:                             12px !default;
+$like-box-padding-right:                            12px !default;
+$like-box-padding:                                  $like-box-padding-top $like-box-padding-right $like-box-padding-bottom $like-box-padding-left !default;
+$like-background-color:                             lighten(red, 20) !default;
+$like-background-color-hover:                       lighten(red, 10) !default;
+$like-font-weight:                                  800 !default;
+$like-box-margin-top:                               0 !default;
+$like-box-margin-bottom:                            0 !default;
+$like-box-margin-right:                             0 !default;
+$like-box-margin-left:                              0 !default;
+$like-box-margin:                                   $like-box-margin-top $like-box-margin-right $like-box-margin-bottom $like-box-margin-left !default;
+
+// Header
+
+$xn-menu-header-shadow:                             0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.3) !default;
+$xn-menu-header-height:                             $header-height !default;
+$xn-menu-header-height-responsive:                  $responsive-header-height !default;
+$xn-menu-header-width:                              100% !default;
+$xn-menu-header-transform:                          initial !default;
+$xn-menu-header-margin-bottom:                      15px !default;
+$xn-menu-header-background-color:                   #fff !default;
+$xn-menu-header-padding-left:                       0px !default;
+$xn-menu-header-padding-right:                      0px !default;
+$xn-menu-header-padding-top:                        0px !default;
+$xn-menu-header-padding-bottom:                     0px !default;
+$xn-menu-header-margin-left:                        0px !default;
+$xn-menu-header-margin-right:                       0px !default;
+$xn-menu-header-margin-top:                         0px !default;
+$xn-menu-header-margin-bottom:                      0px !default;
+$xn-menu-header-left:                               0px !default;
+$xn-menu-header-right:                              initial !default;
+$xn-menu-header-bottom:                             initial !default;
+$xn-menu-header-top:                                0px !default;
+$xn-menu-header-nav-layout:                         flex !default;
+$xn-menu-header-nav-flex-direction:                 row !default;
+$xn-menu-header-nav-flex-wrap:                      wrap !default;
+$xn-menu-header-nav-width:                          initial !default;
+$xn-menu-header-nav-padding-left:                   5px !default;
+$xn-menu-header-nav-padding-right:                  5px !default;
+$xn-menu-header-nav-padding-top:                    5px !default;
+$xn-menu-header-nav-padding-bottom:                 5px !default;
+$xn-menu-header-brand-weight:                       normal !default;
+$xn-menu-header-brand-color:                        $brand-primary !default;
+
+$brand-bar-height:                                  25px !default;
+$brand-name-font:                                   $base-heading-font-family-alternate !default;
+
+$menu-item-margin:                                  20px !default;
+$menu-item-color:                                   $brand-primary !default;
+$menu-item-text-decoration:                         none !default;
+$menu-item-hover-color:                             lighten($menu-item-color, 30%) !default;
+$menu-item-hover-text-decoration:                   none !default;
+$menu-item-active-color:                            $menu-item-hover-color !default;
+$menu-item-active-text-decoration:                  none !default;
+$menu-list-padding-left:                            0px !default;
+$menu-list-padding-right:                           0px !default;
+$menu-list-padding-top:                             0px !default;
+$menu-list-padding-bottom:                          0px !default;
+$menu-list-margin-left:                             auto !default;
+$menu-list-margin-right:                            auto !default;
+$menu-list-margin-top:                              0px !default;
+$menu-list-margin-bottom:                           0px !default;
+$menu-list-position:                                absolute !default;
+$menu-list-float:                                   initial !default;
+
+$menu-brand-bar-float:                              initial !default;
+$menu-brand-bar-margin-left:                        initial !default;
+$menu-brand-bar-margin-right:                       initial !default;
+$menu-brand-bar-margin-top:                         5px !default;
+$menu-brand-bar-margin-bottom:                      initial !default;
+
+// Dialog
+
+$dialog-background:                                     #fff !default;
+$dialog-width:                                          auto !default;
+$dialog-height:                                         auto !default;
+$dialog-border-left:                                    none !default;
+$dialog-border-right:                                   none !default;
+$dialog-border-top:                                     none !default;
+$dialog-border-bottom:                                  none !default;
+$dialog-header-border-bottom:                           1px solid lighten(#333, 50) !default;
+$dialog-header-margin-bottom:                           20px !default;
+$dialog-footer-border-top:                              1px solid lighten(#333, 50) !default;
+$dialog-footer-padding-top:                             20px !default;
+$dialog-shadow:                                         0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.3) !default;
+$dialog-padding-right:                                  30px !default;
+$dialog-padding-top:                                    20px !default;
+$dialog-padding-left:                                   30px !default;
+$dialog-padding-bottom:                                 20px !default;
+
+// Comment Box
+
+$xn-comment-editor-border-bottom:                               1px solid #333 !default;
+$xn-comment-editor-title-font-weight:                           900 !default;
+$xn-comment-child-padding-left:                                 20px !default;
+$xn-comment-child-padding-top:                                  15px !default;
+$xn-add-comment-shadow:                                         0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.3) !default;
+$xn-add-comment-background-color:                               #fff !default;
+$xn-add-comment-width:                                          500px !default;
+$xn-add-comment-padding-top:                                    5px !default;
+$xn-add-comment-padding-right:                                  15px !default;
+$xn-add-comment-padding-bottom:                                 5px !default;
+$xn-add-comment-padding-left:                                   15px !default;
+
+// Masonry
+
+$masonry-column-gap:                                            1em !default;
+
+
+// infobox
+
+$infobox-info-color:                                    $info !default;
+$infobox-error-color:                                   $danger !default;
+
+
+// tooltip
+
+$tooltip-shadow:                                    0px 0px 14px 3px rgba(68, 68, 68, 0.29) !default;
+
+
+// checkbox
+
+$checkbox-border-color:                                 $black-40 !default;
+$checkbox-icon-color:                                   $base-font-color !default;
+$checkbox-bg:                                           transparent !default;
+$checkbox-bg-checked:                                   transparent !default;
+
+
+// form
+
+$input-form-margin-bottom:                      5px !default;
+$input-form-margin-top:                         0px !default;
+$input-form-margin-right:                       0px !default;
+$input-form-margin-left:                        0px !default;
+$input-form-margin:                             $input-form-margin-top $input-form-margin-right $input-form-margin-bottom $input-form-margin-left !default;
+$input-form-color-placeholder:                  $base-input-placeholder-color !default;
+$input-form-color:                              $base-input-color !default;
+$input-form-font-size:                          $base-font-size !default;
+$input-form-label-font-size:                    12 !default;
+$input-form-outline:                            0 !default;
+$input-form-shadow:                             none !default;
+$input-form-padding-top:                        2px !default;
+$input-form-padding-bottom:                     0px !default;
+$input-form-padding-left:                       2px !default;
+$input-form-padding-right:                      12px !default;
+$input-form-background-color:                   #fff !default;
+$input-form-border-bottom:                      1px solid $input-form-color-placeholder !default;
+$input-form-border-top:                         0 !default;
+$input-form-border-right:                       0 !default;
+$input-form-border-left:                        0 !default;
+$input-form-validationerror-color:              $danger !default;
+$input-form-highlight-color:                    $brand-teritiary !default;
+$input-form-icon-color:                         $base-input-placeholder-color !default;
+$input-form-icon-color-hover:                   darken($input-form-icon-color, 30%) !default;
+
+
+
+// Buttons
+
+$button-color:                                  $brand-primary;
+$button-border:                                 1px solid transparent;
+$button-background-color:                       #fff;
+
+$button-hover-shadow:                           0px 1px 5px 1px rgba(68, 68, 68, 0.45);
+$button-active-shadow:                          0px 1px 1px 1px rgba(68, 68, 68, 0.45);
+$button-hover-color:                            $brand-primary;
+$button-hover-background-color:                 #f9f9f9;
+$button-hover-border:                           1px solid transparent;
+
+$button-default-color:                          $brand-teritiary;
+$button-default-hover-color:                    lighten($brand-teritiary, 20);
+$button-default-border:                         1px solid darken($button-default-color, 10);
+
+
+// dropdown
+
+$dropdown-menu-border-top:                      none;
+$dropdown-menu-border-left:                     none;
+$dropdown-menu-border-right:                    none;
+$dropdown-menu-border-bottom:                   none;
+$dropdown-menu-background-color:                #fff;
+$dropdown-menu-shadow:                          0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.3);
+$dropdown-menu-listitem-padding-top:            5px;
+$dropdown-menu-listitem-padding-left:           5px;
+$dropdown-menu-listitem-padding-right:          5px;
+$dropdown-menu-listitem-padding-bottom:         5px;
+$dropdown-menu-listitem-padding:                $dropdown-menu-listitem-padding-top $dropdown-menu-listitem-padding-right $dropdown-menu-listitem-padding-bottom $dropdown-menu-listitem-padding-left;
+$dropdown-menu-listitem-hover-background-color: $brand-teritiary;
+$dropdown-menu-listitem-hover-color:            #fff;
+
+
+// Tabs
+
+$tab-header-border-bottom-style: solid;
+$tab-header-border-bottom-width: 1px;
+$tab-header-border-bottom-color: $very-light-gray;
+$tab-header-border-bottom: $tab-header-border-bottom-width $tab-header-border-bottom-style $tab-header-border-bottom-color;
+
+$tab-header-col-active-border-bottom-color: $brand-teritiary;
+$tab-header-col-active-border-bottom-style: solid;
+$tab-header-col-active-border-bottom-width: 2px;
+$tab-header-col-active-border-bottom: $tab-header-col-active-border-bottom-width $tab-header-col-active-border-bottom-style $tab-header-col-active-border-bottom-color;
+$tab-header-col-active-bg-color: $brand-teritiary-color-60;
+$tab-header-col-font-color: lighten($base-font-color, 30);
+$tab-header-col-active-font-color: $base-font-color;
+
+
+// Selection Control
+
+$selection-control-bg-selected-item:            $brand-teritiary-color-80;
+$selection-control-bg-selected-item-checkbox:   $brand-teritiary;

@@ -1,0 +1,28 @@
+scroll-to-top {
+    @extend .animation;
+    div {
+        @include shadow($scroll-to-top-button-shadow);
+
+        position:                                       fixed;
+        cursor:                                         pointer;
+        bottom:                                         $scroll-to-top-button-position-bottom;
+        right:                                          $scroll-to-top-button-position-right;
+        border-radius:                                  $scroll-to-top-button-border-radius;
+        width:                                          $scroll-to-top-button-width;
+        height:                                         $scroll-to-top-button-height;
+        background-color:                               $scroll-to-top-button-background-color;
+        z-index: 1002;
+
+        p {
+            @extend .alt-font;
+            @include vertical;
+
+            line-height:                                $scroll-to-top-button-text-line-height;
+            margin-left:                                $scroll-to-top-button-text-margin-left;
+            text-align:                                 $scroll-to-top-button-text-align;
+            font-size:                                  $scroll-to-top-button-text-font-size;
+            font-weight:                                $scroll-to-top-button-text-font-weight;
+            color:                                      $scroll-to-top-button-text-color;
+        }
+    }
+}

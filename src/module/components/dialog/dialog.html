@@ -1,0 +1,28 @@
+<xn-block-ui [show]="true" [centerContent]="true">
+    <div class="dialog full-height auto-height-m col-12 col-6-m p-0 flex flex-column"
+         (outsideClick)="onOutsideClick()">
+        <div class="dialog-header clear">
+            <div class="dialog-title left">
+                <ng-content select=".dialog-title"></ng-content>
+            </div>
+            <div *ngIf="closable" (click)="onDialogClose()" class="right close-button">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="dialog-content flex-grow flex flex-column">
+            <ng-content select=".dialog-body"></ng-content>
+        </div>
+        <div *ngIf="!hideButtonBar" class="dialog-footer clear">
+            <ng-container *ngIf="showDefaultButtons">
+                <xn-button [default]="false"
+                           *ngIf="!hideCancelButton"
+                           class="button left"
+                           (click)="onCancelClick()">abbrechen</xn-button>
+                <xn-button [default]="true"
+                           class="button primary right"
+                           (click)="onConfirmClick()">{{defaultOkButtonText}}</xn-button>
+            </ng-container>
+            <ng-content select=".button-bar"></ng-content>
+        </div>
+    </div>
+</xn-block-ui>

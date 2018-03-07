@@ -1,0 +1,34 @@
+@import 'variables';
+
+.divider {
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+
+    span {
+        font-size: $small-font-size;
+        color: $light-gray;
+        position: relative;
+        display: inline-block;
+    }
+
+    span:after, span::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 9999px;
+        height: 1px;
+        background: $light-gray;
+    }
+
+    span:after {
+        left: 100%;
+        margin-left: 15px;
+    }
+
+    span:before {
+        right: 100%;
+        margin-right: 15px;
+    }
+}

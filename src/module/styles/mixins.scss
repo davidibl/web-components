@@ -1,0 +1,55 @@
+@mixin shadow($shadow) {
+    -webkit-box-shadow:                     $shadow;
+    -moz-box-shadow:                        $shadow;
+    box-shadow:                             $shadow;
+}
+
+@mixin no-shadow() {
+    -webkit-box-shadow:                     none;
+    -moz-box-shadow:                        none;
+    box-shadow:                             none;
+}
+
+@mixin rotate($deg) {
+    -moz-transform:                         rotate($deg);
+    -ms-transform:                          rotate($deg);
+    -webkit-transform:                      rotate($deg);
+    transform:                              rotate($deg);
+}
+
+@mixin disable-user-select() {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+@mixin indent($pixel) {
+    width: 100%;
+    width: -webkit-calc(100% - #{$pixel});
+    width: -moz-calc(100% - #{$pixel});
+    width: calc(100% - #{$pixel});
+}
+
+@mixin indent-m($pixel) {
+    width: 100%;
+    width: -webkit-calc(100% - #{$pixel});
+    width: -moz-calc(100% - #{$pixel});
+    width: calc(100% - #{$pixel});
+
+    @media (max-width: $breakpoint-m - 1) {
+        width: 100%;
+    }
+}
+
+@mixin vertical {
+    @include rotate(90deg);
+}
+
+@mixin not-selectable {
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */
+}

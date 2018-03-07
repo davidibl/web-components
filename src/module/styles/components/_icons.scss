@@ -1,0 +1,65 @@
+$icon-size-48:                                      48px;
+$icon-size-64:                                      64px;
+$icon-clickable-hover-opacity:                      0.7;
+
+.icon-48 {
+    height:                                         $icon-size-48;
+    width:                                          $icon-size-48;
+    background-size:                                $icon-size-48 $icon-size-48;
+    display:                                        block;
+
+    &.clickable {
+        cursor:                                     pointer;
+    }
+
+    &.clickable:hover {
+        opacity:                                    $icon-clickable-hover-opacity;
+    }
+}
+
+.icon-64 {
+    height:                                         $icon-size-64;
+    width:                                          $icon-size-64;
+    background-size:                                $icon-size-64 $icon-size-64;
+    display:                                        block;
+}
+
+.indent-48 {
+    @include indent(48px);
+}
+
+.icon-button {
+    cursor:                                         pointer;
+}
+
+.icon-button:hover {
+    opacity:                                        0.7;
+}
+
+.icon-github {
+    background-image: url('/img/icon/github.png');
+}
+
+.icon-facebook {
+    background-image: url('/img/icon/facebook.png');
+}
+
+.icon-twitter {
+    background-image: url('/img/icon/twitter.png');
+}
+
+.icon-linkedin {
+    background-image: url('/img/icon/linkedin.png');
+}
+
+.icon-xing {
+    background-image: url('/img/icon/xing.png');
+}
+
+.icon-meetup {
+    background-image: url('/img/icon/meetup.png');
+}
+
+.icon-stackoverflow {
+    background-image: url('/img/icon/stack_overflow.png');
+}

@@ -1,0 +1,80 @@
+$popup-button-shadow:                                   0px 0px 18px 2px rgba(68, 68, 68, 0.5);
+$popup-button-border-radius:                            50%;
+$popup-button-background-color:                         #fff;
+$popup-button-menu-border-radius:                       0px;
+$popup-button-menu-button-text-align:                   right;
+$popup-button-menu-button-font-size:                    1rem;
+
+popup-button {
+    position:                                           fixed;
+    top:                                                120px;
+    right:                                              50px;
+    width:                                              75px;
+    height:                                             75px;
+    z-index:                                            3005;
+    transition:                                         all 100ms;
+    background-color:                                   $popup-button-background-color;
+    border-radius:                                      $popup-button-border-radius;
+    @include shadow($popup-button-shadow);
+
+    .popup-button {
+        display:                                        block;
+        padding-top:                                    10px;
+        padding-right:                                  14px;
+        transition:                                     all 200ms;
+        text-align:                                     right;
+        font-size:                                      3.1rem;
+    }
+
+    .popup-menu {
+        display:                                        none;
+        transition:                                     all 100ms;
+    }
+
+    .cancel {
+        display:                                        none;
+    }
+
+    @media (max-width: $breakpoint-m - 1) {
+        right:                                          -10px;
+        top:                                            80px;
+        width:                                          60px;
+        height:                                         60px;
+        .popup-button {
+            font-size:                                  2.3rem;
+        }
+    }
+}
+
+popup-button:hover, popup-button.open {
+    border-radius:                                      $popup-button-menu-border-radius;
+    height:                                             auto;
+    padding-left:                                       20px;
+    padding-right:                                      20px;
+    display:                                            block;
+    width:                                              350px;
+
+    .popup-button {
+        width:                                          100%;
+        height:                                         30px;
+        text-align:                                     $popup-button-menu-button-text-align;
+        font-size:                                      $popup-button-menu-button-font-size;
+        margin-bottom:                                  10px;
+        @include no-shadow();
+    }
+
+    .popup-menu {
+        display:                                        block;
+    }
+
+    @media (max-width: $breakpoint-m - 1) {
+        right:                                          10px;
+        top:                                            80px;
+    }
+}
+
+popup-button.open {
+    .cancel {
+        display:                                        block;
+    }
+}

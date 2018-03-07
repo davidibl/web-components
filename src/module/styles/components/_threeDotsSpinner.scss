@@ -1,0 +1,82 @@
+$three-dots-spinner-color:                              #fefefe;
+$three-dots-spinner-color-dark:                         lighten(#333, 20);
+$three-dots-spinner-message-color:                      three-dots-spinner-color;
+$three-dots-spinner-message-align:                      center;
+
+xn-three-dots-spinner {
+    position:                                           relative;
+    display:                                            block;
+    top:                                                0px;
+    height:                                             100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .message {
+        color:                                          $three-dots-spinner-color;
+        display:                                        block;
+        position:                                       relative;
+        text-align:                                     $three-dots-spinner-message-align;
+        padding-top:                                    50px;
+    }
+
+    .dot-spinner {
+        display:                                        block;
+        position:                                       relative;
+        top:                                            0px;
+        text-align:                                     center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .dot-spinner > div {
+        width:                                          18px;
+        height:                                         18px;
+        background-color:                               #e4e4e4;
+
+        border-radius:                                  100%;
+        margin-right:                                   5px;
+        display:                                        inline-block;
+        -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+        animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+    }
+
+    &.dark {
+        .dot-spinner > div {
+            background-color: $three-dots-spinner-color-dark;
+        }
+    }
+
+    .dot-spinner > div:last-child {
+        margin-right:                                   0;
+    }
+
+    .dot-spinner .bounce1 {
+        -webkit-animation-delay:                        -0.32s;
+        animation-delay:                                -0.32s;
+    }
+
+    .dot-spinner .bounce2 {
+        -webkit-animation-delay:                        -0.16s;
+        animation-delay:                                -0.16s;
+    }
+
+    @-webkit-keyframes sk-bouncedelay {
+        0%, 80%, 100% { -webkit-transform: scale(0) }
+        40% { -webkit-transform: scale(1.0) }
+    }
+
+    @keyframes sk-bouncedelay {
+        0%, 80%, 100% {
+            -webkit-transform: scale(0);
+            transform: scale(0);
+        } 40% {
+            -webkit-transform: scale(1.0);
+            transform: scale(1.0);
+        }
+    }
+}
+
+
+

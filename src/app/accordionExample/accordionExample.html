@@ -1,0 +1,28 @@
+<h2 class="ml-2">Accordion</h2>
+<div class="pl-2 pt-2 pr-2">
+    <xn-accordion [preventStepWhenInvalid]="false" [linearStepping]="true">
+        <xn-accordion-element [title]="'Schritt 1'">
+            <div step-body>
+                <p>Test 1</p>
+            </div>
+        </xn-accordion-element>
+        <xn-accordion-element [title]="'Schritt 2'">
+            <div step-body>
+                <form #step2form="ngForm">
+                    <xn-input-form [label]="'testinput'" name="test" [(ngModel)]="bla" xnRequired></xn-input-form>
+                </form>
+            </div>
+        </xn-accordion-element>
+        <xn-accordion-element [title]="'Schritt 3'">
+            <div step-body>
+                <p>Test 3</p>
+            </div>
+        </xn-accordion-element>
+        <xn-accordion-element [title]="'Letzter Schritt'">
+            <div step-body>
+                <h1>Blabla</h1>
+                <P>Ein grö0erere Schritt eben</P>
+            </div>
+        </xn-accordion-element>
+    </xn-accordion>
+</div>

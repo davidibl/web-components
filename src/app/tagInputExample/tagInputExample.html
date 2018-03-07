@@ -1,0 +1,10 @@
+<h2 class="ml-2">Tag Input</h2>
+<div class="pl-2 pt-2 pr-2">
+    <xn-section-divider [label]="'standard Tag Input'"></xn-section-divider>
+    <xn-tag-input [(ngModel)]="tags"></xn-tag-input>
+    <ul>
+        <li *ngFor="let tag of tags">{{tag}}</li>
+    </ul>
+    <xn-section-divider [label]="'Tag Input vorbefüllt'"></xn-section-divider>
+    <xn-tag-input [(ngModel)]="predifinedTags"></xn-tag-input>
+</div>

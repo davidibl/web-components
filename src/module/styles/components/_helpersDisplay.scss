@@ -1,0 +1,64 @@
+.clear {
+    clear:                                  both;
+}
+
+.initial-position {
+    position: initial;
+}
+
+// Flexbox
+
+.flex {
+    display: flex;
+}
+
+.container-flex {
+    @extend .flex-column;
+    @extend .flex-row-m;
+    @extend .flex-row-l;
+    @extend .flex-row-xl;
+}
+
+.flex-grow {
+    flex-grow: 1;
+}
+
+.justify-items {
+    align-items: center;
+}
+
+.box {
+    -webkit-box-flex:                       1;
+    -moz-box-flex:                          1;
+    -webkit-flex:                           0 1 auto;
+    flex:                                   0 1 auto;
+}
+
+// Sizing
+
+.full-width {
+    width:                                  100%;
+}
+
+.full-height {
+    height:                                 100%;
+}
+
+.auto-height {
+    height: auto;
+}
+
+@media (min-width: $breakpoint-m - 1) {
+    .initial-height-m {
+        height:                             initial;
+    }
+
+    .full-height-m {
+        height: 100%;
+    }
+
+    .auto-height-m {
+        height: auto;
+    }
+}
+

@@ -1,0 +1,171 @@
+@import 'variables';
+@import 'mixins';
+
+:host::-ms-clear {
+    display:                                    none;
+}
+
+:host {
+    margin:                                     $input-form-margin;
+}
+
+:host.no-error {
+    .error-labels {
+        display: none;
+    }
+}
+
+input, textarea {
+    @include font-size($input-form-font-size);
+    outline:                                $input-form-outline;
+    -webkit-box-shadow:                     $input-form-shadow;
+    box-shadow:                             $input-form-shadow;
+    padding:                                $input-form-padding-top $input-form-padding-right
+                                            $input-form-padding-bottom $input-form-padding-left;
+    background-color:                       $input-form-background-color;
+    border:                                 0;
+    width:                                  100%;
+    margin-bottom:                          0px;
+    border-bottom:                          none;
+    border-top:                             $input-form-border-top;
+    border-right:                           $input-form-border-right;
+    border-left:                            $input-form-border-left;
+}
+input::-ms-clear {
+    display:                                none;
+}
+textarea {
+    resize:                                 none;
+}
+
+.input-label {
+    display:                                block;
+    visibility:                             visible;
+    margin-bottom:                          -3px;
+    padding-left:                           1px;
+    z-index:                                2;
+    color:                                  $input-form-color-placeholder;
+}
+
+.input-label.hidden {
+    visibility:                             hidden;
+}
+
+.input-label, .validation-message {
+    @include font-size($input-form-label-font-size);
+}
+
+.error-labels {
+
+    &.hidden {
+        visibility:                         hidden;
+    }
+
+    .error-labels-content {
+        display:                            block;
+        height:                             20px;
+        overflow:                           hidden;
+        line-height:                        13px;
+    }
+
+    .validation-message {
+        display:                            none;
+        color:                              $input-form-validationerror-color;
+        margin-top:                         0;
+        padding-left:                       1px;
+    }
+
+    .validation-message:first-child {
+        display:                            block;
+    }
+}
+
+.input-group-wrapper {
+    border-bottom:                          $input-form-border-bottom;
+}
+
+.input-group {
+    width:                                  100%;
+}
+
+.input-box {
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.input-icon-space {
+    width:                                  20px;
+}
+
+.input-icon {
+    @extend .input-icon-space;
+    @include font-size($input-form-font-size);
+
+    color:                                  $input-form-icon-color;
+    padding-top: 5px;
+    line-height:                            100%;
+}
+
+.input-icon.info {
+    cursor:                                 pointer;
+    line-height:                            100%;
+    padding-top:                            3px;
+
+    &:hover {
+        color:                              $input-form-icon-color-hover;
+    }
+
+    &:before {
+        // margin-left:                        -25px;
+    }
+}
+
+.none {
+    display:                                none;
+}
+
+:host.focused {
+    .input-label {
+        color:                                  $input-form-highlight-color;
+    }
+    .input-icon {
+        color:                                  $input-form-highlight-color;
+    }
+    .input-box {
+        border-bottom-color:                    $input-form-highlight-color;
+    }
+}
+
+:host.validation-error {
+    .input-label {
+        color:                                  $input-form-validationerror-color;
+    }
+    .input-icon {
+        color:                                  $input-form-validationerror-color;
+    }
+    .input-box {
+        border-bottom-color:                    $input-form-validationerror-color;
+    }
+}
+
+:host.noborder {
+    .input-box {
+        border:                                 none;
+    }
+}
+
+:host.transparent {
+    input, textarea {
+        background-color: transparent;
+    }
+}
+
+:host.big {
+    input, textarea {
+        @include font-size($input-form-font-size * 1.5);
+    }
+
+    .input-icon {
+        @include font-size($input-form-font-size * 1.5);
+    }
+}

@@ -1,0 +1,138 @@
+flyin-mobile-menu {
+    pointer-events:                                 none;
+
+    .menu-flyin.open {
+        left:                                       0px;
+    }
+    .menu-flyin {
+        pointer-events:                             none;
+        position:                                   fixed;
+        z-index:                                    1000;
+        bottom:                                     50px;
+        left:                                       -210px;
+        padding:                                    8px 15px 5px 15px;
+        padding-left:                               15px;
+        padding: 0;
+        transition:                                 all 100ms;
+
+        .nav-button {
+            @include shadow($responsive-menu-button-shadow);
+            @include vertical;
+
+            transform: rotate(90deg) translateX(0px);
+            pointer-events:                         auto;
+            transform-origin:                       0% 0%;
+            float:                                  left;
+            margin-left:                            40px;
+            height:                                 40px;
+            padding:                                8px 15px 5px 15px;
+            padding-left:                           15px;
+            background:                             $flyin-mobile-menu-button-background-color;
+            cursor:                                 pointer;
+            z-index:                                1000;
+            
+        }
+
+        .nav-button:after {
+            width:                                  105%;
+            height:                                 8px;
+            background-color:                       $flyin-mobile-menu-background-color;
+            display:                                block;
+            content:                                " ";
+            position:                               absolute;
+            top:                                    40px;
+            left:                                   0px;
+        }
+
+        .menu {
+            @include shadow($responsive-menu-shadow);
+
+            float:                                  left;
+            width:                                  auto;
+            background:                             $flyin-mobile-menu-background-color;
+            pointer-events:                         auto;
+
+            ul {
+                padding-left:                       20px;
+                width:                              210px;
+            }
+
+            li {
+                list-style:                         none;
+                cursor:                             pointer;
+                min-width:                          200px;
+                padding-right:                      40px;
+
+                a {
+                    @extend h4;
+
+                    color:                          $flyin-mobile-menu-color;
+                    font:                           $flyin-mobile-menu-item-font;
+
+                    &:hover {
+                        color:                      $flyin-mobile-menu-hover-color;
+                    }
+
+                    &.active {
+                        color:                      $flyin-mobile-menu-hover-color;
+                    }
+                }
+            }
+        }
+
+        .burger {
+            @extend h4;
+
+            font:                                   $flyin-mobile-menu-button-font;
+            color:                                  $very-light-gray;
+
+            @media (max-width: 360px) {
+                text-overflow: ellipsis;
+                width: 80px;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+
+            @media (max-width: 320px) {
+                text-overflow: ellipsis;
+                width: 40px;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+        }
+    }
+}
+
+flyin-mobile-menu.inverted {
+    .menu-flyin {
+
+        .nav-button {
+            background:                             $flyin-mobile-menu-background-color-inverted;
+        }
+        .nav-button:after {
+            background-color:                       $flyin-mobile-menu-background-color-inverted;
+        }
+
+        .menu {
+            background:                             $flyin-mobile-menu-background-color-inverted;
+
+            li {
+                a {
+                    color:                          $flyin-mobile-menu-color-inverted;
+
+                    &:hover {
+                        color:                      $flyin-mobile-menu-hover-color-inverted;
+                    }
+
+                    &.active {
+                        color:                      $flyin-mobile-menu-hover-color-inverted;
+                    }
+                }
+            }
+        }
+
+        .burger {
+            color:                                  $flyin-mobile-menu-color-inverted;
+        }
+    }
+}

@@ -1,0 +1,106 @@
+@import "./_helpersSpacing.scss";
+@import "./_helpersColor.scss";
+@import "./_helpersDisplay.scss";
+@import "./_helpersWidth.scss";
+@import "variables.scss";
+
+// Lists
+
+.no-list-style {
+    list-style: none;
+}
+
+// Links
+
+.hidden-link {
+    cursor: pointer;
+    outline: none;
+}
+.hidden-link:focus {
+    outline: none;
+}
+.hidden-link:active {
+    outline: none;
+}
+
+.reset-link {
+    color: $brand-primary;
+    text-decoration: none;
+
+    &:hover, :active, :visited {
+        color: $brand-primary;
+        text-decoration: none;
+    }
+}
+
+.hover-underlined:hover {
+    text-decoration: underline;
+}
+
+// lines
+
+.line {
+    border-bottom: 1px solid $brand-primary;
+}
+
+.line-2 {
+    border-bottom-width: 2px;
+}
+
+.line-3 {
+    border-bottom-width: 3px;
+}
+
+// Spacer
+
+.spacer10 {
+    height: 20px;
+}
+
+.spacer20 {
+    height: 20px;
+}
+
+
+// Fonts
+
+.alt-font {
+    font-family:                            $base-heading-font-family-alternate;
+}
+
+// border
+
+.bordered {
+    border:                                 1px solid $brand-primary;
+}
+
+.border-bottom {
+    border-bottom:                             1px solid $brand-primary;
+}
+
+.border-top {
+    border-top:                             1px solid $brand-primary;
+}
+
+.border-right {
+    border-right:                             1px solid $brand-primary;
+}
+
+.border-left {
+    border-left:                             1px solid $brand-primary;
+}
+
+// text helpers
+
+.text-left-m {
+    @media (min-width: $breakpoint-m) {
+        text-align:                         left;
+    }
+}
+
+
+// cursor
+
+.pointer {
+    cursor: pointer;
+}

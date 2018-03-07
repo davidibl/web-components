@@ -1,0 +1,29 @@
+<h2 class="ml-2">Combobox</h2>
+<div class="pl-2 pt-2 pr-2">
+    <xn-section-divider [label]="'unset combobox'"></xn-section-divider>
+    <xn-combo-box [(ngModel)]="currentSelected" [items]="items" [displayPropertyPath]="'name'"></xn-combo-box>
+    <p>Aktuell gewählt: {{currentSelected?.name}}</p>
+    <xn-section-divider [label]="'initial set combobox'"></xn-section-divider>
+    <xn-combo-box [(ngModel)]="currentSelected2" [items]="items" [displayPropertyPath]="'name'"></xn-combo-box>
+    <p>Aktuell gewählt: {{currentSelected2?.name}}</p>
+    <xn-section-divider [label]="'initial set combobox nur mit einem key'"></xn-section-divider>
+    <xn-combo-box [(ngModel)]="currentSelected3" [items]="items" [idPropertyPath]="'alter'" [displayPropertyPath]="'name'"></xn-combo-box>
+    <p>Aktuell gewählt: {{currentSelected3}}</p>
+    <xn-section-divider [label]="'combobox mit custom template'"></xn-section-divider>
+    <xn-combo-box [template]="listTemplate" [(ngModel)]="currentSelected2" [items]="items" [displayPropertyPath]="'name'"></xn-combo-box>
+    <p>Aktuell gewählt: {{currentSelected2?.name}}</p>
+    <ng-template #listTemplate let-item="item">
+        <h2>{{item?.name}}</h2>
+        <h3>{{item?.alter | pad:'left':'00000'}}</h3>
+    </ng-template>
+    <xn-section-divider [label]="'combobox im input mode'"></xn-section-divider>
+    <xn-combo-box [inputMode]="true"
+                  [ngModel]="currentSelectedInput"
+                  (ngModelChange)="textChanged($event)"
+                  [items]="variousItems"
+                  [idPropertyPath]="'name'"
+                  [displayPropertyPath]="'name'"></xn-combo-box>
+    <p>Aktuell selektiert: {{currentSelectedInput}}</p>
+    <xn-section-divider [label]="'combobox required and validated'"></xn-section-divider>
+    <xn-combo-box [label]="'Testlabel'" [(ngModel)]="currentSelected" xnRequired [items]="items" [displayPropertyPath]="'name'"></xn-combo-box>
+</div>

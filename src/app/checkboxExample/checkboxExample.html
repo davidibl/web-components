@@ -1,0 +1,11 @@
+<h2 class="ml-2">Checkbox</h2>
+<div class="pl-2 pt-2 pr-2">
+    <xn-section-divider [label]="'einfache Checkbox'"></xn-section-divider>
+    <xn-checkbox [(ngModel)]="value">Testtext</xn-checkbox>
+    <br />
+    <p>Aktuell ist die Checkbox markiert: {{value}}</p>
+    <xn-section-divider [label]="'disabled Checkbox'"></xn-section-divider>
+    <xn-checkbox [ngModel]="true" [isDisabled]="true"></xn-checkbox>
+</div>
+
+

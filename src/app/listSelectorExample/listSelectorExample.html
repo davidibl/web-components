@@ -1,0 +1,40 @@
+<h2 class="ml-2">Selection Control</h2>
+<div class="pl-2 pt-2 pr-2">
+    <xn-section-divider [label]="'validierte multi select Liste'"></xn-section-divider>
+    <form #selectionForm="ngForm">
+        <xn-list-selector [items]="items"
+                        xnNotEmpty
+                        name="selctionA"
+                        [(ngModel)]="selectedItems"
+                        [displayPropertyPath]="'name'">
+        </xn-list-selector>
+    </form>
+    <p>aktuell Selektriert:</p>
+    <ul>
+        <li *ngFor="let item of selectedItems">{{item.name}}</li>
+    </ul>
+    <xn-button class="button primary" [default]="true" [class.disabled]="!selectionForm.valid">Test</xn-button>
+    <xn-section-divider [label]="'single select Liste'"></xn-section-divider>
+    <xn-list-selector [items]="items"
+                    [(ngModel)]="selectedItemsSingle"
+                    [selectionMode]="'SINGLE'"
+                    [displayPropertyPath]="'name'">
+    </xn-list-selector>
+    <p>aktuell Selektriert:</p>
+    <ul>
+        <li *ngFor="let item of selectedItemsSingle">{{item.name}}</li>
+    </ul>
+    <xn-section-divider [label]="'single select Liste mit custom templae'"></xn-section-divider>
+    <xn-list-selector [items]="items"
+                    [(ngModel)]="selectedItemsSingle"
+                    [selectionMode]="'SINGLE'"
+                    [template]="listitem"
+                    [displayPropertyPath]="'name'">
+    </xn-list-selector>
+    <ng-template #listitem let-item="item">
+        <div>
+            <p class="mb-0">{{item.name}}</p>
+            <small>{{item.email}}</small>
+        </div>
+    </ng-template>
+</div>

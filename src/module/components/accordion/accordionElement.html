@@ -1,0 +1,12 @@
+<div class="flex justify-items" (click)="openStep()">
+    <div class="step-number mr-1">
+        <h4 class="mb-0 font-100">{{stepNumber}}</h4>
+    </div>
+    <h4 class="title mb-0 flex-grow font-100">{{title}}</h4>
+    <i [@rotated]="open" class="fa fa-chevron-down" aria-hidden="true"></i>
+</div>
+<div class="step-line ml-1 pb-1 flex-grow flex flex-column full-height">
+    <xn-collapsable-panel class="pl-2 pt-1 full-height flex flex-column flex-grow" [expanded]="open">
+        <ng-content></ng-content>
+    </xn-collapsable-panel>
+</div>

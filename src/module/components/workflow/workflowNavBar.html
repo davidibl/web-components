@@ -1,0 +1,13 @@
+<div class="flex">
+    <xn-button [disabled]="!previousPossible" (click)="previous()">
+        {{previousLabel}}
+    </xn-button>
+    <div class="flex-grow flex justify-items flex-center">
+        <div>
+            <small>{{currentStep}} / {{totalSteps}}</small>
+        </div>
+    </div>
+    <xn-button [disabled]="!nextPossible" [default]="true" (click)="next()">
+        {{nextLabel | switchString:finishLabel:(currentStep !== totalSteps)}}
+    </xn-button>
+</div>

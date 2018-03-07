@@ -1,0 +1,33 @@
+<h2 class="ml-2">Buttons</h2>
+<div class="pl-2 pt-2 pr-2">
+    <xn-section-divider [label]="'Normaler Button'"></xn-section-divider>
+    <xn-button>Normaler Button</xn-button>
+    <xn-section-divider [label]="'Default Button'"></xn-section-divider>
+    <xn-button [default]="true">Default Button</xn-button>
+    <xn-section-divider [label]="'Disabled Button'"></xn-section-divider>
+    <xn-button class="mr-2" [disabled]="true">Disabled Button</xn-button>
+    <xn-button class="mr-2" [default]="true" [disabled]="true">Disabled Primary Button</xn-button>
+    <xn-section-divider [label]="'Spinning Button'"></xn-section-divider>
+    <xn-button [default]="true" [showSpinner]="true">Spinning default Button</xn-button>
+    <xn-button [showSpinner]="true">Spinning Button</xn-button>
+    <xn-section-divider [label]="'Toggle Button'"></xn-section-divider>
+    <xn-toggle-button class="mr-2" [(ngModel)]="notToggled">Aus</xn-toggle-button>
+    <xn-toggle-button [(ngModel)]="toggled">An</xn-toggle-button>
+    <p>
+        Button 1 togglestate: {{notToggled}}<br />
+        Button 2 togglestate: {{toggled}}
+    </p>
+    <xn-section-divider [label]="'Toggle Button mit Alternativem Label'"></xn-section-divider>
+    <xn-toggle-button class="mr-2" [(ngModel)]="notToggled" [showAlternateLabel]="true">
+        <ng-container>Eingeschaltet</ng-container>
+        <ng-container alternate-label>Ausgeschaltet</ng-container></xn-toggle-button>
+    <xn-section-divider [label]="'Toggle Button mit Alternativem Label'"></xn-section-divider>
+    <xn-levitated-button><i class="fa fa-bars"></i></xn-levitated-button>
+    <xn-levitated-button [showSpinner]="true"><i class="fa fa-bars"></i></xn-levitated-button>
+    <xn-levitated-button [default]="true">
+        <i class="white fa fa-bars"></i>
+        <div class="button-content white">Ein Menüpunkt</div>
+    </xn-levitated-button>
+    <xn-levitated-button [bgColorClass]="'bg-brand-light'"><i class="fa fa-bars white"></i></xn-levitated-button>
+    <xn-levitated-button class="right" [bgColorClass]="'bg-brand-light'"><i class="fa fa-bars white"></i></xn-levitated-button>
+</div>

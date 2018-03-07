@@ -1,0 +1,73 @@
+@import 'variables';
+@import 'mixins';
+
+:host {
+    position:                                   relative;
+    color:                                      $button-color;
+    border:                                     $button-border;
+    background-color:                           $button-background-color;
+    text-decoration:                            underline;
+    height:                                     41px;
+
+    @include not-selectable();
+}
+
+i {
+    color:                                  $button-color;
+}
+
+:host.small {
+    padding: 5px 10px;
+}
+
+:host.transparent {
+    background-color: transparent;
+}
+
+:host.default.bordered {
+    color:                                      $button-default-color;
+    border:                                     $button-default-border;
+    text-decoration:                            none;
+}
+
+:host.default {
+    background-color:                           $button-default-color;
+    border:                                     $button-default-border;
+    color:                                      white;
+    text-decoration:                            none;
+}
+
+:host:hover:not([disabled="true"]) {
+    @include shadow($button-hover-shadow);
+
+    color:                                      $button-hover-color;
+    border:                                     $button-hover-border;
+    background-color:                           $button-hover-background-color;
+    text-decoration:                            none;
+
+    i {
+                                                color: $button-hover-color;
+    }
+}
+
+:host.default:hover:not([disabled="true"]) {
+    background-color:                           $button-default-hover-color;
+}
+
+:host:active {
+    @include shadow($button-active-shadow);
+}
+
+:host:visited, :host:focus {
+    color:                                      $button-color;
+    border:                                     $button-border;
+    outline:                                    none;
+    background-color:                           $button-background-color;
+}
+
+:host.spinning:not(.default) {
+    color:                                      $button-hover-color;
+    border:                                     $button-hover-border;
+    background-color:                           #cccccc;
+    text-decoration:                            none;
+}

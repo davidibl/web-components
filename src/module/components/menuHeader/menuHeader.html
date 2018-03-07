@@ -1,0 +1,20 @@
+<div class="header">
+    <div class="nav container">
+        <div class="brand-bar">
+            <img class="full-height left" alt="{{brandName}}" [src]="brandLogoSource" />
+            <h2 class="brand-name">{{brandName}}</h2>
+        </div>
+        <ul class="none block-m">
+            <ng-content select=".menu-m"></ng-content>
+        </ul>
+        <ul class="block none-m">
+            <ng-content select=".menu-s"></ng-content>
+        </ul>
+        <ul class="block">
+            <ng-content select=".menu"></ng-content>
+        </ul>
+    </div>
+</div>
+<div class="sub-menu" *ngIf="open" [class.open]="open">
+    <ng-content select=".sub"></ng-content>
+</div>

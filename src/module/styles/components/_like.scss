@@ -1,0 +1,52 @@
+like {
+
+    padding:                                        $like-box-padding;
+    width:                                          $like-box-width;
+    color:                                          $like-text-color;
+    
+    background-color:                               $like-background-color;
+    cursor:                                         pointer;
+
+    > p {
+        font-weight:                                $like-font-weight;
+        margin:                                     $like-box-margin;
+    }
+
+    > i.fa {
+        color:                                      $like-icon-color;
+    }
+
+    > i.fa:hover {
+        color:                                      $like-icon-color-hover;
+    }
+
+    &:hover {
+        color:                                      $like-text-color-hover;
+        background-color:                           $like-background-color-hover;
+    }
+
+    &.simple {
+
+        color:                                      $brand-primary;
+        background-color:                           transparent;
+        padding:                                    0;
+
+        > p {
+            font-weight:                            inherit;
+            margin:                                 0;
+        }
+
+        > i.fa {
+            color:                                  $brand-primary;
+        }
+
+        &:hover {
+            color:                                  $like-background-color-hover;
+            background-color:                       transparent;
+
+            > i.fa {
+                color:                              $like-background-color;
+            }
+        }
+    }
+}

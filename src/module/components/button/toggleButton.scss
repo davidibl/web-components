@@ -1,0 +1,44 @@
+@import 'variables';
+@import 'mixins';
+
+$toggle-button-toggled-color:                white;
+$toggle-button-toggled-hover-color:          $brand-primary;
+$toggle-button-toggled-bg-color:             $brand-teritiary;
+$toggle-button-toggled-border:               1px solid darken($toggle-button-toggled-bg-color, 10);
+$toggle-button-toggled-hover-border:         1px solid transparent;
+$toggle-button-toggled-hover-bg-color:       lighten($brand-teritiary, 20);
+
+i {
+    color:                                  $button-color;
+}
+
+:host.small {
+    padding: 5px 10px;
+}
+
+:host.transparent {
+    background-color: transparent;
+}
+
+:host:hover:not([disabled="true"]) {
+    @include shadow($button-hover-shadow);
+}
+
+:host:visited, :host:focus {
+    color:                                      $button-color;
+    border:                                     $button-border;
+    outline:                                    none;
+    background-color:                           $button-background-color;
+}
+
+:host.toggled {
+    background-color:                           $toggle-button-toggled-bg-color;
+    border:                                     $toggle-button-toggled-border;
+    color:                                      $toggle-button-toggled-color;
+}
+
+:host.toggled:hover:not([disabled="true"]) {
+    background-color:                           $toggle-button-toggled-hover-bg-color;
+    border:                                     $toggle-button-toggled-hover-border;
+    color:                                      $toggle-button-toggled-hover-color;
+}

@@ -1,0 +1,44 @@
+<div>
+    <div class="calendar-header">
+        <xn-button class="left" (click)="onCurrentMonthClick()">
+                <small>{{currentMonth.monthName}}</small>
+        </xn-button>
+        <xn-button class="button" (click)="onCurrentYearClick()">
+            <small>{{currentMonth.year}}</small>
+        </xn-button>
+    </div>
+    <div class="dayview animation fade-in mb-05" [class.active]="dayview">
+        <div class="week week-header">
+            <span class="day"
+                *ngFor="let day of weekdaysShort"><small>{{day}}</small></span>
+        </div>
+        <div *ngFor="let week of currentMonth.days; let weekNumber = index"
+             class="week"
+             [class.first-week]="(weekNumber === 0)">
+            <span class="day"
+                  (click)="onDayClick(day)"
+                  [class.today]="day.today"
+                  [class.selected]="day._date?.getTime() === selectedDateValue?.getTime()"
+                  *ngFor="let day of week">{{day.dayDisplay}}</span>
+        </div>
+    </div>
+    <div class="monthview animation fade-in mb-05" [class.active]="monthview">
+        <span (click)="onMonthClick(month)"
+              class="month col-4"
+              *ngFor="let month of months">{{month.monthName}}</span>
+    </div>
+    <div class="yearview animation fade-in mb-05" [class.active]="yearview">
+        <span (click)="onYearClick(year)"
+              class="year col-4"
+              *ngFor="let year of years">{{year.getYearNumber()}}</span>
+    </div>
+    <div class="bar">
+        <xn-button (click)="onPreviousYearsClick()" *ngIf="yearview || dayview" class="button">
+            <small><i class="fa fa-chevron-left" aria-hidden="true"></i></small>
+        </xn-button>
+        <xn-button class="button" (click)="onTodayClick()"><small>Heute</small></xn-button>
+        <xn-button (click)="onNextYearsClick()" *ngIf="yearview || dayview" class="button">
+            <small><i class="fa fa-chevron-right" aria-hidden="true"></i></small>
+        </xn-button>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="component-container">
+    <span (outsideClick)="onCloseDropdown()">
+        <xn-input-form name="name"
+                    ngModel
+                    [(ngModel)]="displayText"
+                    [showLabel]="showLabel"
+                    [validatable]="validatable"
+                    [iconAfterClass]="chevronClass"
+                    [label]="label"
+                    (keydown.ArrowDown)="onArrowDown($event)"
+                    (keydown.ArrowUp)="onArrowUp($event)"
+                    (keydown.enter)="onEnter($event)"
+                    (keydown.Escape)="onEscape($event)"
+                    [outerErrors]="ngControl?.errors"
+                    [placeholder]="placeholder"
+                    [showClearButton]="true"
+                    [iconClass]="iconClass"
+                    [touched]="touched"
+                    (click)="onToggleDropdown()">
+        </xn-input-form>
+        <ul>
+            <li [class.highlight]="selectedIndex === -1" (click)="onItemSelect(null)">&nbsp;</li>
+            <ng-container *ngIf="!template">
+                <li *ngFor="let item of items | filterObjects:displayText; let i = index"
+                    [class.highlight]="selectedIndex === i"
+                    (click)="onItemSelect(item)">
+                    {{item | objectProperty:displayPropertyPath}}</li>
+            </ng-container>
+            <ng-container *ngIf="template">
+                <li *ngFor="let item of items | filterObjects:displayText; let i = index"
+                    [class.highlight]="selectedIndex === i"
+                    (click)="onItemSelect(item)">
+                    <ng-template
+                        [ngTemplateOutletContext]="{item: item}"
+                        [ngTemplateOutlet]="template">
+                    </ng-template>
+                </li>
+            </ng-container>
+        </ul>
+    </span>
+</div>

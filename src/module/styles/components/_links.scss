@@ -1,0 +1,34 @@
+$default-link-color:                            $brand-teritiary;
+$default-link-hover-color:                      lighten($default-link-color, 20);
+
+a {
+    cursor:                                     pointer;
+    color:                                      $default-link-color;
+}
+
+a:hover {
+    color:                                      $default-link-color;
+}
+
+a.color-effect:hover {
+    color:                                      $default-link-hover-color;
+}
+
+a.no-color-effect {
+    color:                                      initial;
+}
+
+a.hover-underline {
+    text-decoration:                            none;
+}
+a.hover-underline:hover {
+    text-decoration:                            underline;
+}
+
+a.no-underline {
+    text-decoration:                            none;
+}
+
+a.no-underline:hover {
+    text-decoration:                            none;
+}

@@ -1,0 +1,18 @@
+<table [class.condensed]="condensed">
+    <thead>
+        <ng-content select="th"></ng-content>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of data | sort:sortOrder:sortPropertyPath | filterObjects:filter | pageIt:pageSize:currentPage">
+            <ng-template
+                [ngTemplateOutletContext]="{item: item}"
+                [ngTemplateOutlet]="templateRef">
+            </ng-template>
+        </tr>
+    </tbody>
+</table>
+<xn-pagination [currentPage]="currentPage"
+               *ngIf="pageSize > 0"
+               [itemCount]="(data | filterObjects:filter).length"
+               [pageSize]="pageSize"
+               (currentPageChange)="onCurrentPageChange($event)"></xn-pagination>

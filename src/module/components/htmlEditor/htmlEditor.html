@@ -1,0 +1,44 @@
+<div class="editor-wrapper">
+    <div (blur)="onBlur()" (focus)="onFocus()" class="input-element" #editorElement>
+    </div>
+</div>
+<div class="predictions"
+     *ngIf="predictions.isOpen && hasFocus"
+     [style.left.px]="boxXPosition"
+     [style.top.px]="boxYPosition">
+    <span class="prediction"
+          *ngFor="let prediction of predictions.avaiable; let idx = index"
+          (click)="insertPrediction(predictions.currentWord, prediction)"
+          [class.selected]="idx === predictions.selectedIndex">{{prediction}}</span>
+</div>
+<div class="predictions flex"
+     *ngIf="(showToolset && hasFocus) || toolsetHovered || !!selectedTool"
+     (mouseenter)="setToolsetHovered(true)"
+     (mouseleave) ="setToolsetHovered(false)"
+     [style.left.px]="boxXPosition - 40"
+     [style.top.px]="boxYPosition - 70">
+    <div class="tool"
+        [class.selected]="selectedTool === 'bold'"
+        title="Fett: STRG + b"><i class="fa fa-bold" aria-hidden="true"></i></div>
+    <div class="tool"
+        [class.selected]="selectedTool === 'italic'"
+        title="Kursiv: STRG + i"><i class="fa fa-italic" aria-hidden="true"></i></div>
+    <div class="tool"
+        [class.selected]="selectedTool === 'underline'"
+        title="Unterstrichen: STRG + u"><i class="fa fa-underline" aria-hidden="true"></i></div>
+    <div class="tool"
+        [class.selected]="selectedTool === '<p>'"
+        title="Paragraf: STRG + 0"><i class="fa fa-paragraph" aria-hidden="true"></i></div>
+    <div class="tool"
+        [class.selected]="selectedTool === '<h1>'"
+        title="Überschr. 1: STRG + 1"><i class="fa fa-header" aria-hidden="true"></i>1</div>
+    <div class="tool"
+        [class.selected]="selectedTool === '<h2>'"
+        title="Überschr. 2: STRG + 2"><i class="fa fa-header" aria-hidden="true"></i>2</div>
+    <div class="tool"
+        [class.selected]="selectedTool === '<h3>'"
+        title="Überschr. 3: STRG + 3"><i class="fa fa-header" aria-hidden="true"></i>3</div>
+    <div class="tool"
+        [class.selected]="selectedTool === 'insertunorderedlist'"
+        title="Liste: STRG + l"><i class="fa fa-list-ul" aria-hidden="true"></i></div>
+</div>

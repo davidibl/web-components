@@ -1,0 +1,27 @@
+@import 'variables';
+
+@for $i from 0 through 12 {
+    .wp-#{$i} {
+        width: round(percentage(12/100) * $i);
+    }
+}
+
+@media (min-width: $breakpoint-m - 1) {
+    @for $i from 0 through 12 {
+        .wp-#{$i}-m {
+            width: round(percentage(12/100) * $i);
+        }
+    }
+}
+
+@media (min-width: $breakpoint-l - 1) {
+    @for $i from 0 through 12 {
+        .wp-#{$i}-l {
+            width: round(percentage(12/100) * $i);
+        }
+    }
+}
+
+.w20 {
+    width: 20px;
+}

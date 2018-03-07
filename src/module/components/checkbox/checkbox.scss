@@ -1,0 +1,30 @@
+@import 'variables';
+
+:host {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+:host.disabled {
+    cursor: initial;
+
+    i {
+        opacity: .5;
+    }
+}
+
+i {
+    border: 1px solid $checkbox-border-color;
+    padding: 3px;
+    margin-right: 10px;
+    color: transparent;
+    background-color: $checkbox-bg;
+}
+
+:host.checked {
+    i {
+        color: $checkbox-icon-color;
+        background-color: $checkbox-bg-checked;
+    }
+}

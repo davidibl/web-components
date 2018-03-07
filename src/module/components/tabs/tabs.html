@@ -1,0 +1,9 @@
+<ul *ngIf="tabsArray">
+    <li *ngFor="let tab of tabsArray" (click)="selectTab(tab)" [class.active]="tab.active">
+        <small>
+            <i *ngIf="tab.iconClass" class="mr-05 fa {{tab.iconClass}}" aria-hidden="true"></i>
+            {{tab.title}}
+        </small>
+    </li>
+</ul>
+<ng-content></ng-content>

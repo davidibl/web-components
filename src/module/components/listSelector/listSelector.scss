@@ -1,0 +1,62 @@
+@import 'variables';
+
+ul {
+    list-style: none;
+}
+
+li {
+    border-bottom: 1px solid $black-40;
+
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+li.selected {
+    background-color: $selection-control-bg-selected-item;
+    color: $brand-white;
+    xn-checkbox::ng-deep {
+        i {
+            background-color: $selection-control-bg-selected-item-checkbox;
+            color: $brand-white;
+        }
+    }
+}
+
+.error-labels {
+
+    &.hidden {
+        visibility:                         hidden;
+    }
+
+    .error-labels-content {
+        display:                            block;
+        height:                             20px;
+        overflow:                           hidden;
+        line-height:                        13px;
+    }
+
+    .validation-message {
+        display:                            none;
+        color:                              $input-form-validationerror-color;
+        margin-top:                         0;
+        padding-left:                       3px;
+    }
+
+    .validation-message:first-child {
+        display:                            block;
+    }
+}
+
+:host.condensed {
+    li {
+        padding: 4px;
+    }
+}
+
+:host.no-error {
+    .error-labels {
+        display: none;
+    }
+}

@@ -1,0 +1,16 @@
+<div class="none-m menu-flyin"
+     [class.open]="_isMenuOpen"
+     [style.z-index]="zindex"
+     [style.bottom]="bottom"
+     (outsideClick)="onCloseMenu()">
+    <div class="menu" [class.open]="_isMenuOpen">
+        <ul (click)="onItemClicked()">
+            <ng-content></ng-content>
+        </ul>
+    </div>
+    <div class="nav-button" (click)="onToggleMenu()">
+        <div class="burger">
+            &#9776; {{menuItemText | translate:'Menü' | async}}
+        </div>
+    </div>
+</div>

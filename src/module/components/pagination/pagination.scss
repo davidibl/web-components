@@ -1,0 +1,41 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+:host {
+    text-align: right;
+    display: block;
+}
+
+.pagination {
+    display: inline-block;
+}
+
+.page {
+    display: block;
+    font-size: 1.1rem;
+    line-height: 1.1rem;
+    text-align: center;
+    width: 20px;
+    height: 45px;
+    cursor: pointer;
+    @include disable-user-select();
+    i {
+        font-size: 14px;
+        color: $light-gray;
+    }
+}
+
+.outer-page {
+    i:last-child {
+        margin-left: -8px;
+    }
+}
+
+.count-text {
+    line-height: 1.2rem;
+    color: $light-gray;
+}
+
+.pagedot.selected {
+    background-color: $brand-teritiary;
+}

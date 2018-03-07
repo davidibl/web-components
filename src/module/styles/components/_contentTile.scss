@@ -1,0 +1,46 @@
+$content-tile-text-align:                           justify;
+$content-tile-margin-top:                           15px;
+$content-tile-margin-bottom:                        15px;
+$content-tile-subtitle-margin-bottom:               10px;
+$content-tile-subtitle-line-height:                 1rem;
+$content-tile-title-margin-bottom:                  -1px;
+
+content-tile {
+    @media (min-width: $breakpoint-m) {
+        height:                                     280px;
+        overflow:                                   hidden;
+    }
+
+    margin-bottom:                                  $content-tile-margin-bottom;
+    margin-top:                                     $content-tile-margin-top;
+
+    .paragraph {
+        h2 {
+            margin-bottom:                          $content-tile-title-margin-bottom;
+        }
+
+        h5 {
+            @extend .alt-font;
+
+            margin-bottom:                          $content-tile-subtitle-margin-bottom;
+            line-height:                            $content-tile-subtitle-line-height;
+        }
+
+        p {
+            text-align:                             $content-tile-text-align;
+        }
+    }
+}
+
+content-tile.single {
+    @extend .col-12;
+    @extend .col-6-m;
+    @extend .col-4-l;
+}
+
+content-tile.double {
+    @extend .col-12;
+    @extend .col-12-m;
+    @extend .col-8-l;
+}
+

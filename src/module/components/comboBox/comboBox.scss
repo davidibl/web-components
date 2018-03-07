@@ -1,0 +1,46 @@
+@import 'variables';
+@import 'mixins';
+
+.component-container {
+    position: relative;
+    display: block;
+}
+
+ul {
+    display:                                none;
+    padding:                                0;
+    margin:                                 0;
+    margin-left:                            0;
+    list-style:                             none;
+    position:                               absolute;
+    background:                             $dropdown-menu-background-color;
+    width:                                  100%;
+    margin-top:                             -23px;
+    z-index:                                5001;
+    border-left:                            $dropdown-menu-border-left;
+    border-right:                           $dropdown-menu-border-right;
+    border-bottom:                          $dropdown-menu-border-bottom;
+    border-top:                             $dropdown-menu-border-top;
+    @include shadow($dropdown-menu-shadow);
+}
+
+li {
+    padding:                                $dropdown-menu-listitem-padding;
+    cursor:                                 pointer;
+}
+
+li:hover {
+    background-color:                       $dropdown-menu-listitem-hover-background-color;
+    color:                                  $dropdown-menu-listitem-hover-color;
+}
+
+li.highlight {
+    background-color:                       $dropdown-menu-listitem-hover-background-color;
+    color:                                  $dropdown-menu-listitem-hover-color;
+}
+
+:host.open {
+    ul {
+        display:                                block;
+    }
+}

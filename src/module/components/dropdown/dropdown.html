@@ -1,0 +1,28 @@
+<div class="component-container">
+    <span (outsideClick)="onCloseDropdown()">
+        <xn-input-form
+                    name="name"
+                    ngModel
+                    class="disabled"
+                    [validateOnChangeAndBlur]="validateOnChangeAndBlur"
+                    [ngModel]="_valueDisplay"
+                    [showLabel]="showLabel"
+                    [validatable]="validatable"
+                    [iconAfterClass]="chevronClass"
+                    [readonly]="true"
+                    [touched]="ngControl?.touched"
+                    [showPointer]="true"
+                    [label]="label"
+                    [outerErrors]="ngControl?.errors"
+                    [placeholder]="placeholder"
+                    [validateOnBlur]="validateOnBlur"
+                    [iconClass]="_iconClass"
+                    (click)="onToggleDropdown()">
+        </xn-input-form>
+        <ul>
+            <li (click)="onItemSelect(null)">&nbsp;</li>
+            <li *ngFor="let item of _items" (click)="onItemSelect(item)">
+                {{item | objectProperty:displayPropertyPath}}</li>
+        </ul>
+    </span>
+</div>

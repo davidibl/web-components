@@ -1,0 +1,6 @@
+<a *ngIf="navigationItem.routerLink"
+   [routerLinkActiveOptions]="{exact: true}"
+   [routerLinkActive]="['active']"
+   [routerLink]="navigationItem.routerLink">{{navigationItem.name | translate:navigationItem.name | async}}</a>
+<a *ngIf="!navigationItem.routerLink"
+   (click)="onLinkClick()">{{navigationItem.name | translate:navigationItem.name | async}}</a>

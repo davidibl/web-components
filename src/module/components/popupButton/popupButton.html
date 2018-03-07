@@ -1,0 +1,10 @@
+<span class="popup-button">
+    <i class="fa fa-search" aria-hidden="true"></i>
+</span>
+<div class="popup-menu animation fade-in">
+    <ng-content></ng-content>
+    <div>
+        <button class="button left mr10 mb10" (click)="onLeftButtonClick()">{{leftButtonText}}</button>
+        <button class="button left cancel mb10" (click)="onRightButtonClick()">{{rightButtonText}}</button>
+    </div>
+</div>

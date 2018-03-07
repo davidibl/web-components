@@ -1,0 +1,22 @@
+<span>
+    <xn-input-form name="name"
+                ngModel
+                xnDateFormatValidator
+                [validateOnChangeAndBlur]="validateOnChangeAndBlur"
+                [ngModel]="_value"
+                (ngModelChange)="onValueChange($event)"
+                [showLabel]="showLabel"
+                [validatable]="validatable"
+                [label]="label"
+                (touchedChange)="onTouchedChange($event)"
+                (iconClick)="onIconClick()"
+                (blur)="onBlur()"
+                [outerErrors]="ngControl?.errors"
+                [placeholder]="placeholder"
+                [validateOnBlur]="validateOnBlur"
+                [iconClass]="'fa-calendar'">
+    </xn-input-form>
+    <calendar *ngIf="calendarOpen"
+            [selectedDate]="model"
+            (dateChanged)="onCalendarDateChange($event)"></calendar>
+</span>

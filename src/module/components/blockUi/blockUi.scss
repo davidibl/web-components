@@ -1,0 +1,42 @@
+$block-site-color:                              rgba(0, 0, 0, 0.4);
+$block-site-color-bright:                       rgba(255, 255, 255, 0.6);
+$block-site-cursor:                             wait;
+
+:host {
+    z-index:                                    1000;
+    border:                                     none;
+    margin:                                     0px;
+    padding:                                    0px;
+    width:                                      100%;
+    height:                                     100%;
+    top:                                        0px;
+    left:                                       0px;
+    background-color:                           $block-site-color;
+    cursor:                                     initial;
+    position:                                   fixed;
+    display:                                    none;
+}
+
+:host.element-level {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+:host.bright {
+    background-color:                           $block-site-color-bright;
+}
+
+:host.special-cursor {
+    cursor:                                     $block-site-cursor;
+}
+
+:host.show {
+    display:                                    block;
+}
+
+:host.center-content {
+    display:                                        flex;
+    justify-content:                                center;
+    align-items:                                    center;
+}

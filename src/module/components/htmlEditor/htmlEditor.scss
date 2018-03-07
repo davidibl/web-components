@@ -1,0 +1,61 @@
+@import 'variables';
+@import 'mixins';
+$predictions-shadow:                                   0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.3);;
+
+.editor-wrapper {
+    display: table;
+    width: 100%;
+}
+
+.input-element {
+    width: 100%;
+    padding: 3px;
+    min-height: 30px;
+    border: 1px solid $black-40;
+    display: table-cell;
+    * {
+        max-width: 100%;
+        min-width: 100%;
+    }
+}
+
+p {
+    min-height: 24px;
+}
+
+p, h1, h2, h3, h4, h5 {
+    outline: none;
+}
+
+.predictions {
+    z-index: 1001;
+    position: fixed;
+    background: #fff;
+    @include shadow($predictions-shadow);
+
+}
+
+.prediction {
+    display: block;
+    padding: 5px;
+
+    &.selected {
+        background-color: $selection-control-bg-selected-item;
+    }
+}
+
+.tool {
+    padding: 6px;
+    padding-left: 9px;
+    padding-right: 9px;
+    border-right: 1px solid $black-40;
+    cursor: pointer;
+
+    &:last-child {
+        border: none;
+    }
+}
+
+.tool:hover, .tool.selected {
+    background-color: $button-default-hover-color;
+}

@@ -1,0 +1,22 @@
+<div class="flex">
+    <chip *ngFor="let tag of tags"
+        [text]="tag"
+        (click)="onTagClick(tag)">
+    </chip>
+    <xn-input-form class="inline-block wp-3"
+                [placeholder]="'Neues Tag'"
+                [showLabel]="false"
+                (keyup.enter)="addTag()"
+                [outerErrors]="inputError"
+                (keydown.backspace)="removeLastTag()"
+                [(ngModel)]="currentText"></xn-input-form>
+</div>
+<div *ngIf="validatable" class="input-group error-labels" [class.hidden]="!ngControl?.errors || !touched || !ngControl?.touched">
+    <div class="error-labels-content">
+        <ng-container *ngFor="let val of ngControl?.errors | properties | sort:'ASCENDING':'value.order'">
+            <small class="validation-message small" *ngIf="val.value.type !== 'unvisible'">
+                {{val.value.message | translate:val.value.message:val.value.tokens | async}}
+            </small>
+        </ng-container>
+    </div>
+</div>

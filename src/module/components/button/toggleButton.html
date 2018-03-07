@@ -1,0 +1,6 @@
+<ng-container *ngIf="!showAlternateLabel || toggleState">
+    <ng-content></ng-content>
+</ng-container>
+<ng-container *ngIf="showAlternateLabel && !toggleState">
+    <ng-content select="[alternate-label]"></ng-content>
+</ng-container>

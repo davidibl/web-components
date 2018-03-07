@@ -1,0 +1,10 @@
+<h2 class="ml-2">Buttons</h2>
+<div class="pl-2 pt-2 pr-2">
+    <xn-section-divider [label]="'Ein normales Dropdown'"></xn-section-divider>
+    <xn-dropdown [items]="items" [placeholder]="'Bitte wählen'" [label]="'Ein Item'" [(ngModel)]="selected"></xn-dropdown>
+    Aktuell Selektiert: {{selected}}
+
+    <xn-section-divider [label]="'Ein normales Dropdown mit icon'"></xn-section-divider>
+    <xn-dropdown [items]="items" [iconClass]="'fa-bug'" [placeholder]="'Bitte wählen'" [label]="'Ein Item'" [(ngModel)]="selected"></xn-dropdown>
+    Aktuell Selektiert: {{selected}}
+</div>

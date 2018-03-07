@@ -1,0 +1,24 @@
+<ul class="no-padding mt-0 mb-0">
+    <li class="pt-05 pb-05 pl-05" [class.selected]="getSelection(item)" *ngFor="let item of items">
+        <xn-checkbox [ngModel]="getSelection(item)" (ngModelChange)="onCheckedChange($event, item)">
+            <ng-container *ngIf="!template">
+                {{item | objectProperty:displayPropertyPath}}
+            </ng-container>
+            <ng-container *ngIf="template">
+                <ng-template
+                    [ngTemplateOutletContext]="{item: item}"
+                    [ngTemplateOutlet]="template">
+                </ng-template>
+            </ng-container>
+        </xn-checkbox>
+    </li>
+</ul>
+<div *ngIf="validatable" class="input-group error-labels" [class.hidden]="!hasError() || !touched || !ngControl?.touched">
+    <div class="error-labels-content">
+        <ng-container *ngFor="let val of ngControl?.errors | properties | sort:'ASCENDING':'value.order'">
+            <small class="validation-message small" *ngIf="val.value.type !== 'unvisible'">
+                {{val.value.message | translate:val.value.message:val.value.tokens | async}}
+            </small>
+        </ng-container>
+    </div>
+</div>
