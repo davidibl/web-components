@@ -164,13 +164,9 @@ export class InputFormComponent extends ControlContainer implements ControlValue
         return (this.model !== null && this.model !== undefined && this.model !== '');
     }
 
-    public hasError(): boolean {
-        return (this._hostElement.nativeElement.errors !== null && this._touched);
-    }
-
     public reset(value?: any) {
         this.writeValue(null);
-        this._touched = false;
+        this.touched = false;
     }
 
     public writeValue(value: any): void {

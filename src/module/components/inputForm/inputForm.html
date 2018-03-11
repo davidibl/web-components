@@ -1,6 +1,6 @@
 <div *ngIf="showLabel" class="input-group flex">
     <div class="input-icon-space" [class.none]="iconClass == 'none'"></div>
-    <small class="input-label animated slideInUp slideOutDown" [class.hidden]="!isModelSet()">{{label}}</small>
+    <small class="input-label" [class.hidden]="!isModelSet() && !hasFocus">{{label}}</small>
 </div>
 
 <div class="input-group input-box flex">
@@ -44,11 +44,11 @@
             aria-hidden="true"></i>
     </div>
 </div>
-<div *ngIf="validatable" class="input-group flex error-labels" [class.hidden]="!hasError() || !touched || !ngControl?.touched">
+<div *ngIf="validatable" class="input-group flex error-labels" [class.hidden]="!ngControl?.errors || !ngControl?.touched">
     <div class="input-icon-space" [class.none]="iconClass == 'none'"></div>
     <div class="error-labels-content">
         <ng-container *ngFor="let val of ngControl?.errors | joinObjects:outerErrors | properties | sort:'DESCENDING':'value.order'">
-            <small class="validation-message small" *ngIf="!val.value.visibleAfterBlur || (blured && val.value.visibleAfterBlur)">
+            <small class="validation-message" *ngIf="!val.value.visibleAfterBlur || (blured && val.value.visibleAfterBlur)">
                 {{val.value.message | translate:val.value.message:val.value.tokens | async}}
             </small>
         </ng-container>

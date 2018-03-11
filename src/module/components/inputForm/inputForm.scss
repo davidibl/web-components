@@ -131,25 +131,13 @@ textarea {
     .input-icon {
         color:                                  $input-form-highlight-color;
     }
-    .input-box {
+    .input-group-wrapper {
         border-bottom-color:                    $input-form-highlight-color;
     }
 }
 
-:host.validation-error {
-    .input-label {
-        color:                                  $input-form-validationerror-color;
-    }
-    .input-icon {
-        color:                                  $input-form-validationerror-color;
-    }
-    .input-box {
-        border-bottom-color:                    $input-form-validationerror-color;
-    }
-}
-
 :host.noborder {
-    .input-box {
+    .input-group-wrapper {
         border:                                 none;
     }
 }
