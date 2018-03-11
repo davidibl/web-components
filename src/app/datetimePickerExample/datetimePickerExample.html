@@ -1,20 +1,20 @@
-<h2 class="ml-2">Datetime Picker</h2>
+<h2 class="ml-2">{{'datetimer_samples' | translate | async}}</h2>
 <div class="pl-2 pt-2 pr-2">
-    <xn-section-divider [label]="'simple Datetime Picker'"></xn-section-divider>
+    <xn-section-divider class="mb-1 mt-2 block" [label]="'simple Datetime Picker'"></xn-section-divider>
     <xn-datetime-picker [(ngModel)]="currentDate"
-                        [placeholder]="'ein Datum eben'"
-                        [label]="'Geburtsdatum'">
+                        [placeholder]="'placeholder_date' | translate | async"
+                        [label]="'label.birthday' | translate | async">
     </xn-datetime-picker>
     <p>Datum gewählt: {{currentDate | toDateString}}</p>
-    <xn-section-divider [label]="'required Datetime Picker'"></xn-section-divider>
+    <xn-section-divider class="mb-1 mt-2 block" [label]="'required Datetime Picker'"></xn-section-divider>
     <form #dateform="ngForm">
         <xn-datetime-picker [(ngModel)]="unsetDate"
-                            [placeholder]="'ein Datum eben'"
+                            [placeholder]="'placeholder_date' | translate | async"
                             xnRequired
                             name="datepickerA"
                             [requiredMessage]="'Bitte geben Sie ein Datum ein!'"
-                            [label]="'Geburtsdatum'">
+                            [label]="'label.birthday' | translate | async">
         </xn-datetime-picker>
     </form>
-    <xn-button class="button" [default]="true" [class.disabled]="!dateform.valid">Datum absenden</xn-button>
+    <xn-button class="button" [default]="true" [class.disabled]="!dateform.valid">{{'label.button_next' | translate | async}}</xn-button>
 </div>

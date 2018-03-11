@@ -17,9 +17,12 @@
         "input_label": "Ein Input Control",
         "multiline_label": "Ein Multiline Input Control",
         "placeholder": "Ein Platzhalter vom feinsten",
+        "placeholder_date": "Datum eingeben",
+        "birthday": "Geburtsdatum",
         "button_next": "Weiter"
     },
     "title": {
-        "input_samples": "Standard Text Input Controls"
+        "input_samples": "Standard Text Input Controls",
+        "datetimer_samples": "Datetime Picker Controls"
     }
 }
