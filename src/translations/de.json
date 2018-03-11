@@ -27,5 +27,8 @@
     "title": {
         "input_samples": "Standard Text Input Controls",
         "datetimer_samples": "Datetime Picker Controls"
+    },
+    "text": {
+        "description": "Web components ist eine leichtgewichtige Komponentenbibliothek für angular ab version 5."
     }
 }

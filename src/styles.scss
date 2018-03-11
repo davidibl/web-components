@@ -5,3 +5,7 @@ $fa-font-path: '../node_modules/font-awesome/fonts';
 @import "../node_modules/getbase/scss/base/_helpers.scss";
 @import "../node_modules/breakpoint-sass/stylesheets/_breakpoint.scss";
 @import "./module/styles/core";
+
+body {
+    padding-top: 40px;
+}
