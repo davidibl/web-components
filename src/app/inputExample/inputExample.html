@@ -1,40 +1,42 @@
-<h2 class="ml-2">Inputs</h2>
+<h2 class="ml-2">{{'title.input_samples' | translate | async}}</h2>
 <div class="pl-2 pt-2 pr-2 pb-2">
     <form #inputForm="ngForm">
-        <xn-section-divider [label]="'Normales Input ohne alles'"></xn-section-divider>
-        <xn-input-form [label]="'Ein Input'"
+        <xn-section-divider class="block mt-2 mb-1" [label]="'label.input_simple' | translate | async"></xn-section-divider>
+        <xn-input-form [label]="'label.input_label' | translate | async"
                         name="a"
                         [(ngModel)]="input"></xn-input-form>
-        <xn-section-divider [label]="'Input mit Icon und unterschiedlichem PLaceholder'"></xn-section-divider>
-        <xn-input-form [label]="'Ein Input'"
-                        [placeholder]="'Ein Placeholder'"
+        <xn-section-divider class="block mt-2 mb-1" [label]="'label.input_placeholder' | translate | async"></xn-section-divider>
+        <xn-input-form [label]="'label.input_label' | translate | async"
+                        [placeholder]="'label.placeholder' | translate | async"
                         [iconClass]="'fa-bug'"
                         name="b"
                         [(ngModel)]="input"></xn-input-form>
-        <xn-section-divider [label]="'Input mit Icon after und required'"></xn-section-divider>
-        <xn-input-form [label]="'Ein Input'"
-                        [placeholder]="'Ein Placeholder'"
+        <xn-section-divider class="block mt-2 mb-1" [label]="'label.input_iconafter' | translate | async"></xn-section-divider>
+        <xn-input-form [label]="'label.input_label' | translate | async"
+                        [placeholder]="'label.placeholder' | translate | async"
                         [iconAfterClass]="'fa-bug'"
                         name="c"
                         xnRequired
                         [(ngModel)]="inputRequired"></xn-input-form>
-        <xn-section-divider [label]="'Multiline Input'"></xn-section-divider>
-        <xn-input-form [label]="'Ein Input'"
-                        [placeholder]="'Ein Placeholder'"
+        <xn-section-divider class="block mt-2 mb-1" [label]="'label.multiline_label' | translate | async"></xn-section-divider>
+        <xn-input-form [label]="'label.input_label' | translate | async"
+                        [placeholder]="'label.placeholder' | translate | async"
                         [iconClass]="'fa-bug'"
                         name="d"
                         [multiline]="true"
                         xnRequired
                         [(ngModel)]="inputValue"></xn-input-form>
-        <xn-section-divider [label]="'validated mail input'"></xn-section-divider>
-        <xn-input-form [label]="'Ein Input'"
-                        [placeholder]="'Ein Placeholder'"
+        <xn-section-divider class="block mt-2 mb-1" [label]="'label.input_emailvalidated' | translate | async"></xn-section-divider>
+        <xn-input-form [label]="'label.input_label' | translate | async"
+                        [placeholder]="'label.placeholder' | translate | async"
                         [iconClass]="'fa-envelope-o'"
                         name="e"
                         xnRequired
-                        [requiredMessage]="'Please provide a valid email'"
+                        [requiredMessage]="'validation.message.requiredemail' | translate | async"
                         xnEmailValidator
                         [(ngModel)]="mailinput"></xn-input-form>
-        <xn-button class="right mb-3" [class.disabled]="!inputForm.valid" [default]="true">Next</xn-button>
+        <xn-button class="right mb-3" [class.disabled]="!inputForm.valid" [default]="true">
+            {{'label.button_next' | translate | async}}
+        </xn-button>
     </form>
 </div>

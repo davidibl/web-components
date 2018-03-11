@@ -1,11 +1,25 @@
 {
     "validation": {
         "message": {
-            "required": "Ein Wert muss angegeben sein.",
-            "minLength": "Bitte geben Sie mindestens {minLength} Zeichen ein.",
+            "required": "Ein Wert muss angegeben sein",
+            "minLength": "Bitte geben Sie mindestens {minLength} Zeichen ein",
             "dateformat": "Bitte verwenden Sie folgendes Format: {datePattern}",
             "notEmpty": "Bitte wählen Sie mindestens eine Option",
-            "email": "Bitte geben Sie eine gültige Email Adresse an"
+            "email": "Bitte geben Sie eine gültige Email Adresse an",
+            "requiredemail": "Bitte geben Sie eine Email Adresse an"
         }
+    },
+    "label": {
+        "input_simple": "Einfaches Input",
+        "input_placeholder": "Input mit Icon und Platzhalter",
+        "input_iconafter": "Input mit Icon rechts als Pflichtfeld",
+        "input_emailvalidated": "Input für Email Adresse",
+        "input_label": "Ein Input Control",
+        "multiline_label": "Ein Multiline Input Control",
+        "placeholder": "Ein Platzhalter vom feinsten",
+        "button_next": "Weiter"
+    },
+    "title": {
+        "input_samples": "Standard Text Input Controls"
     }
 }
