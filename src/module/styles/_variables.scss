@@ -357,3 +357,24 @@ $tab-header-col-active-font-color: $base-font-color;
 
 $selection-control-bg-selected-item:            $brand-teritiary-color-80;
 $selection-control-bg-selected-item-checkbox:   $brand-teritiary;
+
+
+// List
+
+$list-hover-color:                              $brand-teritiary-color-80;
+$list-link-color:                               $brand-primary;
+$list-link-hover-color:                         $brand-white;
+$list-border-bottom:                            1px solid $very-light-gray;
+$list-border-right:                             none;
+$list-border-top:                               none;
+$list-border-left:                              none;
+$list-border-bottom-first:                            1px solid $very-light-gray;
+$list-border-right-first:                             none;
+$list-border-top-first:                               none;
+$list-border-left-first:                              none;
+$list-border-bottom-last:                            none;
+$list-border-right-last:                             none;
+$list-border-top-last:                               none;
+$list-border-left-last:                              none;
+$list-striped-bg:                               $black-20;
+

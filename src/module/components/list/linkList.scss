@@ -1,0 +1,51 @@
+@import 'variables.scss';
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+:host::ng-deep {
+    li {
+        padding: 0;
+        list-style-type: none;
+        cursor: pointer;
+        a {
+            padding: 8px;
+            display: block;
+            color: $list-link-color
+        }
+
+        border-bottom: $list-border-bottom;
+        border-right: $list-border-right;
+        border-top: $list-border-top;
+        border-left: $list-border-left;
+    }
+
+    li:first-child {
+        border-bottom: $list-border-bottom-first;
+        border-right: $list-border-right-first;
+        border-top: $list-border-top-first;
+        border-left: $list-border-left-first;
+    }
+
+    li:last-child {
+        border-bottom: $list-border-bottom-last;
+        border-right: $list-border-right-last;
+        border-top: $list-border-top-last;
+        border-left: $list-border-left-last;
+    }
+
+    li:hover {
+        background-color: $list-hover-color;
+        a {
+            color: $list-link-hover-color;
+        }
+    }
+}
+
+:host.striped::ng-deep {
+    li:nth-child(2n) {
+        background-color: $list-striped-bg;
+    }
+}

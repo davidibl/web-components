@@ -42,6 +42,7 @@ import { AccordionElementComponent } from './accordion/accordionElement';
 import { WorkflowNavBarComponent } from './workflow/workflowNavBar';
 import { LevitatedButtonComponent } from './button/levitatedButton';
 import { HtmlEditorComponent } from './htmlEditor/htmlEditor';
+import { LinkListComponent } from './list/linkList';
 
 export const ALL_COMPONENTS = [
     FlyinMobileMenuComponent,
@@ -87,4 +88,5 @@ export const ALL_COMPONENTS = [
     WorkflowNavBarComponent,
     LevitatedButtonComponent,
     HtmlEditorComponent,
+    LinkListComponent,
 ];
