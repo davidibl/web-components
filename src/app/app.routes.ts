@@ -17,6 +17,7 @@ import { WorkflowExampleComponent } from './workflowExample/workflowExample';
 import { InputExampleComponent } from './inputExample/inputExample';
 import { HtmlEditorExampleComponent } from './htmlEditorExample/htmlEditorExample';
 import { SpinnerExampleComponent } from './spinnerExample/spinnerExample';
+import { InfoboxExampleComponent } from './infoboxExample/infoboxExample';
 
 export const routes: Routes = [
     { path: '', pathMatch: 'full', redirectTo: 'start' },
@@ -37,6 +38,7 @@ export const routes: Routes = [
     { component: InputExampleComponent, path: 'input' },
     { component: HtmlEditorExampleComponent, path: 'editor' },
     { component: SpinnerExampleComponent, path: 'spinner' },
+    { component: InfoboxExampleComponent, path: 'infobox' },
     { path: '**', redirectTo: 'start' },
 ];
 

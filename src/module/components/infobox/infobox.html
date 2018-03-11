@@ -1,8 +1,9 @@
 <div class="infobox pr-1 pl-0">
     <div class="infobox-icon mr-2">
-        <i class="fa fa-info-circle" aria-hidden="true"></i>
+        <i class="fa" aria-hidden="true"></i>
     </div>
-    <div class="infobox-content pt-1 pb-1">
-        <ng-content></ng-content>
+    <div class="flex flex-column pt-1 pb-1">
+        <h2><ng-content select=".info-title"></ng-content></h2>
+        <ng-content select=".info-content"></ng-content>
     </div>
 </div>

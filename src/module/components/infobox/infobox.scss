@@ -30,6 +30,10 @@
 
     .infobox-icon {
         background-color: $infobox-info-color;
+
+        i:before {
+            content: "\F05A"
+        }
     }
 }
 
@@ -44,5 +48,9 @@
 
     .infobox-icon {
         background-color: $infobox-error-color;
+
+        i:before {
+            content: "\f06a";
+        }
     }
 }

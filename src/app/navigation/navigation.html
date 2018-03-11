@@ -1,21 +1,42 @@
 <h2 class="ml-2">Links zu den Komponenten</h2>
-<div class="pl-2 pt-2 pr-2 pb-2">
-    <xn-list>
-        <li><a [routerLink]="'/table'">Tabellen</a></li>
-        <li><a [routerLink]="'/listSelector'">Listen Selektor</a></li>
-        <li><a [routerLink]="'/checkbox'">Checkbox</a></li>
-        <li><a [routerLink]="'/datetime'">Datetime Picker</a></li>
-        <li><a [routerLink]="'/buttons'">Buttons</a></li>
-        <li><a [routerLink]="'/pagination'">Pagination</a></li>
-        <li><a [routerLink]="'/dropdown'">Dropdown</a></li>
-        <li><a [routerLink]="'/taginput'">Tag Input</a></li>
-        <li><a [routerLink]="'/combobox'">Combobox</a></li>
-        <li><a [routerLink]="'/tabs'">Tabs</a></li>
-        <li><a [routerLink]="'/accordion'">Accordion</a></li>
-        <li><a [routerLink]="'/workflownav'">Workflow Navigation</a></li>
-        <li><a [routerLink]="'/workflow'">Workflow</a></li>
-        <li><a [routerLink]="'/input'">Inputs</a></li>
-        <li><a [routerLink]="'/editor'">HTML Editor</a></li>
-        <li><a [routerLink]="'/spinner'">Spinner</a></li>
-    </xn-list>
+<div class="row">
+    <div class="col col-12 col-6-m p-2">
+        <h3>Forms</h3>
+        <xn-list>
+            <li><a [routerLink]="'/input'">Inputs</a></li>
+            <li><a [routerLink]="'/checkbox'">Checkbox</a></li>
+            <li><a [routerLink]="'/taginput'">Tag Input</a></li>
+            <li><a [routerLink]="'/datetime'">Datetime Picker</a></li>
+            <li><a [routerLink]="'/combobox'">Combobox</a></li>
+            <li><a [routerLink]="'/dropdown'">Dropdown</a></li>
+            <li><a [routerLink]="'/listSelector'">Listen Selektor</a></li>
+            <li><a [routerLink]="'/editor'">HTML Editor</a></li>
+        </xn-list>
+    </div>
+    <div class="col col-12 col-6-m p-2">
+        <h3>Allgemein</h3>
+        <xn-list>
+            <li><a [routerLink]="'/buttons'">Buttons</a></li>
+            <li><a [routerLink]="'/spinner'">Spinner</a></li>
+            <li><a [routerLink]="'/pagination'">Pagination</a></li>
+        </xn-list>
+    </div>
+</div>
+<div class="row">
+    <div class="col col-12 col-6-m p-2">
+        <h3>Content</h3>
+        <xn-list>
+            <li><a [routerLink]="'/table'">Tabellen</a></li>
+            <li><a [routerLink]="'/tabs'">Tabs</a></li>
+            <li><a [routerLink]="'/accordion'">Accordion</a></li>
+            <li><a [routerLink]="'/workflownav'">Workflow Navigation</a></li>
+            <li><a [routerLink]="'/workflow'">Workflow</a></li>
+        </xn-list>
+    </div>
+    <div class="col col-12 col-6-m p-2">
+        <h3>Building Blocks</h3>
+        <xn-list>
+            <li><a [routerLink]="'/infobox'">Infobox</a></li>
+        </xn-list>
+    </div>
 </div>
