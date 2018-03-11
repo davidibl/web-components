@@ -4,17 +4,20 @@
         <xn-section-divider class="block mt-2 mb-1" [label]="'label.input_simple' | translate | async"></xn-section-divider>
         <xn-input-form [label]="'label.input_label' | translate | async"
                         name="a"
+                        class="w300 block"
                         [(ngModel)]="input"></xn-input-form>
         <xn-section-divider class="block mt-2 mb-1" [label]="'label.input_placeholder' | translate | async"></xn-section-divider>
         <xn-input-form [label]="'label.input_label' | translate | async"
                         [placeholder]="'label.placeholder' | translate | async"
                         [iconClass]="'fa-bug'"
+                        class="w300 block"
                         name="b"
                         [(ngModel)]="input"></xn-input-form>
         <xn-section-divider class="block mt-2 mb-1" [label]="'label.input_iconafter' | translate | async"></xn-section-divider>
         <xn-input-form [label]="'label.input_label' | translate | async"
                         [placeholder]="'label.placeholder' | translate | async"
                         [iconAfterClass]="'fa-bug'"
+                        class="w300 block"
                         name="c"
                         xnRequired
                         [(ngModel)]="inputRequired"></xn-input-form>
@@ -22,6 +25,7 @@
         <xn-input-form [label]="'label.input_label' | translate | async"
                         [placeholder]="'label.placeholder' | translate | async"
                         [iconClass]="'fa-bug'"
+                        class="w300 block"
                         name="d"
                         [multiline]="true"
                         xnRequired
@@ -30,12 +34,13 @@
         <xn-input-form [label]="'label.input_label' | translate | async"
                         [placeholder]="'label.placeholder' | translate | async"
                         [iconClass]="'fa-envelope-o'"
+                        class="w300 block"
                         name="e"
                         xnRequired
                         [requiredMessage]="'validation.message.requiredemail' | translate | async"
                         xnEmailValidator
                         [(ngModel)]="mailinput"></xn-input-form>
-        <xn-button class="right mb-3" [class.disabled]="!inputForm.valid" [default]="true">
+        <xn-button class="left mb-3" [class.disabled]="!inputForm.valid" [default]="true">
             {{'label.button_next' | translate | async}}
         </xn-button>
     </form>
