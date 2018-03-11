@@ -37,7 +37,7 @@ export class NotEmptyValidatorDirective implements Validator {
         return {
             minLength: {
                 message: message,
-                order: 1
+                order: 1,
             }
         };
     }

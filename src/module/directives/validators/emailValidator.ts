@@ -1,5 +1,5 @@
-import { Directive, forwardRef, Input } from '@angular/core';
-import { Validator, FormControl, NG_VALIDATORS } from '@angular/forms';
+import { Directive, forwardRef, Input, HostListener, Optional, Host, ViewContainerRef, Self, SkipSelf } from '@angular/core';
+import { Validator, FormControl, NG_VALIDATORS, ControlContainer, NgForm } from '@angular/forms';
 
 @Directive({
     providers: [
@@ -37,6 +37,7 @@ export class EmailValidatorDirective implements Validator {
             email: {
                 message: message,
                 order: 1,
+                visibleAfterBlur: true,
             }
         };
     }

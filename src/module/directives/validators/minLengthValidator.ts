@@ -41,7 +41,8 @@ export class MinLengthValidatorDirective implements Validator {
             minLength: {
                 message: message,
                 tokens: {minLength: this.xnMinLength},
-                order: 1
+                order: 1,
+                visibleAfterBlur: true,
             }
         };
     }

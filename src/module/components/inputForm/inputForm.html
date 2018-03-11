@@ -1,10 +1,10 @@
 <div *ngIf="showLabel" class="input-group flex">
-    <div class="input-icon-space" [class.none]="_iconClass == 'none'"></div>
+    <div class="input-icon-space" [class.none]="iconClass == 'none'"></div>
     <small class="input-label animated slideInUp slideOutDown" [class.hidden]="!isModelSet()">{{label}}</small>
 </div>
 
 <div class="input-group input-box flex">
-    <i class="input-icon fa" (click)="onIconClick()" [ngClass]="_iconClass" aria-hidden="true"></i>
+    <i class="input-icon fa" (click)="onIconClick()" [ngClass]="iconClass" aria-hidden="true"></i>
     <div class="input-group-wrapper flex flex-grow">
         <input *ngIf="!multiline"
             [placeholder]="placeholder | switchString:label:placeholder"
@@ -45,10 +45,10 @@
     </div>
 </div>
 <div *ngIf="validatable" class="input-group flex error-labels" [class.hidden]="!hasError() || !touched || !ngControl?.touched">
-    <div class="input-icon-space" [class.none]="_iconClass == 'none'"></div>
+    <div class="input-icon-space" [class.none]="iconClass == 'none'"></div>
     <div class="error-labels-content">
         <ng-container *ngFor="let val of ngControl?.errors | joinObjects:outerErrors | properties | sort:'DESCENDING':'value.order'">
-            <small class="validation-message small" *ngIf="val.value.type !== 'unvisible'">
+            <small class="validation-message small" *ngIf="!val.value.visibleAfterBlur || (blured && val.value.visibleAfterBlur)">
                 {{val.value.message | translate:val.value.message:val.value.tokens | async}}
             </small>
         </ng-container>

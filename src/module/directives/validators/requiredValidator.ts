@@ -30,7 +30,7 @@ export class MyRequiredValidatorDirective implements Validator {
         return {
             required: {
                 message: message,
-                order: 0
+                order: 0,
             }
         };
     }

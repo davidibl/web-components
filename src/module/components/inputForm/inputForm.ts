@@ -26,7 +26,8 @@ export class InputFormComponent extends ControlContainer implements ControlValue
 
     private _value: string;
     private _touched = false;
-    public _iconClass = 'none';
+    private _iconClass = 'none';
+    private _blured = false;
 
     public control: AbstractControl;
 
@@ -82,6 +83,14 @@ export class InputFormComponent extends ControlContainer implements ControlValue
         if (iconClass !== null && iconClass !== '') {
             this._iconClass = iconClass;
         }
+    }
+
+    public get iconClass() {
+        return this._iconClass;
+    }
+
+    public get blured() {
+        return this._blured;
     }
 
     @Input('ngModel')
@@ -191,6 +200,7 @@ export class InputFormComponent extends ControlContainer implements ControlValue
         this.hasFocus = false;
         this.setTouchedIfNot();
         this._onBlur();
+        this._blured = true;
         this.blur.emit(null);
     }
 
