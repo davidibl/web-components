@@ -18,6 +18,7 @@ import { InputExampleComponent } from './inputExample/inputExample';
 import { HtmlEditorExampleComponent } from './htmlEditorExample/htmlEditorExample';
 import { SpinnerExampleComponent } from './spinnerExample/spinnerExample';
 import { InfoboxExampleComponent } from './infoboxExample/infoboxExample';
+import { DialogExampleComponent } from './dialogExample/dialogExample';
 
 export const routes: Routes = [
     { path: '', pathMatch: 'full', redirectTo: 'start' },
@@ -39,6 +40,7 @@ export const routes: Routes = [
     { component: HtmlEditorExampleComponent, path: 'editor' },
     { component: SpinnerExampleComponent, path: 'spinner' },
     { component: InfoboxExampleComponent, path: 'infobox' },
+    { component: DialogExampleComponent, path: 'dialog' },
     { path: '**', redirectTo: 'start' },
 ];
 

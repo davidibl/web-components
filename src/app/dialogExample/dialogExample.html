@@ -1,0 +1,11 @@
+<h2 class="ml-2">Dialoge</h2>
+<div class="pl-2 pt-2 pr-2">
+    <xn-button (click)="showDialog()">Einfachen Dialog Öffnen</xn-button>
+</div>
+<xn-dialog [(open)]="simpleDialogOpen" [showDefaultButtons]="true">
+    <span class="dialog-title">Dialogtitel</span>
+    <span class="dialog-body">
+        <p>Der Dialogtext ist frei definierbar</p>
+        <p>Auch Komponenten können projeziert werden.</p>
+    </span>
+</xn-dialog>
