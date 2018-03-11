@@ -4,6 +4,7 @@
     <form #selectionForm="ngForm">
         <xn-list-selector [items]="items"
                         xnNotEmpty
+                        class="w300 block"
                         name="selctionA"
                         [(ngModel)]="selectedItems"
                         [displayPropertyPath]="'name'">
@@ -17,6 +18,7 @@
     <xn-section-divider [label]="'single select Liste'"></xn-section-divider>
     <xn-list-selector [items]="items"
                     [(ngModel)]="selectedItemsSingle"
+                    class="w300 block"
                     [selectionMode]="'SINGLE'"
                     [displayPropertyPath]="'name'">
     </xn-list-selector>
@@ -28,6 +30,7 @@
     <xn-list-selector [items]="items"
                     [(ngModel)]="selectedItemsSingle"
                     [selectionMode]="'SINGLE'"
+                    class="w300 block"
                     [template]="listitem"
                     [displayPropertyPath]="'name'">
     </xn-list-selector>

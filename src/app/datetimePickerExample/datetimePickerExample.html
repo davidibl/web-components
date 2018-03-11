@@ -3,6 +3,7 @@
     <xn-section-divider class="mb-1 mt-2 block" [label]="'simple Datetime Picker'"></xn-section-divider>
     <xn-datetime-picker [(ngModel)]="currentDate"
                         [placeholder]="'placeholder_date' | translate | async"
+                        class="w300 block"
                         [label]="'label.birthday' | translate | async">
     </xn-datetime-picker>
     <p>Datum gewählt: {{currentDate | toDateString}}</p>
@@ -10,6 +11,7 @@
     <form #dateform="ngForm">
         <xn-datetime-picker [(ngModel)]="unsetDate"
                             [placeholder]="'placeholder_date' | translate | async"
+                            class="w300 block"
                             xnRequired
                             name="datepickerA"
                             [requiredMessage]="'Bitte geben Sie ein Datum ein!'"
