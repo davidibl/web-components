@@ -1,8 +1,7 @@
 import { Component, Input, Output, EventEmitter, HostListener } from '@angular/core';
 
 @Component({
-    moduleId: module.id,
-    selector: 'like',
+    selector: 'xn-like',
     templateUrl: 'like.html',
 })
 export class LikeComponent {
