@@ -19,6 +19,9 @@
         "placeholder": "Ein Platzhalter vom feinsten",
         "placeholder_date": "Datum eingeben",
         "birthday": "Geburtsdatum",
+        "spinner": "Warteanimationen",
+        "threedots": "Drei Punkte",
+        "material_spinner": "Material like Warteanimation",
         "button_next": "Weiter"
     },
     "title": {
