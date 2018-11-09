@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { isNull } from '../functions/checks';
 import { getObjectProperty } from '../functions/objectUtils';
 
 @Injectable()
