@@ -2,12 +2,10 @@ import { KeyValuePair } from './../model/keyValuePair';
 import { ConfigurationService } from './configurationService';
 import { Injectable } from '@angular/core';
 import { LanguageService } from './languageService';
-import { ReplaySubject } from 'rxjs/ReplaySubject';
+import { ReplaySubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/switchMap';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/observable/zip';
+import { Observable, zip } from 'rxjs';
+import { switchMap, map } from 'rxjs/operators';
 import { COMMON_TRANSLATIONS } from '../translations/de';
 
 const REGEX_TOKEN = /{(.+?)}/g;
@@ -25,17 +23,21 @@ export class TranslationService {
     public initStartupTranslation() {
         this._languageService
             .getCurrentLanguage()
-            .switchMap(language => this.queryCurrentTranslations(language))
+            .pipe(
+                switchMap(language => this.queryCurrentTranslations(language))
+            )
             .subscribe(translations => this.setupTranslations(null, ...translations));
     }
 
     public translateDefault(key: string, defaultValue?: string, tokens?: Object): Observable<string> {
         return this._registeredTranslationsSubject
             .asObservable()
-            .map(trans => {
-                return trans[key] ? trans[key] : defaultValue;
-            })
-            .map(trans => this.replaceTokens(trans, tokens));
+            .pipe(
+                map(trans => {
+                    return trans[key] ? trans[key] : defaultValue;
+                }),
+                map(trans => this.replaceTokens(trans, tokens))
+            );
     }
 
     private setupTranslations(prefix?: string, ...translationObjects: Object[]) {
@@ -76,13 +78,13 @@ export class TranslationService {
 
         const translationEndpoints = this._configurationService.getConfigValue<any[]>('translationEndpoints');
         if (!translationEndpoints) {
-            return Observable.zip(
+            return zip(
                 this._http.get<Object>(`/translations/${currentLanguage.toLowerCase()}.json`));
         }
         const translationQueries = translationEndpoints
             .map(endpoint => this
                 .queryAdditionalTranslation(endpoint.url, endpoint.key));
-        return Observable.zip(
+        return zip(
             ...translationQueries,
             this._http
                 .get<Object>(`/translations/${currentLanguage.toLowerCase()}.json`)

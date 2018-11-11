@@ -6,12 +6,14 @@ import {
     HostBinding,
     ContentChild,
     AfterContentInit,
+} from '@angular/core';
+import {
     trigger,
     state,
     style,
     animate,
-    transition
-} from '@angular/core';
+    transition,
+} from '@angular/animations';
 import { NgForm } from '@angular/forms';
 
 @Component({

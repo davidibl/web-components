@@ -3,7 +3,6 @@ import { ScrollSpyService } from '../../services/scrollSpyService';
 import { ScrollService } from '../../services/scrollService';
 
 @Component({
-    moduleId: module.id,
     selector: 'scroll-to-top',
     templateUrl: 'scrollToTop.html',
 })

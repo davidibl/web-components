@@ -1,4 +1,12 @@
-import { Component, Input, trigger, state, style, animate, transition, HostBinding } from '@angular/core';
+import { Component, Input, HostBinding } from '@angular/core';
+import {
+    trigger,
+    state,
+    style,
+    animate,
+    transition,
+    // ...
+  } from '@angular/animations';
 
 @Component({
     animations: [

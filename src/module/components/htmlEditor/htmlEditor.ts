@@ -10,9 +10,8 @@ import {
     Output,
     Input
 } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/of';
-import 'rxjs/add/operator/delay';
+import { Observable, of } from 'rxjs';
+import { delay } from 'rxjs/operators';
 import {
     ControlContainer,
     ControlValueAccessor,
@@ -133,7 +132,7 @@ export class HtmlEditorComponent extends ControlContainer implements ControlValu
             this._editorElement.nativeElement.innerHTML = this._value;
         }
         document.addEventListener('selectionchange', () => this.resetCaretPosition());
-        document.execCommand('enableObjectResizing', false, false);
+        document.execCommand('enableObjectResizing', false, "false");
         this._renderer.setAttribute(this._editorElement.nativeElement, 'contentEditable', 'true');
         this._renderer.listen(this._editorElement.nativeElement, 'keydown',
             (event) => this.onKeyDown(event, this._editorElement.nativeElement));
@@ -150,9 +149,7 @@ export class HtmlEditorComponent extends ControlContainer implements ControlValu
             event.stopPropagation();
         }
         this.selectedTool = formatType;
-        Observable
-            .of('null')
-            .delay(250)
+        of('null').pipe(delay(250))
             .subscribe(() => this.selectedTool = null);
     }
 

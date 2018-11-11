@@ -8,9 +8,8 @@ import {
     QueryList,
 } from '@angular/core';
 import { query, state, style, animate, transition, trigger } from '@angular/animations';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/of';
-import 'rxjs/add/operator/timeout';
+import { Observable, of } from 'rxjs';
+import { timeout } from 'rxjs/operators';
 
 @Component({
     selector: 'xn-levitated-button',
@@ -100,7 +99,7 @@ export class LevitatedButtonComponent {
 
     private close() {
         this.showMenuItem = false;
-        Observable.of(null).timeout(100).subscribe(() => {
+        of(null).pipe(timeout(100)).subscribe(() => {
             this.expanded = false;
             this.showIcon = true;
         });

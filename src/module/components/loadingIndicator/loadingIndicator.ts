@@ -3,7 +3,6 @@ import { LoadingIndicatorService } from '../../services/loadingIndicatorService'
 import { LoadingIndicatorEvent } from '../../model/loadingIndicatorEvent';
 
 @Component({
-    moduleId: module.id,
     selector: 'loading-indicator',
     templateUrl: 'loadingIndicator.html',
 })

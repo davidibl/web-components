@@ -1,4 +1,4 @@
-import { ReplaySubject } from 'rxjs/ReplaySubject';
+import { ReplaySubject } from 'rxjs';
 import { isNull } from '../functions/checks';
 
 export class DataServiceCache<T> {

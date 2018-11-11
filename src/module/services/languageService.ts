@@ -1,8 +1,9 @@
 import { UserprofileService } from './userprofileService';
 import { Injectable } from '@angular/core';
 import { ConfigurationService } from './configurationService';
-import { ReplaySubject } from 'rxjs/ReplaySubject';
-import { Observable } from 'rxjs/Observable';
+import { ReplaySubject } from 'rxjs';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class LanguageService {
@@ -33,7 +34,9 @@ export class LanguageService {
 
         this._userprofileService
             .getUserprofile()
-            .map(profile => (profile) ? profile.language : null)
+            .pipe(
+                map(profile => (profile) ? profile.language : null)
+            )
             .subscribe(profileLanguage => this.setCurrentLanguage(profileLanguage || language));
     }
 

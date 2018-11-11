@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { TranslationService } from '../services/translationService';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 
 @Pipe({
     name: 'translateEnum',

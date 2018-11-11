@@ -1,13 +1,12 @@
 import { RestTemplate } from './../model/network/restTemplate';
 import { Injectable } from '@angular/core';
-import { ReplaySubject } from 'rxjs/ReplaySubject';
+import { ReplaySubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { DataServiceCache } from '../model/dataServiceCache';
 import { LanguageService } from './languageService';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs/Observable';
-import { isNull } from '../functions/checks';
-import 'rxjs/add/operator/catch';
+import { Observable } from 'rxjs';
+import { switchMap, catchError } from 'rxjs/operators';
 
 @Injectable()
 export class ContentService {
@@ -26,11 +25,13 @@ export class ContentService {
 
             this._languageService
                 .getCurrentLanguage()
-                .switchMap(language => this.queryContent(path, language.toLowerCase()))
-                .catch((error, source) => {
-                    this._router.navigateByUrl('404');
-                    return source;
-                })
+                .pipe(
+                    switchMap(language => this.queryContent(path, language.toLowerCase())),
+                    catchError((error, source) => {
+                        this._router.navigateByUrl('404');
+                        return source;
+                    })
+                )
                 .subscribe(result => subject.next(result));
         }
         return subject;

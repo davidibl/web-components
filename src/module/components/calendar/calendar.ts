@@ -5,7 +5,6 @@ import { Year } from '../../model/year';
 import { CalendarService } from '../../services/calendarService';
 
 @Component({
-    moduleId: module.id,
     selector: 'calendar',
     templateUrl: 'calendar.html',
 })

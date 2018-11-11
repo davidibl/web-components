@@ -1,6 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { MomentService } from '../services/momentService';
-import { Observable } from 'rxjs/Observable';
 
 @Pipe({
     name: 'toTimespanString',

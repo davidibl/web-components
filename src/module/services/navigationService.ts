@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { NavigationItem } from '../model/navigationItem';
-import { ReplaySubject } from 'rxjs/ReplaySubject';
+import { ReplaySubject } from 'rxjs';
 
 @Injectable()
 export class NavigationService {

@@ -1,7 +1,6 @@
 import { Component, Input, HostBinding } from '@angular/core';
 
 @Component({
-    moduleId: module.id,
     selector: 'content-tile',
     templateUrl: 'contentTile.html',
 })

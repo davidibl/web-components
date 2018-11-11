@@ -2,10 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd, PRIMARY_OUTLET } from '@angular/router';
 import { NavigationItem } from '../../model/navigationItem';
 import { isStringNullOrEmpty } from '../../functions/stringUtils';
-import 'rxjs/add/operator/filter';
+import { filter } from 'rxjs/operators';
 
 @Component({
-    moduleId: module.id,
     selector: 'path',
     templateUrl: 'path.html',
 })
@@ -18,7 +17,9 @@ export class PathComponent implements OnInit {
     public ngOnInit() {
         this._router
             .events
-            .filter(event => event instanceof NavigationEnd)
+            .pipe(
+                filter(event => event instanceof NavigationEnd)
+            )
             .subscribe(event => {
                 this.navigationItems = null;
                 const root = this._activatedRoute.root;

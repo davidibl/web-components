@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import * as moment from 'moment';
 import { LanguageService } from './languageService';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/do';
+import { tap } from 'rxjs/operators';
 import { ConfigurationService } from './configurationService';
 
 @Injectable()
@@ -18,7 +17,9 @@ export class MomentService {
         moment.locale(this._language);
         this._languageService
             .getCurrentLanguage()
-            .do(language => this._language = language)
+            .pipe(
+                tap(language => this._language = language)
+            )
             .subscribe(language => moment.locale(language));
     }
 

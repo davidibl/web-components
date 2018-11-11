@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FilterObjectService } from '../../module/services/filterObjectsService';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/debounceTime';
+import { Observable, of } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
 
 @Component({
     selector: 'xn-combo-box-example',
@@ -37,9 +37,10 @@ export class ComboBoxExampleComponent {
     public constructor(private _filterService: FilterObjectService) {}
 
     public textChanged(text: string) {
-        Observable
-            .of(this._filterService.filter(this.items, text))
-            .debounceTime(1000)
+        of(this._filterService.filter(this.items, text))
+            .pipe(
+                debounceTime(1000)
+            )
             .subscribe(result => {
                 this.variousItems = result;
             });
