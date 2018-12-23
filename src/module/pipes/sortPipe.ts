@@ -10,6 +10,10 @@ export class SortPipe implements PipeTransform {
     public constructor(private _sortObjectService: SortObjectsService) {}
 
     public transform(value: any[], sortOrder?: SortOrderType, propertyPath?: string) {
+        const result = this._sortObjectService.sortItems(value, sortOrder, propertyPath);
+        if (!result) {
+            return null;
+        }
         return this._sortObjectService.sortItems(value, sortOrder, propertyPath).slice();
     }
 
