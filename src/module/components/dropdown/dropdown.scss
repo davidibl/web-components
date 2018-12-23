@@ -21,6 +21,8 @@ ul {
     border-right:                           $dropdown-menu-border-right;
     border-bottom:                          $dropdown-menu-border-bottom;
     border-top:                             $dropdown-menu-border-top;
+    overflow-y: scroll;
+    max-height: 250px;
     @include shadow($dropdown-menu-shadow);
 }
 

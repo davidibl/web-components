@@ -67,6 +67,12 @@ export class DropdownComponent extends ControlContainer implements ControlValueA
     public showLabel = true;
 
     @Input()
+    public noborder = false;
+
+    @Input()
+    public nomargin = false;
+
+    @Input()
     public set iconClass(iconClass: string) {
         if (iconClass !== null && iconClass !== '') {
             this._iconClass = iconClass;
@@ -103,6 +109,9 @@ export class DropdownComponent extends ControlContainer implements ControlValueA
 
     @Output()
     public blur: EventEmitter<void> = new EventEmitter<void>();
+
+    @Output()
+    public selectionChange = new EventEmitter<void>();
 
     public chevronClass = DropdownComponent.CHEVRON_DOWN_CLASS;
 
@@ -165,6 +174,7 @@ export class DropdownComponent extends ControlContainer implements ControlValueA
         this.setTouchedIfNot();
         this.trySetSelectedItem(getObjectProperty(this.idPropertyPath, item));
 
+        this.selectionChange.emit();
         this.onCloseDropdown();
     }
 
