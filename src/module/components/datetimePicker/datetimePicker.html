@@ -13,7 +13,10 @@
                 (blur)="onBlur()"
                 [outerErrors]="ngControl?.errors"
                 [placeholder]="placeholder"
+                [iconAfterClass]="iconAfterClass"
                 [validateOnBlur]="validateOnBlur"
+                [class.noborder]="noborder"
+                [class.nomargin]="nomargin"
                 [iconClass]="'fa-calendar'">
     </xn-input-form>
     <calendar *ngIf="calendarOpen"
