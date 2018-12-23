@@ -1,12 +1,22 @@
-<div class="flex">
-    <chip *ngFor="let tag of tags"
-        [text]="tag"
-        (click)="onTagClick(tag)">
-    </chip>
+<div class="flex flex-wrap">
+    <ng-container *ngIf="showChips">
+        <chip *ngFor="let tag of tags"
+            [text]="tag"
+            (click)="onTagClick(tag)">
+        </chip>
+    </ng-container>
+    <ng-container *ngIf="!showChips">
+        <div class="inline-block mr-05"
+             *ngFor="let tag of tags"
+             (click)="onTagClick(tag)">{{tag}}</div>
+    </ng-container>
     <xn-input-form class="inline-block wp-3"
-                [placeholder]="'Neues Tag'"
+                [placeholder]="placeholder"
                 [showLabel]="false"
                 (keyup.enter)="addTag()"
+                [class.noborder]="noborder"
+                [class.nomargin]="nomargin"
+                [validatable]="false"
                 [outerErrors]="inputError"
                 (keydown.backspace)="removeLastTag()"
                 [(ngModel)]="currentText"></xn-input-form>

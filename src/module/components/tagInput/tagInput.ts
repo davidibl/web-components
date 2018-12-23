@@ -36,6 +36,18 @@ export class TagInputComponent extends ControlContainer implements ControlValueA
 
     public inputError = null;
 
+    @Input()
+    public noborder = false;
+
+    @Input()
+    public nomargin = false;
+
+    @Input()
+    public showChips = true;
+
+    @Input()
+    public placeholder = 'Neues Tag';
+
     @Output()
     public touchedChange = new EventEmitter<boolean>();
 
