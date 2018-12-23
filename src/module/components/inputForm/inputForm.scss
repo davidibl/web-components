@@ -142,6 +142,22 @@ textarea {
     }
 }
 
+:host.nomargin {
+    .input-box {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+:host.small {
+    input, textarea {
+        font-size: $small-font-size;
+    }
+}
+
 :host.transparent {
     input, textarea {
         background-color: transparent;
