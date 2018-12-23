@@ -69,6 +69,12 @@ export class ComboBoxComponent extends ControlContainer implements ControlValueA
         this._items = this._filterService.filter(this._initialItems, this.displayText);
     }
 
+    @Input()
+    public noborder = false;
+
+    @Input()
+    public nomargin = false;
+
     public get items() {
         return this._items;
     }

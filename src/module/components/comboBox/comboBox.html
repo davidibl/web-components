@@ -12,6 +12,8 @@
                     (keydown.enter)="onEnter($event)"
                     (keydown.Escape)="onEscape($event)"
                     [outerErrors]="ngControl?.errors"
+                    [class.noborder]="noborder"
+                    [class.nomargin]="nomargin"
                     [placeholder]="placeholder"
                     [showClearButton]="true"
                     [iconClass]="iconClass"
