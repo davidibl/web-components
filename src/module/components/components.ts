@@ -43,6 +43,7 @@ import { WorkflowNavBarComponent } from './workflow/workflowNavBar';
 import { LevitatedButtonComponent } from './button/levitatedButton';
 import { HtmlEditorComponent } from './htmlEditor/htmlEditor';
 import { LinkListComponent } from './list/linkList';
+import { NumberInputFormComponent } from './numberInputForm/numberInputForm';
 
 export const ALL_COMPONENTS = [
     FlyinMobileMenuComponent,
@@ -89,4 +90,5 @@ export const ALL_COMPONENTS = [
     LevitatedButtonComponent,
     HtmlEditorComponent,
     LinkListComponent,
+    NumberInputFormComponent,
 ];
