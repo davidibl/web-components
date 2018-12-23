@@ -31,6 +31,7 @@ import { HtmlEditorExampleComponent } from './htmlEditorExample/htmlEditorExampl
 import { SpinnerExampleComponent } from './spinnerExample/spinnerExample';
 import { InfoboxExampleComponent } from './infoboxExample/infoboxExample';
 import { DialogExampleComponent } from './dialogExample/dialogExample';
+import { NumberInputExampleComponent } from './numberInputExample/numberInputExample';
 
 export function startupServiceFactory(startupService: StartupService): Function {
     return () => startupService.load(environment.configuration);
@@ -58,6 +59,7 @@ export function startupServiceFactory(startupService: StartupService): Function 
         SpinnerExampleComponent,
         InfoboxExampleComponent,
         DialogExampleComponent,
+        NumberInputExampleComponent,
     ],
     imports: [
         BrowserModule,

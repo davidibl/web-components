@@ -1,0 +1,8 @@
+<h2 class="ml-2">{{'title.input_samples' | translate | async}}</h2>
+<div class="pl-2 pt-2 pr-2 pb-2">
+    <form #inputForm="ngForm">
+        <xn-number-input-form [(ngModel)]="number"
+                              [label]="'Krasse Zahl'"
+                              [name]="'krasseZahl'"></xn-number-input-form>
+    </form>
+</div>
