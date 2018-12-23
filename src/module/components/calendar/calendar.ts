@@ -35,7 +35,7 @@ export class CalendarComponent implements OnInit {
 
     @Input()
     public set selectedDate(value: Date) {
-        if (!value || <any>value === '') {
+        if (!value || <any>value === '' || value['setHours'] === undefined) {
             return;
         }
 
