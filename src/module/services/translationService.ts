@@ -1,4 +1,4 @@
-import { KeyValuePair } from './../model/keyValuePair';
+import { KeyValuePairString } from './../model/keyValuePairString';
 import { ConfigurationService } from './configurationService';
 import { Injectable } from '@angular/core';
 import { LanguageService } from './languageService';
@@ -94,13 +94,13 @@ export class TranslationService {
     private queryAdditionalTranslation(endpoint: string, key: string): Observable<Object> {
         return Observable.create(observer => {
             this._http
-                .get<KeyValuePair[]>(endpoint)
+                .get<KeyValuePairString[]>(endpoint)
                 .subscribe(response => observer.next(response));
         })
         .map(result => this.fromKeyValuePair(result, key));
     }
 
-    private fromKeyValuePair(translations: KeyValuePair[], key: string) {
+    private fromKeyValuePair(translations: KeyValuePairString[], key: string) {
         const newTranslation = {
             'ENUMS': {},
         };

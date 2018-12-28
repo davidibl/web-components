@@ -1,12 +1,6 @@
 import { IKeyValuePair } from './keyValuePairInterface';
 
-export class KeyValuePair implements IKeyValuePair {
+export class KeyValuePair<T, F> implements IKeyValuePair<T, F> {
 
-    public key: string;
-    public value: string;
-
-    public constructor(key: string, value: string) {
-        this.key = key;
-        this.value = value;
-    }
+    public constructor(public key: T, public value: F) {}
 }

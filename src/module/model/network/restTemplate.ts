@@ -1,9 +1,9 @@
-import { KeyValuePair } from '../keyValuePair';
+import { KeyValuePairString } from '../keyValuePairString';
 import { concatPaths } from '../../functions/io';
 
 export class RestTemplate {
 
-    private queryParameter: KeyValuePair[] = new Array();
+    private queryParameter: KeyValuePairString[] = new Array();
     private pathParameter: string[] = new Array();
 
     public static create(baseUrl: string): RestTemplate {
@@ -18,14 +18,14 @@ export class RestTemplate {
     }
 
     public withQueryParameter(key: string, value: string): RestTemplate {
-        this.queryParameter.push(new KeyValuePair(key, value));
+        this.queryParameter.push(new KeyValuePairString(key, value));
         return this;
     }
 
     public withQueryParameters(parameters: Object) {
         Object.keys(parameters)
             .filter(key => parameters.hasOwnProperty(key))
-            .map(key => new KeyValuePair(key, parameters[key]))
+            .map(key => new KeyValuePairString(key, parameters[key]))
             .forEach(queryParameter => this.queryParameter.push(queryParameter));
     }
 
