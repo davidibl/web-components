@@ -26,6 +26,9 @@ export class DialogComponent {
     public hideCancelButton = false;
 
     @Input()
+    public hideOkButton = false;
+
+    @Input()
     public closable = true;
 
     @Output()

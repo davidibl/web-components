@@ -19,6 +19,7 @@
                            (click)="onCancelClick()">abbrechen</xn-button>
                 <xn-button [default]="true"
                            class="button primary right"
+                           *ngIf="!hideOkButton"
                            (click)="onConfirmClick()">{{defaultOkButtonText}}</xn-button>
             </ng-container>
             <ng-content select=".button-bar"></ng-content>
