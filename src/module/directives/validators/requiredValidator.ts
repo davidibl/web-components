@@ -1,4 +1,4 @@
-import { Directive, forwardRef, Inject, Host, Optional, Input } from '@angular/core';
+import { Directive, forwardRef, Input } from '@angular/core';
 import { Validator, FormControl, NG_VALIDATORS } from '@angular/forms';
 
 @Directive({
