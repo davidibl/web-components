@@ -1,5 +1,7 @@
-import { Directive, forwardRef, Input } from '@angular/core';
+import { Directive, forwardRef, Input, SimpleChanges, OnChanges } from '@angular/core';
 import { Validator, FormControl, NG_VALIDATORS } from '@angular/forms';
+import { isNull } from '../../functions/checks';
+import { ConditionalValidator } from './conditionalValidator';
 
 @Directive({
     providers: [
@@ -11,18 +13,22 @@ import { Validator, FormControl, NG_VALIDATORS } from '@angular/forms';
     ],
     selector: '[xnRequired]',
 })
-export class MyRequiredValidatorDirective implements Validator {
+export class MyRequiredValidatorDirective extends ConditionalValidator implements Validator, OnChanges {
 
     @Input()
     public requiredMessage: string;
 
-    constructor() {
-    }
+    @Input()
+    public validateIf: boolean;
+
+    constructor() { super(); }
 
     public validate(control: FormControl): {} {
+        if (!this.checkValidationRequired(this.validateIf)) { return null; }
+
         const value = control.value;
 
-        return (value) ? null : this.getValidationError();
+        return (!isNull(value)) ? null : this.getValidationError();
     }
 
     private getValidationError() {

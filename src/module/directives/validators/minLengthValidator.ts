@@ -1,5 +1,6 @@
-import { Directive, forwardRef, Inject, Host, Optional, Input } from '@angular/core';
+import { Directive, forwardRef, Input, OnChanges } from '@angular/core';
 import { Validator, FormControl, NG_VALIDATORS } from '@angular/forms';
+import { ConditionalValidator } from './conditionalValidator';
 
 @Directive({
     providers: [
@@ -11,7 +12,7 @@ import { Validator, FormControl, NG_VALIDATORS } from '@angular/forms';
     ],
     selector: '[xnMinLength]',
 })
-export class MinLengthValidatorDirective implements Validator {
+export class MinLengthValidatorDirective extends ConditionalValidator implements Validator, OnChanges {
 
     @Input()
     public xnMinLength: number;
@@ -19,10 +20,14 @@ export class MinLengthValidatorDirective implements Validator {
     @Input()
     public minLengthMessage: string;
 
-    constructor() {
-    }
+    @Input()
+    public validateIf: boolean;
+
+    constructor() { super(); }
 
     public validate(control: FormControl): {} {
+        if (!this.checkValidationRequired(this.validateIf)) { return null; }
+
         const value = control.value;
         if (value === null || value === undefined || value === '') {
             return this.getValidationError();
