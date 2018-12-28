@@ -11,7 +11,6 @@ import { Component,
          Self} from '@angular/core';
 import { ControlContainer, ControlValueAccessor, AbstractControl, NgControl } from '@angular/forms';
 import { IKeyValuePair } from '../../model/keyValuePairInterface';
-import { KeyValuePair } from '../../model/keyValuePair';
 import { getObjectProperty } from '../../functions/objectUtils';
 
 @Component({
@@ -170,7 +169,7 @@ export class DropdownComponent extends ControlContainer implements ControlValueA
         this.dropdownOpen = true;
     }
 
-    public onItemSelect(item: IKeyValuePair): void {
+    public onItemSelect(item: IKeyValuePair<any, any>): void {
         this.setTouchedIfNot();
         this.trySetSelectedItem(getObjectProperty(this.idPropertyPath, item));
 
