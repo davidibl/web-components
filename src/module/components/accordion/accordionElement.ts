@@ -77,8 +77,13 @@ export class AccordionElementComponent implements AfterContentInit {
     }
 
     @HostBinding('class.invalid')
+    @Input()
     public get invalid() {
         return this._invalid;
+    }
+
+    public set invalid(invalid: boolean) {
+        this._invalid = invalid;
     }
 
     @Input()
