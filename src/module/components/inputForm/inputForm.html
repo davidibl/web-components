@@ -21,7 +21,7 @@
             ngModel />
 
         <textarea *ngIf="multiline" [rows]="rows"
-            [placeholder]="placeholder | switchString:placeholder:label"
+            [placeholder]="placeholder | switchString:label:placeholder"
             [(ngModel)]="internalModel"
             (focus)="onFocus()"
             (blur)="onBlur()"
