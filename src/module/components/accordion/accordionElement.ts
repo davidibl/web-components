@@ -15,6 +15,7 @@ import {
     transition,
 } from '@angular/animations';
 import { NgForm } from '@angular/forms';
+import { isNull } from '../../functions/checks';
 
 @Component({
     animations: [
@@ -35,6 +36,7 @@ export class AccordionElementComponent implements AfterContentInit {
     private _open = false;
     private _stepNumber: number;
     private _invalid = false;
+    private _additionalValidationParameter: boolean;
 
     @Input()
     public grow = false;
@@ -77,13 +79,14 @@ export class AccordionElementComponent implements AfterContentInit {
     }
 
     @HostBinding('class.invalid')
-    @Input()
     public get invalid() {
         return this._invalid;
     }
 
-    public set invalid(invalid: boolean) {
-        this._invalid = invalid;
+    @Input()
+    public set additionalValidationParameter(valid: boolean) {
+        this._additionalValidationParameter = valid;
+        this._invalid = this.currentlyInvalid;
     }
 
     @Input()
@@ -95,12 +98,24 @@ export class AccordionElementComponent implements AfterContentInit {
     public ngAfterContentInit() {
         if (this._form) {
             this._form.statusChanges.subscribe(status => {
-                this._invalid = !this._form.valid;
+                this._invalid = this.currentlyInvalid;
+                // this._invalid = !this._form.valid;
             });
         }
     }
 
     public openStep() {
         this.activate.emit(this);
+    }
+
+    private get currentlyInvalid() {
+        let valid = true;
+        if (this._form) {
+            valid = this._form.valid;
+        }
+        if (!isNull(this._additionalValidationParameter)) {
+            valid = (valid && this._additionalValidationParameter);
+        }
+        return !valid;
     }
 }
