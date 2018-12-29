@@ -52,6 +52,14 @@ div.container {
     }
 }
 
+:host.expanded::ng-deep {
+    xn-block-ui {
+        border-radius: 2px;
+        width: 250px;
+        height: 100%;
+    }
+}
+
 div:hover {
     box-shadow: none;
 }
