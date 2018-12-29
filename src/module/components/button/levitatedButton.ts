@@ -46,6 +46,8 @@ import { timeout } from 'rxjs/operators';
 export class LevitatedButtonComponent {
 
     private _showSpinner = false;
+    private _forceKeepOpen = false;
+    private _hovered = false;
 
     @Input()
     public bgColorClass: string;
@@ -54,6 +56,7 @@ export class LevitatedButtonComponent {
     @Input()
     public default: boolean;
 
+    @HostBinding('class.expanded')
     public expanded = false;
     public showIcon = true;
     public showMenuItem = false;
@@ -64,12 +67,14 @@ export class LevitatedButtonComponent {
 
     @HostListener('mouseenter')
     public onMouseOver($event) {
-        this.expanded = true;
-        this.showIcon = false;
+        this.show();
+        this._hovered = true;
     }
 
     @HostListener('mouseleave')
     public onMouseOut($event) {
+        this._hovered = false;
+        if (this.forceKeepOpen) { return; }
         this.close();
     }
 
@@ -84,6 +89,20 @@ export class LevitatedButtonComponent {
         return this._showSpinner;
     }
 
+    @Input()
+    public set forceKeepOpen(forceKeepOpen: boolean) {
+        this._forceKeepOpen = forceKeepOpen;
+        if (!forceKeepOpen) {
+            if (!this._hovered) {
+                this.close();
+            }
+        }
+    }
+
+    public get forceKeepOpen() {
+        return this._forceKeepOpen;
+    }
+
     public openMenu($event) {
         if (this.expanded) {
             this.showMenuItem = true;
@@ -95,6 +114,11 @@ export class LevitatedButtonComponent {
     @HostListener('click')
     public onClick() {
         this._elementRef.nativeElement.blur();
+    }
+
+    public show() {
+        this.expanded = true;
+        this.showIcon = false;
     }
 
     private close() {
