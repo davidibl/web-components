@@ -9,6 +9,9 @@ export class PopupButtonComponent {
     private _closeRequested = false;
 
     @Input()
+    public iconClass = 'fa-search';
+
+    @Input()
     public leftButtonText: string;
 
     @Input()
