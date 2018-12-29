@@ -10,6 +10,7 @@ export class TabComponent {
     private _active = false;
     private _title: string;
     private _iconClass: string;
+    private _id: string;
 
     @HostBinding('class.active')
     public set active(active: boolean) {
@@ -27,6 +28,15 @@ export class TabComponent {
 
     public set title(title: string) {
         this._title = title;
+    }
+
+    @Input()
+    public get id() {
+        return (this._id) ? this._id : this._title;
+    }
+
+    public set id(id: string) {
+        this._id = id;
     }
 
     @Input()
