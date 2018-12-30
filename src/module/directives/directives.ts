@@ -8,6 +8,8 @@ import { ShowScrollDirective } from './scrollShowDirective';
 import { AutofocusDirective } from './autofocus';
 import { AnalyticsDirective } from './analytics';
 import { NotEmptyValidatorDirective } from './validators/notEmptyValidator';
+import { IfNullDirective } from './ifNull';
+import { IfFalseDirective } from './ifFalse';
 
 export const ALL_DIRECTIVES = [
     OutsideClickDirective,
@@ -20,4 +22,6 @@ export const ALL_DIRECTIVES = [
     AnalyticsDirective,
     MyRequiredValidatorDirective,
     NotEmptyValidatorDirective,
+    IfNullDirective,
+    IfFalseDirective,
 ];
