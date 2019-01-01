@@ -20,6 +20,9 @@ export class TabsComponent implements AfterContentInit {
         if (!this._tabs) {
             return;
         }
+        this._tabs.changes.subscribe(changes => {
+            this.tabsArray = this._tabs.toArray();
+        });
         this.tabsArray = this._tabs.toArray();
         this.selectTab(this.tabsArray[0]);
     }
