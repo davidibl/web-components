@@ -79,7 +79,7 @@ export class TranslationService {
         const translationEndpoints = this._configurationService.getConfigValue<any[]>('translationEndpoints');
         if (!translationEndpoints) {
             return zip(
-                this._http.get<Object>(`/translations/${currentLanguage.toLowerCase()}.json`));
+                this._http.get<Object>(`translations/${currentLanguage.toLowerCase()}.json`));
         }
         const translationQueries = translationEndpoints
             .map(endpoint => this
@@ -87,7 +87,7 @@ export class TranslationService {
         return zip(
             ...translationQueries,
             this._http
-                .get<Object>(`/translations/${currentLanguage.toLowerCase()}.json`)
+                .get<Object>(`translations/${currentLanguage.toLowerCase()}.json`)
         );
     }
 
