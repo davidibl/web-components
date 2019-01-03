@@ -4,13 +4,13 @@
             <img class="full-height left mr-05" alt="{{brandName}}" [src]="brandLogoSource" />
             <h2 class="brand-name">{{brandName}}</h2>
         </div>
-        <ul class="none block-m">
+        <ul class="main-menu none block-m">
             <ng-content select=".menu-m"></ng-content>
         </ul>
-        <ul class="block none-m">
+        <ul class="main-menu block none-m">
             <ng-content select=".menu-s"></ng-content>
         </ul>
-        <ul class="block">
+        <ul class="main-menu block">
             <ng-content select=".menu"></ng-content>
         </ul>
     </div>
