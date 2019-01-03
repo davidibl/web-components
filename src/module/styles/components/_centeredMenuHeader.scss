@@ -67,33 +67,35 @@ xn-menu-header {
             padding:                                $menu-list-padding;
         }
 
-        li {
-            @extend .left;
+        ul.main-menu {
+            > li {
+                @extend .left;
 
-            list-style:                             none;
-            margin-right:                           $menu-item-margin;
-            cursor:                                 pointer;
+                list-style:                             none;
+                margin-right:                           $menu-item-margin;
+                cursor:                                 pointer;
 
-            a {
-                @extend h4;
+                a {
+                    @extend h4;
 
-                color:                              $menu-item-color;
-                text-decoration:                    $menu-item-text-decoration;
+                    color:                              $menu-item-color;
+                    text-decoration:                    $menu-item-text-decoration;
 
-                &:hover {
-                    color:                          $menu-item-hover-color;
-                    text-decoration:                $menu-item-hover-text-decoration;
-                }
+                    &:hover {
+                        color:                          $menu-item-hover-color;
+                        text-decoration:                $menu-item-hover-text-decoration;
+                    }
 
-                &.active {
-                    color:                          $menu-item-active-color;
-                    text-decoration:                $menu-item-active-text-decoration;
+                    &.active {
+                        color:                          $menu-item-active-color;
+                        text-decoration:                $menu-item-active-text-decoration;
+                    }
                 }
             }
-        }
 
-        li:last-of-type {
-            margin-right:                           0px;
+            li:last-of-type {
+                margin-right:                           0px;
+            }
         }
     }
 
