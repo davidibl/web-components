@@ -32,3 +32,14 @@
         margin-right: 15px;
     }
 }
+
+:host.line-only {
+    .divider {
+        span:after {
+            margin-left: 0px;
+        }
+        span:before {
+            margin-right: 0px;
+        }
+    }
+}

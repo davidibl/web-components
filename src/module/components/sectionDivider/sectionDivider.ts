@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, HostBinding } from '@angular/core';
 
 @Component({
     selector: 'xn-section-divider',
@@ -9,4 +9,8 @@ export class SectionDividerComponent {
 
     @Input()
     public label: string;
+
+    @Input()
+    @HostBinding('class.line-only')
+    public lineOnly = false;
 }
