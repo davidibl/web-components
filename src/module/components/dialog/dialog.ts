@@ -31,6 +31,9 @@ export class DialogComponent {
     @Input()
     public closable = true;
 
+    @Input()
+    public closeOnConfirm = true;
+
     @Output()
     public openChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
@@ -49,7 +52,9 @@ export class DialogComponent {
     }
 
     public onConfirmClick() {
-        this.onDialogClose();
+        if (this.closeOnConfirm) {
+            this.onDialogClose();
+        }
         this.confirm.emit(true);
     }
 

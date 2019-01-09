@@ -28,6 +28,7 @@ xn-dialog {
             border-right:                               $dialog-border-right;
             border-top:                                 $dialog-border-top;
             border-bottom:                              $dialog-border-bottom;
+            max-height: 90vh;
             cursor:                                     initial;
             padding:                                    $dialog-padding;
             min-width:                                  300px;
@@ -40,6 +41,15 @@ xn-dialog {
             .dialog-footer {
                 border-top:                             $dialog-footer-border-top;
                 padding-top:                            $dialog-footer-padding-top
+            }
+
+            .dialog-body {
+                display: block;
+                overflow: auto;
+            }
+
+            @media (max-width: $breakpoint-m) {
+                max-height: 100vh;
             }
         }
     }
