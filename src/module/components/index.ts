@@ -23,3 +23,4 @@ export * from './listSelector/listSelector';
 export * from './workflow/workflowState';
 export * from './accordion/accordion';
 export * from './button/levitatedButton';
+export * from './tabs/tabs';

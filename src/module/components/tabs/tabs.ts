@@ -27,6 +27,11 @@ export class TabsComponent implements AfterContentInit {
         this.selectTab(this.tabsArray[0]);
     }
 
+    public selectTabById(id: string) {
+        if (!this.tabsArray) { return; }
+        this.selectTab(this.tabsArray.find(tab => tab.id === id));
+    }
+
     private selectTab(selectedTab: TabComponent) {
         if (!selectedTab) {
             return;
