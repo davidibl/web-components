@@ -3,12 +3,12 @@
         <ng-content select="th"></ng-content>
     </thead>
     <tbody>
-        <tr *ngFor="let item of data | sort:sortOrder:sortPropertyPath | filterObjects:filter | pageIt:pageSize:currentPage">
+        <ng-container *ngFor="let item of data | sort:sortOrder:sortPropertyPath | filterObjects:filter | pageIt:pageSize:currentPage">
             <ng-template
                 [ngTemplateOutletContext]="{item: item}"
                 [ngTemplateOutlet]="templateRef">
             </ng-template>
-        </tr>
+        </ng-container>
     </tbody>
 </table>
 <xn-pagination [currentPage]="currentPage"
