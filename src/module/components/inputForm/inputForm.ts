@@ -110,6 +110,7 @@ export class InputFormComponent extends ControlContainer implements ControlValue
 
     public set internalModel(value: any) {
         if (this.hasValueNullAwareChanged(value)) {
+            if (value === '') { value = null; }
             this.setTouchedIfNot();
             this._value = value;
             if (!this.validateOnBlur || this.validateOnChangeAndBlur) {
