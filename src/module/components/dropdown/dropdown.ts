@@ -129,7 +129,7 @@ export class DropdownComponent extends ControlContainer implements ControlValueA
 
     public writeValue(value: any): void {
         this._value = value;
-        this.trySetSelectedItem(this._value);
+        // this.trySetSelectedItem(this._value);
     }
 
     public registerOnChange(fn: (_: any) => void): void {
