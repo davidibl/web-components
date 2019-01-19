@@ -36,11 +36,24 @@ export class AccordionComponent extends AbstractWorkflowComponent implements Aft
             return;
         }
 
+        this._elements.changes.subscribe(_ => {
+            this.initializeElements();
+        });
+        this.initializeElements();
+    }
+
+    private initializeElements() {
+        if (!this._elements) { return; }
+
         this.elementsArray = this._elements.toArray();
+
+        const currentStep = this.elementsArray.find(element => element.open);
+
         this.elementsArray.forEach((element, index) => {
             element.stepNumber = (index + 1);
             element.activate.subscribe(openedElement => this.openElement(openedElement));
         });
+        if (currentStep) { return; }
         this.openElement(this.elementsArray[0]);
     }
 
