@@ -193,7 +193,8 @@ export class DropdownComponent extends ControlContainer implements ControlValueA
             return;
         }
 
-        const selectedItem = this._items.find(item => getObjectProperty(this.idPropertyPath, item) === value);
+        const selectedItem = this._items.find(item =>
+            JSON.stringify(getObjectProperty(this.idPropertyPath, item)) === JSON.stringify(value));
 
         if ((!value || !selectedItem) && !this._value) {
             this._valueDisplay = null;

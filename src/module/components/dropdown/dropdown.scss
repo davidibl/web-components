@@ -12,9 +12,9 @@ ul {
     margin:                                 0;
     margin-left:                            0;
     list-style:                             none;
-    position:                               absolute;
+    position:                               fixed;
     background:                             $dropdown-menu-background-color;
-    width:                                  100%;
+    width:                                  auto;
     margin-top:                             -23px;
     z-index:                                5001;
     border-left:                            $dropdown-menu-border-left;
