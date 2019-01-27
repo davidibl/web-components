@@ -11,6 +11,16 @@ export class TabComponent {
     private _title: string;
     private _iconClass: string;
     private _id: string;
+    private _visible = true;
+
+    @Input()
+    public set visible(visible: boolean) {
+        this._visible = visible;
+    }
+
+    public get visible() {
+        return this._visible;
+    }
 
     @HostBinding('class.active')
     public set active(active: boolean) {
