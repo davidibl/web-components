@@ -1,4 +1,4 @@
-import { Input, HostBinding, Output, Component } from '@angular/core';
+import { Input, HostBinding, Component } from '@angular/core';
 
 @Component({
     selector: 'xn-tab',
