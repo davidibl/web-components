@@ -55,6 +55,7 @@ export class AccordionComponent extends AbstractWorkflowComponent implements Aft
         });
         if (currentStep) { return; }
         this.openElement(this.elementsArray[0]);
+        this.elementsCountChange.emit();
     }
 
     public openStep(step: number) {

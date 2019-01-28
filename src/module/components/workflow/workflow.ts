@@ -50,6 +50,10 @@ export class WorkflowComponent implements AfterContentInit {
     public ngAfterContentInit() {
         this.stepCount = this._workflowComponent.stepCount;
         this._workflowComponent
+            .elementsCountChange
+            .subscribe(_ => this.stepCount = this._workflowComponent.stepCount);
+
+        this._workflowComponent
             .stepChange
             .subscribe(step => {
                 this._currentStep = step;

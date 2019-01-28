@@ -1,4 +1,4 @@
-import { EventEmitter, Input } from '@angular/core';
+import { EventEmitter, Input, Output } from '@angular/core';
 
 export abstract class AbstractWorkflowComponent {
     public stepCount: number;
@@ -9,6 +9,9 @@ export abstract class AbstractWorkflowComponent {
 
     @Input()
     public linearStepping = false;
+
+    @Output()
+    public elementsCountChange = new EventEmitter<void>();
 
     abstract get currentStepValid(): boolean;
 
