@@ -105,7 +105,7 @@ export class LevitatedButtonComponent {
 
     public openMenu($event) {
         if (this.expanded) {
-            this.showMenuItem = true;
+            setTimeout(() => this.showMenuItem = true, 1);
         }
     }
 
@@ -123,10 +123,8 @@ export class LevitatedButtonComponent {
 
     private close() {
         this.showMenuItem = false;
-        of(null).pipe(timeout(100)).subscribe(() => {
-            this.expanded = false;
-            this.showIcon = true;
-        });
+        this.expanded = false;
+        this.showIcon = true;
     }
 
 }
