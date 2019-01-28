@@ -12,15 +12,17 @@ ul {
     margin:                                 0;
     margin-left:                            0;
     list-style:                             none;
-    position:                               absolute;
+    position:                               fixed;
     background:                             $dropdown-menu-background-color;
-    width:                                  100%;
+    width:                                  auto;
     margin-top:                             -23px;
     z-index:                                5001;
     border-left:                            $dropdown-menu-border-left;
     border-right:                           $dropdown-menu-border-right;
     border-bottom:                          $dropdown-menu-border-bottom;
     border-top:                             $dropdown-menu-border-top;
+    overflow-y: scroll;
+    max-height: 250px;
     @include shadow($dropdown-menu-shadow);
 }
 
