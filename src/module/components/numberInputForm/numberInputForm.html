@@ -6,7 +6,7 @@
                [validatable]="validatable"
                [required]="required"
                [autofocus]="autofocus"
-               [outerErrors]
+               [outerErrors]="ngControl.errors"
                (blur)="onBlur()"
                (iconClick)="onIconClick()"
                (iconAfterClick)="onIconAfterClick()"
