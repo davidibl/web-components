@@ -1,15 +1,11 @@
 import {
     Component,
     HostBinding,
-    ContentChildren,
     Input,
     HostListener,
     ElementRef,
-    QueryList,
 } from '@angular/core';
-import { query, state, style, animate, transition, trigger } from '@angular/animations';
-import { Observable, of } from 'rxjs';
-import { timeout } from 'rxjs/operators';
+import { AnimationEvent, state, style, animate, transition, trigger } from '@angular/animations';
 
 @Component({
     selector: 'xn-levitated-button',
@@ -103,9 +99,9 @@ export class LevitatedButtonComponent {
         return this._forceKeepOpen;
     }
 
-    public openMenu($event) {
-        if (this.expanded) {
-            setTimeout(() => this.showMenuItem = true, 1);
+    public openMenu($event: AnimationEvent) {
+        if (this.expanded && this.expanded === <boolean><any>$event.toState) {
+            this.showMenuItem = true
         }
     }
 
