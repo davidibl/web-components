@@ -44,7 +44,7 @@
             aria-hidden="true"></i>
     </div>
 </div>
-<div *ngIf="validatable" class="input-group flex error-labels" [class.hidden]="!ngControl?.errors || !ngControl?.touched">
+<div *ngIf="validatable" class="input-group flex error-labels" [class.hidden]="(!ngControl?.errors && !outerErrors) || !ngControl?.touched">
     <div class="input-icon-space" [class.none]="iconClass == 'none'"></div>
     <div class="error-labels-content">
         <ng-container *ngFor="let val of ngControl?.errors | joinObjects:outerErrors | properties | sort:'DESCENDING':'value.order'">
