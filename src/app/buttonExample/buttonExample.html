@@ -35,7 +35,7 @@
     <xn-toggle-switch-button [toggleItems]="[{text: 'ja', value: true}, {text: 'nein', value: false}]"
                             [(ngModel)]="toggleButtonValue"></xn-toggle-switch-button>
     <p>Wert des Togglers: {{toggleButtonValue}}</p>
-
+    <xn-section-divider [label]="'Toggle Button Switch mit Required Validation'"></xn-section-divider>
     <xn-toggle-switch-button [toggleItems]="[{text: 'ja', value: 'huch'}, {text: 'nein', value: 'bla'}]"
                             xnRequired
                             [(ngModel)]="togglerZweiValue"></xn-toggle-switch-button>
