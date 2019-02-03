@@ -30,4 +30,14 @@
     </xn-levitated-button>
     <xn-levitated-button [bgColorClass]="'bg-brand-light'"><i class="fa fa-bars white"></i></xn-levitated-button>
     <xn-levitated-button class="right" [bgColorClass]="'bg-brand-light'"><i class="fa fa-bars white"></i></xn-levitated-button>
+
+    <xn-section-divider [label]="'Toggle Button Switch'"></xn-section-divider>
+    <xn-toggle-switch-button [toggleItems]="[{text: 'ja', value: true}, {text: 'nein', value: false}]"
+                            [(ngModel)]="toggleButtonValue"></xn-toggle-switch-button>
+    <p>Wert des Togglers: {{toggleButtonValue}}</p>
+
+    <xn-toggle-switch-button [toggleItems]="[{text: 'ja', value: 'huch'}, {text: 'nein', value: 'bla'}]"
+                            xnRequired
+                            [(ngModel)]="togglerZweiValue"></xn-toggle-switch-button>
+    <p>Wert des Togglers: {{togglerZweiValue}}</p>
 </div>

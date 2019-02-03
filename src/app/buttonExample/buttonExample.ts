@@ -10,4 +10,8 @@ export class ButtonExampleComponent {
     public toggled = true;
 
     public notToggled = false;
+
+    public toggleButtonValue: boolean;
+
+    public togglerZweiValue: any;
 }
