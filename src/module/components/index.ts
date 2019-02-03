@@ -24,3 +24,4 @@ export * from './workflow/workflowState';
 export * from './accordion/accordion';
 export * from './button/levitatedButton';
 export * from './tabs/tabs';
+export * from './button/toggleSwitchButton';

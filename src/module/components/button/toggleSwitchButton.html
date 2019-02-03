@@ -1,0 +1,13 @@
+<ng-container *ngFor="let item of toggleItems">
+    <xn-toggle-button [ngModel]="item.value === model"
+                      (ngModelChange)="onItemClick(item.value)">{{item.text}}</xn-toggle-button>
+</ng-container>
+<div *ngIf="validatable" class="input-group flex error-labels" [class.hidden]="(!ngControl?.errors && !outerErrors) || !ngControl?.touched">
+    <div class="error-labels-content">
+        <ng-container *ngFor="let val of ngControl?.errors | joinObjects:outerErrors | properties | sort:'DESCENDING':'value.order'">
+            <small class="validation-message" *ngIf="!val.value.visibleAfterBlur || (ngControl?.touched && val.value.visibleAfterBlur)">
+                {{val.value.message | translate:val.value.message:val.value.tokens | async}}
+            </small>
+        </ng-container>
+    </div>
+</div>

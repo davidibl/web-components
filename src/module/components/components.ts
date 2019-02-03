@@ -44,6 +44,7 @@ import { LevitatedButtonComponent } from './button/levitatedButton';
 import { HtmlEditorComponent } from './htmlEditor/htmlEditor';
 import { LinkListComponent } from './list/linkList';
 import { NumberInputFormComponent } from './numberInputForm/numberInputForm';
+import { ToggleSwitchButtonComponent } from './button/toggleSwitchButton';
 
 export const ALL_COMPONENTS = [
     FlyinMobileMenuComponent,
@@ -91,4 +92,5 @@ export const ALL_COMPONENTS = [
     HtmlEditorComponent,
     LinkListComponent,
     NumberInputFormComponent,
+    ToggleSwitchButtonComponent,
 ];
