@@ -40,6 +40,9 @@ export class DialogComponent {
     @Output()
     public confirm: EventEmitter<boolean> = new EventEmitter<boolean>();
 
+    @Output()
+    public cancel: EventEmitter<void> = new EventEmitter<void>();
+
     public onOutsideClick() {
         if (this.closeOnOutsideClick) {
             this.onDialogClose();
@@ -60,7 +63,7 @@ export class DialogComponent {
 
     public onCancelClick() {
         this.onDialogClose();
-        this.confirm.emit(false);
+        this.cancel.emit();
     }
 
 }

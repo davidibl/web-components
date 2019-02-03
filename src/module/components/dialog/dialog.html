@@ -4,7 +4,7 @@
             <div class="dialog-title left">
                 <ng-content select=".dialog-title"></ng-content>
             </div>
-            <div *ngIf="closable" (click)="onDialogClose()" class="right close-button">
+            <div *ngIf="closable" (click)="onCancelClick()" class="right close-button">
                 <i class="fa fa-times" aria-hidden="true"></i>
             </div>
         </div>
