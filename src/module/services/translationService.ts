@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, zip } from 'rxjs';
 import { switchMap, map } from 'rxjs/operators';
 import { COMMON_TRANSLATIONS } from '../translations/de';
+import { TokenTransformationService } from './tokenTransformationService';
 
 const REGEX_TOKEN = /{(.+?)}/g;
 
@@ -18,7 +19,8 @@ export class TranslationService {
 
     public constructor(private _languageService: LanguageService,
         private _configurationService: ConfigurationService,
-        private _http: HttpClient) { }
+        private _http: HttpClient,
+        private _tokenTransformation: TokenTransformationService) { }
 
     public initStartupTranslation() {
         this._languageService
@@ -36,7 +38,7 @@ export class TranslationService {
                 map(trans => {
                     return trans[key] ? trans[key] : defaultValue;
                 }),
-                map(trans => this.replaceTokens(trans, tokens))
+                map(trans => this._tokenTransformation.replaceTokens(trans, tokens))
             );
     }
 
@@ -50,15 +52,6 @@ export class TranslationService {
     private addTranslations(translationObject: Object, prefix?: string) {
         prefix = (prefix) ? prefix : '';
         this.addTranslationValue(this._registeredTranslations, translationObject, prefix);
-    }
-
-    private replaceTokens(translation: string, tokens: Object) {
-        if (tokens) {
-            translation = translation.replace(REGEX_TOKEN, (match, key) => {
-                return tokens[key] || key;
-            });
-        }
-        return translation;
     }
 
     private addTranslationValue(translations: Map<string, string>, translationObject: Object, prefix: string) {

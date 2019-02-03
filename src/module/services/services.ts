@@ -12,6 +12,7 @@ import { LanguageService } from './languageService';
 import { CalendarService } from './calendarService';
 import { AnalyticsService } from './analyticsService';
 import { FilterObjectService } from './filterObjectsService';
+import { TokenTransformationService } from './tokenTransformationService';
 
 export const ALL_SERVICES = [
     TranslationService,
@@ -28,4 +29,5 @@ export const ALL_SERVICES = [
     FilterObjectService,
     UserprofileService,
     StartupService,
+    TokenTransformationService,
 ];

@@ -11,3 +11,4 @@ export * from './calendarService';
 export * from './configurationService';
 export * from './analyticsService';
 export * from './startupService';
+export * from './tokenTransformationService';
