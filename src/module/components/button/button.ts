@@ -1,4 +1,4 @@
-import { Component, Input, HostBinding, HostListener, ElementRef } from '@angular/core';
+import { Component, Input, HostBinding, HostListener, ElementRef, Output, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'xn-button',
@@ -31,11 +31,15 @@ export class ButtonComponent {
     @HostBinding('class.disabled')
     public disabled = false;
 
+    @Output('clicked')
+    public clicked = new EventEmitter<void>();
+
     constructor(private _elementRef: ElementRef) { }
 
     @HostListener('click')
     public onClick() {
         this._elementRef.nativeElement.blur();
+        this.clicked.emit();
     }
 
 }
