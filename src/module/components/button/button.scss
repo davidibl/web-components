@@ -21,6 +21,10 @@ i {
     height: 30px;
 }
 
+:host.nounderline {
+    text-decoration: none;
+}
+
 :host.transparent {
     background-color: transparent;
 }
@@ -38,6 +42,7 @@ i {
     text-decoration:                            none;
 }
 
+:host.selected:not([disabled="true"]),
 :host:hover:not([disabled="true"]) {
     @include shadow($button-hover-shadow);
 
@@ -51,6 +56,7 @@ i {
     }
 }
 
+:host.selected.default:not([disabled="true"]),
 :host.default:hover:not([disabled="true"]) {
     background-color:                           $button-default-hover-color;
 }

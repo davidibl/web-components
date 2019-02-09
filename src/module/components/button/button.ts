@@ -31,6 +31,10 @@ export class ButtonComponent {
     @HostBinding('class.disabled')
     public disabled = false;
 
+    @Input()
+    @HostBinding('class.selected')
+    public selected = false;
+
     @Output('clicked')
     public clicked = new EventEmitter<void>();
 
