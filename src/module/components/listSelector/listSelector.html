@@ -1,6 +1,6 @@
 <ul class="no-padding mt-0 mb-0">
     <li class="pt-05 pb-05 pl-05" [class.selected]="getSelection(item)" *ngFor="let item of items">
-        <xn-checkbox [ngModel]="getSelection(item)" (ngModelChange)="onCheckedChange($event, item)">
+        <xn-checkbox [ngModel]="getSelection(item)" class="block" (ngModelChange)="onCheckedChange($event, item)">
             <ng-container *ngIf="!template">
                 {{item | objectProperty:displayPropertyPath}}
             </ng-container>
