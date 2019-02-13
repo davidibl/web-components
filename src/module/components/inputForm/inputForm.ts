@@ -89,6 +89,9 @@ export class InputFormComponent extends ControlContainer implements ControlValue
         return this._iconClass;
     }
 
+    @Input()
+    public alwaysShowLabel = false;
+
     public get blured() {
         return this._blured;
     }

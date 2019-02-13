@@ -1,6 +1,6 @@
 <div *ngIf="showLabel" class="input-group flex">
     <div class="input-icon-space" [class.none]="iconClass == 'none'"></div>
-    <small class="input-label" [class.hidden]="!isModelSet() && !hasFocus">{{label}}</small>
+    <small class="input-label" [class.hidden]="!isModelSet() && !hasFocus && !alwaysShowLabel">{{label}}</small>
 </div>
 
 <div class="input-group input-box flex">
