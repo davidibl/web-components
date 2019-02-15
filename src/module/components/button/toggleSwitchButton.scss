@@ -9,6 +9,10 @@
     @include font-size($input-form-label-font-size);
 }
 
+.toggle-switch-button {
+    margin: $toggle-switch-button-margin;
+}
+
 .error-labels {
 
     &.hidden {

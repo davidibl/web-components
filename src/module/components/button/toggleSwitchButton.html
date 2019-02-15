@@ -1,5 +1,6 @@
 <ng-container *ngFor="let item of toggleItems">
     <xn-toggle-button [ngModel]="item.value === model"
+                      class="toggle-switch-button"
                       (ngModelChange)="onItemClick(item.value)">{{item.text}}</xn-toggle-button>
 </ng-container>
 <div *ngIf="validatable" class="input-group flex error-labels" [class.hidden]="(!ngControl?.errors && !outerErrors) || !ngControl?.touched">

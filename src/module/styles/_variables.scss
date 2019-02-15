@@ -320,6 +320,17 @@ $button-default-hover-color:                    lighten($brand-teritiary, 20);
 $button-default-border:                         1px solid darken($button-default-color, 10);
 
 
+// Toggle Switch
+
+$toggle-switch-spacing: 0.5rem;
+$toggle-switch-button-margin-right: $toggle-switch-spacing;
+$toggle-switch-button-margin-bottom: $toggle-switch-spacing;
+$toggle-switch-button-margin-left: 0;
+$toggle-switch-button-margin-top: 0;
+$toggle-switch-button-margin: $toggle-switch-button-margin-top $toggle-switch-button-margin-right $toggle-switch-button-margin-bottom $toggle-switch-button-margin-left !default;
+
+
+
 // dropdown
 
 $dropdown-menu-border-top:                      none;
