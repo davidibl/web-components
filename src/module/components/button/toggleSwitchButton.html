@@ -1,5 +1,5 @@
 <ng-container *ngFor="let item of toggleItems">
-    <xn-toggle-button [ngModel]="item.value === model"
+    <xn-toggle-button [ngModel]="equals(item.value, model)"
                       class="toggle-switch-button"
                       (ngModelChange)="onItemClick(item.value)">{{item.text}}</xn-toggle-button>
 </ng-container>

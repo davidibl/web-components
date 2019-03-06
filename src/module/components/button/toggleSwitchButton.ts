@@ -1,5 +1,6 @@
-import { Component, Input, ElementRef, Self, Optional, Output, EventEmitter } from "@angular/core";
+import { Component, Input, ElementRef, Self, Optional, Output, EventEmitter, ChangeDetectionStrategy } from "@angular/core";
 import { AbstractControl, ControlContainer, ControlValueAccessor, NgControl } from '@angular/forms';
+import { equal } from '../../functions';
 
 export interface ToggleItem {
     text: string;
@@ -10,6 +11,7 @@ export interface ToggleItem {
     selector: 'xn-toggle-switch-button',
     templateUrl: 'toggleSwitchButton.html',
     styleUrls: ['toggleSwitchButton.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ToggleSwitchButtonComponent extends ControlContainer implements ControlValueAccessor {
 
@@ -67,6 +69,10 @@ export class ToggleSwitchButtonComponent extends ControlContainer implements Con
         if (this.ngControl) {
             this.ngControl.valueAccessor = this;
         }
+    }
+
+    public equals(itemA: any, itemB: any) {
+        return equal(itemA, itemB);
     }
 
     public reset(value?: any) {

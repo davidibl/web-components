@@ -3,7 +3,5 @@ export function isNull(value: any): boolean {
 }
 
 export function equal(a: any, b: any) {
-    const valA = JSON.stringify(a);
-    const valB = JSON.stringify(b);
-    return valA === valB;
+    return JSON.stringify(a) === JSON.stringify(b);
 }
