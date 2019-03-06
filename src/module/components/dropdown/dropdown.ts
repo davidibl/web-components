@@ -3,7 +3,6 @@ import { Component,
          Output,
          EventEmitter,
          HostBinding,
-         forwardRef,
          ElementRef,
          OnChanges,
          SimpleChanges,
@@ -12,6 +11,7 @@ import { Component,
 import { ControlContainer, ControlValueAccessor, AbstractControl, NgControl } from '@angular/forms';
 import { IKeyValuePair } from '../../model/keyValuePairInterface';
 import { getObjectProperty } from '../../functions/objectUtils';
+import { equal } from '../../functions/checks';
 
 @Component({
     selector: 'xn-dropdown',
@@ -188,6 +188,7 @@ export class DropdownComponent extends ControlContainer implements ControlValueA
     private _onBlur = () => void 0;
 
     private trySetSelectedItem(value: any) {
+        const lastValue = this._value;
         if (!this._items) {
             this._valueDisplay = null;
             return;
@@ -211,7 +212,9 @@ export class DropdownComponent extends ControlContainer implements ControlValueA
             this._valueDisplay = null;
         }
         if (!this.validateOnBlur || this.validateOnChangeAndBlur) {
-            this._onChange(this._value);
+            if (!equal(lastValue, value)) {
+                this._onChange(this._value);
+            }
         }
     }
 
