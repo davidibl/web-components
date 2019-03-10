@@ -1,6 +1,6 @@
 import { Component, Input, ElementRef, Self, Optional, Output, EventEmitter, ChangeDetectionStrategy } from "@angular/core";
 import { AbstractControl, ControlContainer, ControlValueAccessor, NgControl } from '@angular/forms';
-import { equal } from '../../functions';
+import { equal } from '../../functions/checks';
 
 export interface ToggleItem {
     text: string;
