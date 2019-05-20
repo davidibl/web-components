@@ -79,7 +79,7 @@ export class NumberInputFormComponent extends ControlContainer implements Contro
             }
             this.setTouchedIfNot();
             this._internalValue = value;
-            this._value = (!value) ? null : parseFloat(value);
+            this._value = (!value || value.trim() === '-') ? null : parseFloat(value);
             if (!this.validateOnBlur || this.validateOnChangeAndBlur) {
                 this._onChange(this._value);
             }
@@ -132,7 +132,7 @@ export class NumberInputFormComponent extends ControlContainer implements Contro
     }
 
     public onKeyDown(event: KeyboardEvent) {
-        if ([46, 8, 9, 27, 13, 110, 190].indexOf(event.keyCode) !== -1 ||
+        if ([46, 8, 9, 27, 13, 110, 190, 189].indexOf(event.keyCode) !== -1 ||
             // Allow: Ctrl+A
             (event.keyCode === 65 && (event.ctrlKey || event.metaKey)) ||
             // Allow: Ctrl+C
