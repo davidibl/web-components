@@ -2,6 +2,7 @@ import { Component, Input, OnChanges, SimpleChanges, Optional, Self, Output, Eve
 import { ControlContainer, ControlValueAccessor, NgControl, AbstractControl } from '@angular/forms';
 import { getObjectProperty } from '../../functions/objectUtils';
 import { SelectionMode } from './selectionMode';
+import { equal } from '../../functions/checks';
 
 @Component({
     selector: 'xn-list-selector',
@@ -65,7 +66,9 @@ export class ListSelectorComponent extends ControlContainer implements ControlVa
             if (this.selectionMode === SelectionMode.SINGLE) {
                 this._selectedItems = new Array();
             }
-            this.addItem(getObjectProperty(this.idPropertyPath, item));
+            if (!this.containsItem(item)) {
+                this.addItem(getObjectProperty(this.idPropertyPath, item));
+            }
         } else {
             const id = getObjectProperty(this.idPropertyPath, item);
             const itemToRemove = this._selectedItems.find(selectedItem => selectedItem === id);
@@ -79,7 +82,7 @@ export class ListSelectorComponent extends ControlContainer implements ControlVa
         if (!this._selectedItems) {
             return false;
         }
-        return !!this._selectedItems.find(selectedItem => selectedItem === getObjectProperty(this.idPropertyPath, item));
+        return this.containsItem(item);
     }
 
     public hasError(): boolean {
@@ -122,5 +125,10 @@ export class ListSelectorComponent extends ControlContainer implements ControlVa
             this._onTouched();
             this.touchedChange.emit(this._touched);
         }
+    }
+
+    private containsItem(item: any) {
+        return !!this._selectedItems &&
+               !!this._selectedItems.find(selectedItem => equal(selectedItem, getObjectProperty(this.idPropertyPath, item)));
     }
 }
