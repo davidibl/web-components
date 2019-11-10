@@ -4,20 +4,20 @@ import {
     Output,
     EventEmitter,
     HostBinding,
-    forwardRef,
     ElementRef,
     ViewChildren,
     QueryList,
     Optional,
     Self,
-    HostListener,
+    ChangeDetectionStrategy,
 } from '@angular/core';
-import { ControlContainer, ControlValueAccessor, NG_VALUE_ACCESSOR, AbstractControl, NgControl } from '@angular/forms';
+import { ControlContainer, ControlValueAccessor, AbstractControl, NgControl } from '@angular/forms';
 
 @Component({
     selector: 'xn-input-form',
     templateUrl: 'inputForm.html',
     styleUrls: ['inputForm.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class InputFormComponent extends ControlContainer implements ControlValueAccessor {
 

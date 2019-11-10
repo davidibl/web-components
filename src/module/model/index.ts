@@ -11,3 +11,4 @@ export * from './year';
 export * from './network/restTemplate';
 export * from './genericCache';
 export * from './tuple';
+export * from './genericCache2';
