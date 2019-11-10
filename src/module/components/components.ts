@@ -45,6 +45,7 @@ import { HtmlEditorComponent } from './htmlEditor/htmlEditor';
 import { LinkListComponent } from './list/linkList';
 import { NumberInputFormComponent } from './numberInputForm/numberInputForm';
 import { ToggleSwitchButtonComponent } from './button/toggleSwitchButton';
+import { IconComponent } from './icon/icon';
 
 export const ALL_COMPONENTS = [
     FlyinMobileMenuComponent,
@@ -93,4 +94,5 @@ export const ALL_COMPONENTS = [
     LinkListComponent,
     NumberInputFormComponent,
     ToggleSwitchButtonComponent,
+    IconComponent,
 ];
