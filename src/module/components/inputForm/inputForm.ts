@@ -67,6 +67,7 @@ export class InputFormComponent extends ControlContainer implements ControlValue
     public showLabel = true;
 
     @Input()
+    @HostBinding('class.multiline')
     public multiline = false;
 
     @Input()

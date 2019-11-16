@@ -27,9 +27,9 @@ input, textarea {
     width:                                  100%;
     margin-bottom:                          0px;
     border-bottom:                          none;
-    border-top:                             $input-form-border-top;
-    border-right:                           $input-form-border-right;
-    border-left:                            $input-form-border-left;
+    border-top:                             none;
+    border-right:                           none;
+    border-left:                            none;
 }
 input::-ms-clear {
     display:                                none;
@@ -82,6 +82,18 @@ textarea {
 
 .input-group-wrapper {
     border-bottom:                          $input-form-border-bottom;
+    border-top:                             $input-form-border-top;
+    border-right:                           $input-form-border-right;
+    border-left:                            $input-form-border-left;
+}
+
+:host.multiline {
+    .input-group-wrapper {
+        border-bottom:                          $input-form-multiline-border-bottom;
+        border-top:                             $input-form-multiline-border-top;
+        border-left:                            $input-form-multiline-border-left;
+        border-right:                           $input-form-multiline-border-right;
+    }
 }
 
 .input-group {

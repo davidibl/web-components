@@ -296,6 +296,10 @@ $input-form-border-bottom:                      1px solid $input-form-color-plac
 $input-form-border-top:                         0 !default;
 $input-form-border-right:                       0 !default;
 $input-form-border-left:                        0 !default;
+$input-form-multiline-border-bottom:            1px solid $input-form-color-placeholder !default;
+$input-form-multiline-border-top:               1px solid $input-form-color-placeholder !default;
+$input-form-multiline-border-right:             1px solid $input-form-color-placeholder !default;
+$input-form-multiline-border-left:              1px solid $input-form-color-placeholder !default;
 $input-form-validationerror-color:              $danger !default;
 $input-form-highlight-color:                    $brand-teritiary !default;
 $input-form-icon-color:                         $base-input-placeholder-color !default;
