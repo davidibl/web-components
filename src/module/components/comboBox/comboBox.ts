@@ -75,6 +75,14 @@ export class ComboBoxComponent extends ControlContainer implements ControlValueA
     @Input()
     public nomargin = false;
 
+    @Input()
+    @HostBinding('class.small')
+    public small = false;
+
+    @Input()
+    @HostBinding('class.transparent')
+    public transparent = false;
+
     public get items() {
         return this._items;
     }

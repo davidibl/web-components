@@ -12,6 +12,8 @@
                 (iconClick)="onIconClick()"
                 (blur)="onBlur()"
                 [outerErrors]="ngControl?.errors"
+                [class.small]="small"
+                [class.transparent]="transparent"
                 [placeholder]="placeholder"
                 [iconAfterClass]="iconAfterClass"
                 [validateOnBlur]="validateOnBlur"

@@ -11,6 +11,8 @@
                     (keydown.ArrowUp)="onArrowUp($event)"
                     (keydown.enter)="onEnter($event)"
                     (keydown.Escape)="onEscape($event)"
+                    [class.small]="small"
+                    [class.transparent]="transparent"
                     [outerErrors]="ngControl?.errors"
                     [class.noborder]="noborder"
                     [class.nomargin]="nomargin"

@@ -10,6 +10,8 @@
                (blur)="onBlur()"
                (iconClick)="onIconClick()"
                (iconAfterClick)="onIconAfterClick()"
+               [class.small]="small"
+                [class.transparent]="transparent"
                [validateOnChangeAndBlur]="validateOnChangeAndBlur"
                [(ngModel)]="internalModel"
                [class.noborder]="noborder"

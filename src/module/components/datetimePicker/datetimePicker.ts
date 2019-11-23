@@ -67,6 +67,14 @@ export class DatetimePickerComponent extends ControlContainer implements Control
     @Input()
     public nomargin = false;
 
+    @Input()
+    @HostBinding('class.small')
+    public small = false;
+
+    @Input()
+    @HostBinding('class.transparent')
+    public transparent = false;
+
     @Input('ngModel')
     public set model(dateValue: Date) {
         if (isNull(dateValue)) {

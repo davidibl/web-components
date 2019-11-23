@@ -72,6 +72,14 @@ export class DropdownComponent extends ControlContainer implements ControlValueA
     public nomargin = false;
 
     @Input()
+    @HostBinding('class.small')
+    public small = false;
+
+    @Input()
+    @HostBinding('class.transparent')
+    public transparent = false;
+
+    @Input()
     public set iconClass(iconClass: string) {
         if (iconClass !== null && iconClass !== '') {
             this._iconClass = iconClass;

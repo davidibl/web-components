@@ -165,7 +165,7 @@ textarea {
 }
 
 :host.small {
-    input, textarea {
+    input, textarea, i {
         font-size: $small-font-size;
     }
 }

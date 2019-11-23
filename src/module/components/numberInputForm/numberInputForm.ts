@@ -1,4 +1,4 @@
-import { Component, Input, ElementRef, Self, Optional, EventEmitter, Output } from "@angular/core";
+import { Component, Input, ElementRef, Self, Optional, EventEmitter, Output, HostBinding } from "@angular/core";
 import { ControlValueAccessor, ControlContainer, AbstractControl, NgControl } from "@angular/forms";
 
 @Component({
@@ -107,6 +107,14 @@ export class NumberInputFormComponent extends ControlContainer implements Contro
 
     @Input()
     public nomargin = false;
+
+    @Input()
+    @HostBinding('class.small')
+    public small = false;
+
+    @Input()
+    @HostBinding('class.transparent')
+    public transparent = false;
 
     @Output()
     public blur: EventEmitter<void> = new EventEmitter<void>();
