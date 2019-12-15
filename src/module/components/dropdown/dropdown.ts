@@ -72,6 +72,9 @@ export class DropdownComponent extends ControlContainer implements ControlValueA
     public nomargin = false;
 
     @Input()
+    public canDeselect = true;
+
+    @Input()
     @HostBinding('class.small')
     public small = false;
 

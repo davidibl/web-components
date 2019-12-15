@@ -24,7 +24,7 @@
                     (click)="onToggleDropdown()">
         </xn-input-form>
         <ul>
-            <li (click)="onItemSelect(null)">&nbsp;</li>
+            <li *ngIf="canDeselect" (click)="onItemSelect(null)">&nbsp;</li>
             <li *ngFor="let item of _items" (click)="onItemSelect(item)">
                 {{item | objectProperty:displayPropertyPath}}</li>
         </ul>
