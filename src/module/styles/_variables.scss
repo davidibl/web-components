@@ -326,13 +326,22 @@ $button-default-border:                         1px solid darken($button-default
 
 // Toggle Switch
 
-$toggle-switch-spacing: 0.5rem;
-$toggle-switch-button-margin-right: $toggle-switch-spacing;
-$toggle-switch-button-margin-bottom: $toggle-switch-spacing;
-$toggle-switch-button-margin-left: 0;
-$toggle-switch-button-margin-top: 0;
+$toggle-switch-spacing: 0.5rem !default;
+$toggle-switch-button-margin-right: $toggle-switch-spacing !default;
+$toggle-switch-button-margin-bottom: $toggle-switch-spacing !default;
+$toggle-switch-button-margin-left: 0 !default;
+$toggle-switch-button-margin-top: 0 !default;
 $toggle-switch-button-margin: $toggle-switch-button-margin-top $toggle-switch-button-margin-right $toggle-switch-button-margin-bottom $toggle-switch-button-margin-left !default;
 
+
+// Toggle Button
+
+$toggle-button-toggled-color:                white !default;
+$toggle-button-toggled-hover-color:          $brand-primary !default;
+$toggle-button-toggled-bg-color:             $brand-teritiary !default;
+$toggle-button-toggled-border:               1px solid darken($toggle-button-toggled-bg-color, 10) !default;
+$toggle-button-toggled-hover-border:         1px solid transparent !default;
+$toggle-button-toggled-hover-bg-color:       lighten($brand-teritiary, 20) !default;
 
 
 // dropdown
@@ -370,8 +379,8 @@ $tab-header-col-active-font-color: $base-font-color;
 
 // Selection Control
 
-$selection-control-bg-selected-item:            $brand-teritiary-color-80;
-$selection-control-bg-selected-item-checkbox:   $brand-teritiary;
+$selection-control-bg-selected-item:            $brand-teritiary-color-80 !default;
+$selection-control-bg-selected-item-checkbox:   $brand-teritiary !default;
 
 
 // List
@@ -392,4 +401,24 @@ $list-border-right-last:                             none;
 $list-border-top-last:                               none;
 $list-border-left-last:                              none;
 $list-striped-bg:                               $black-20;
+
+
+// Calendar
+
+$calendar-background-color:                         #fff !default;
+$calendar-shadow:                                   0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.3) !default;
+$calendar-header-shadow:                            0px 15px 25px -15px rgba(0, 0, 0, 0.5) !default;
+$calendar-day-today-background-color:               $very-light-gray !default;
+$calendar-day-selected-background-color:            lighten($brand-teritiary, 30) !default;
+$calendar-day-hover-background-color:               $calendar-day-selected-background-color !default;
+$calendar-day-hover-color:                          #fff !default;
+$calendar-month-hover-background-color:             $calendar-day-hover-background-color !default;
+$calendar-month-hover-color:                        $calendar-day-hover-color !default;
+$calendar-year-hover-background-color:              $calendar-day-hover-background-color !default;
+$calendar-year-hover-color:                         $calendar-day-hover-color !default;
+$calendar-border-color:                             $brand-primary !default;
+$calendar-border-bottom:                            none !default;
+$calendar-border-left:                              none !default;
+$calendar-border-right:                             none !default;
+$calendar-border-top:                               none !default;
 

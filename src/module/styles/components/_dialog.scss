@@ -43,6 +43,10 @@ xn-dialog {
                 padding-top:                            $dialog-footer-padding-top
             }
 
+            .dialog-content {
+                overflow-y: auto;
+            }
+
             .dialog-body {
                 display: block;
                 overflow: auto;
