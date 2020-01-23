@@ -1,9 +1,9 @@
 <div>
     <div class="calendar-header">
-        <xn-button class="left" (click)="onCurrentMonthClick()">
+        <xn-button class="small left" (click)="onCurrentMonthClick()">
                 <small>{{currentMonth.monthName}}</small>
         </xn-button>
-        <xn-button class="button" (click)="onCurrentYearClick()">
+        <xn-button class="small button" (click)="onCurrentYearClick()">
             <small>{{currentMonth.year}}</small>
         </xn-button>
     </div>
@@ -33,11 +33,11 @@
               *ngFor="let year of years">{{year.getYearNumber()}}</span>
     </div>
     <div class="bar">
-        <xn-button (click)="onPreviousYearsClick()" *ngIf="yearview || dayview" class="button">
+        <xn-button (click)="onPreviousYearsClick()" *ngIf="yearview || dayview" class="small button mr-05">
             <small><i class="fa fa-chevron-left" aria-hidden="true"></i></small>
         </xn-button>
-        <xn-button class="button" (click)="onTodayClick()"><small>Heute</small></xn-button>
-        <xn-button (click)="onNextYearsClick()" *ngIf="yearview || dayview" class="button">
+        <xn-button class="small button mr-05" (click)="onTodayClick()"><small>Heute</small></xn-button>
+        <xn-button (click)="onNextYearsClick()" *ngIf="yearview || dayview" class="small button">
             <small><i class="fa fa-chevron-right" aria-hidden="true"></i></small>
         </xn-button>
     </div>
