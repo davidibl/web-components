@@ -34,6 +34,9 @@ export class DialogComponent {
     @Input()
     public closeOnConfirm = true;
 
+    @Input()
+    public buttonsDisabled = false;
+
     @Output()
     public openChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
