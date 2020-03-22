@@ -37,6 +37,12 @@ export class DialogComponent {
     @Input()
     public buttonsDisabled = false;
 
+    @Input()
+    public defaultOkButtonDisabled = false;
+
+    @Input()
+    public defaultCancelButtonDisabled = false;
+
     @Output()
     public openChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 

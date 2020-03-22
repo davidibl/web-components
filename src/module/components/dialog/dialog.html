@@ -15,12 +15,12 @@
             <ng-container *ngIf="showDefaultButtons">
                 <xn-button [default]="false"
                            *ngIf="!hideCancelButton"
-                           [disabled]="buttonsDisabled"
+                           [disabled]="buttonsDisabled || defaultCancelButtonDisabled"
                            class="button left"
                            (click)="onCancelClick()">abbrechen</xn-button>
                 <xn-button [default]="true"
                            class="button primary right"
-                           [disabled]="buttonsDisabled"
+                           [disabled]="buttonsDisabled || defaultOkButtonDisabled"
                            *ngIf="!hideOkButton"
                            (click)="onConfirmClick()">{{defaultOkButtonText}}</xn-button>
             </ng-container>
