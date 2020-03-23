@@ -24,14 +24,19 @@ export class TooltipDirective implements OnDestroy {
     ) { }
 
     public ngOnDestroy(): void {
-        this.hide();
+        if (this.tooltipElement) {
+            this.renderer.removeChild(document.body, this.tooltipElement);
+            this.tooltipElement = null;
+        }
     }
 
-    @HostListener('mouseenter') onMouseEnter() {
+    @HostListener('mouseenter')
+    public onMouseEnter() {
         if (!this.tooltipElement) { this.show(); }
     }
 
-    @HostListener('mouseleave') onMouseLeave() {
+    @HostListener('mouseleave')
+    public onMouseLeave() {
         if (this.tooltipElement) { this.hide(); }
     }
 
