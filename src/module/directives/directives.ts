@@ -10,6 +10,7 @@ import { AnalyticsDirective } from './analytics';
 import { NotEmptyValidatorDirective } from './validators/notEmptyValidator';
 import { IfNullDirective } from './ifNull';
 import { IfFalseDirective } from './ifFalse';
+import { TooltipDirective } from './tooltip';
 
 export const ALL_DIRECTIVES = [
     OutsideClickDirective,
@@ -24,4 +25,5 @@ export const ALL_DIRECTIVES = [
     NotEmptyValidatorDirective,
     IfNullDirective,
     IfFalseDirective,
+    TooltipDirective,
 ];

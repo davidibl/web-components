@@ -20,6 +20,7 @@ import { SpinnerExampleComponent } from './spinnerExample/spinnerExample';
 import { InfoboxExampleComponent } from './infoboxExample/infoboxExample';
 import { DialogExampleComponent } from './dialogExample/dialogExample';
 import { NumberInputExampleComponent } from './numberInputExample/numberInputExample';
+import { TooltipExampleComponent } from './tooltipExample/tooltipExample';
 
 export const routes: Routes = [
     { path: '', pathMatch: 'full', redirectTo: 'start' },
@@ -43,6 +44,7 @@ export const routes: Routes = [
     { component: InfoboxExampleComponent, path: 'infobox' },
     { component: DialogExampleComponent, path: 'dialog' },
     { component: NumberInputExampleComponent, path: 'number' },
+    { component: TooltipExampleComponent, path: 'tooltip' },
     { path: '**', redirectTo: 'start' },
 ];
 

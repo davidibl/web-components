@@ -32,6 +32,7 @@ import { SpinnerExampleComponent } from './spinnerExample/spinnerExample';
 import { InfoboxExampleComponent } from './infoboxExample/infoboxExample';
 import { DialogExampleComponent } from './dialogExample/dialogExample';
 import { NumberInputExampleComponent } from './numberInputExample/numberInputExample';
+import { TooltipExampleComponent } from './tooltipExample/tooltipExample';
 
 export function startupServiceFactory(startupService: StartupService): Function {
     return () => startupService.load(environment.configuration);
@@ -60,6 +61,7 @@ export function startupServiceFactory(startupService: StartupService): Function 
         InfoboxExampleComponent,
         DialogExampleComponent,
         NumberInputExampleComponent,
+        TooltipExampleComponent,
     ],
     imports: [
         BrowserModule,

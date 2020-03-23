@@ -1,63 +1,51 @@
-$tooltip-shadow:                                    0px 0px 14px 3px rgba(68, 68, 68, 0.29);
+@import "variables";
+@import "mixins";
 
-xn-tooltip {
-    display: inline-block;
-
-    .info-icon {
-        position:                               relative;
-        text-align: center;
-        border:                                 none;
-        display:                                block;
-        z-index:                                30;
-        color:                                  #999;
-        width:                                  20px;
-        font-size:                              1.3rem;
-    }
-
-    .tooltip-content {
-        display: none;
-        @include shadow($tooltip-shadow);
-
-        position: absolute;
-        padding: 15px 15px 15px 15px;
-        background-color: white;
-        z-index: 20;
-        top: -20px;
-        width: 300px;
-        margin-left: -140px;
-    }
-
-    .tooltip-content:before {
-        content: "";
-        position: absolute;
-        width: 0;
-        height: 0;
-        margin-left: -1.1em;
-        bottom: -2em;
-        left: 50%;
-        box-sizing: border-box;
-        border: 1em solid black;
-        border-color: transparent transparent #ffffff #ffffff;
-        transform-origin: 0 0;
-        transform: rotate(-45deg);
-        box-shadow: -5px 5px 10px 0px rgba(68, 68, 68, 0.29);
-    }
-
-    &.bottom {
-        .tooltip-content {
-            top: calc(100% + 20px);
-        }
-
-        .tooltip-content:before {
-            margin-left: 1.1em;
-            bottom: 1.5em;
-            transform: rotate(135deg);
-        }
-    }
+.xn-tooltip {
+    position: absolute;
+    max-width: 150px;
+    font-size: 14px;
+    text-align: center;
+    color: $tooltip-color;
+    padding: 3px 8px;
+    background: $tooltip-background-color;
+    border-radius: $tooltip-border-radius;
+    z-index: 1000;
+    opacity: 0;
 }
-
-xn-tooltip.open {
-    .tooltip-content {
-        display:                                        block;
-    }
+.xn-tooltip:after {
+    content: "";
+    position: absolute;
+    border-style: solid;
+}
+.xn-tooltip-top:after {
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-color: $tooltip-background-color transparent transparent transparent;
+}
+.xn-tooltip-bottom:after {
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-color: transparent transparent $tooltip-background-color transparent;
+}
+.xn-tooltip-left:after {
+    top: 50%;
+    left: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-color: transparent transparent transparent $tooltip-background-color;
+}
+.xn-tooltip-right:after {
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-color: transparent $tooltip-background-color transparent transparent;
+}
+.xn-tooltip-show {
+    opacity: 1;
 }

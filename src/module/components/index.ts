@@ -3,7 +3,6 @@ export * from './menuHeader/menuHeader';
 export * from './content/contentTile';
 export * from './inputForm/inputForm';
 export * from './path/path';
-export * from './tooltip/tooltip';
 export * from './button/button';
 export * from './scrollToTop/scrollToTop';
 export * from './chip/chip';
