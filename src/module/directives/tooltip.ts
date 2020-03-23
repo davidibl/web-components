@@ -1,9 +1,9 @@
-import { Directive, Input, ElementRef, HostListener, Renderer2 } from '@angular/core';
+import { Directive, Input, ElementRef, HostListener, Renderer2, OnDestroy } from '@angular/core';
 
 @Directive({
     selector: '[xnTooltip]'
 })
-export class TooltipDirective {
+export class TooltipDirective implements OnDestroy {
 
     @Input()
     public xnTooltip: string;
@@ -23,6 +23,10 @@ export class TooltipDirective {
         private renderer: Renderer2
     ) { }
 
+    public ngOnDestroy(): void {
+        this.hide();
+    }
+
     @HostListener('mouseenter') onMouseEnter() {
         if (!this.tooltipElement) { this.show(); }
     }
@@ -31,13 +35,13 @@ export class TooltipDirective {
         if (this.tooltipElement) { this.hide(); }
     }
 
-    show() {
+    private show() {
         this.create();
         this.setPosition();
         this.renderer.addClass(this.tooltipElement, 'xn-tooltip-show');
     }
 
-    hide() {
+    private hide() {
         this.renderer.removeClass(this.tooltipElement, 'xn-tooltip-show');
         window.setTimeout(() => {
             this.renderer.removeChild(document.body, this.tooltipElement);
@@ -45,7 +49,7 @@ export class TooltipDirective {
         }, this.delay);
     }
 
-    create() {
+    private create() {
         this.tooltipElement = this.renderer.createElement('span');
 
         this.renderer.appendChild(
@@ -64,7 +68,7 @@ export class TooltipDirective {
         this.renderer.setStyle(this.tooltipElement, 'transition', `opacity ${this.delay}ms`);
     }
 
-    setPosition() {
+    private setPosition() {
         const hostPosition = this.element.nativeElement.getBoundingClientRect();
 
         const tooltipPosition = this.tooltipElement.getBoundingClientRect();
