@@ -5,7 +5,6 @@ import { MenuHeaderComponent } from './menuHeader/menuHeader';
 import { ContentTileComponent } from './content/contentTile';
 import { InputFormComponent } from './inputForm/inputForm';
 import { PathComponent } from './path/path';
-import { TooltipComponent } from './tooltip/tooltip';
 import { ButtonComponent } from './button/button';
 import { NavigationLinkComponent } from './navigationLink/navigationLink';
 import { ScrollToTopComponent } from './scrollToTop/scrollToTop';
@@ -53,7 +52,6 @@ export const ALL_COMPONENTS = [
     ContentTileComponent,
     InputFormComponent,
     PathComponent,
-    TooltipComponent,
     ButtonComponent,
     NavigationLinkComponent,
     ScrollToTopComponent,
