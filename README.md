@@ -62,6 +62,7 @@ https://webcomponents.xnoname.com
 - tag input form control
 - tooltip
 - workflow control
+- context menu
 
 ## Directives
 

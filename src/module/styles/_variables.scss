@@ -425,6 +425,19 @@ $calendar-border-top:                               none !default;
 
 // Tooltip
 
-$tooltip-background-color:                          $dark-gray;
-$tooltip-color:                                     $brand-white;
-$tooltip-border-radius:                             2px;
+$tooltip-background-color:                          $dark-gray !default;
+$tooltip-color:                                     $brand-white !default;
+$tooltip-border-radius:                             2px !default;
+
+
+// Context Menu
+
+$context-menu-item-color:                           $brand-primary !default;
+$context-menu-background-color:                     $brand-white !default;
+$context-menu-shadow:                               0px 3px 5px 1px rgba(68, 68, 68, 0.45) !default;
+$context-menu-item-hover-background-color:          $brand-teritiary-color-60 !default;
+$context-menu-item-background-color:                $brand-white !default;
+$context-menu-item-padding-left:                    15px !default;
+$context-menu-item-padding-right:                   15px !default;
+$context-menu-item-padding-bottom:                  8px !default;
+$context-menu-item-padding-top:                     8px !default;

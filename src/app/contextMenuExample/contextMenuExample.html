@@ -1,0 +1,9 @@
+<h2 class="ml-2">Pagination</h2>
+<div class="pl-2 pt-2 pr-2">
+    <h3 [xnContextMenuConnect]="contextmenu" [context]="1">Ich habe ein Kontext Menü mit '1' als Datenkontext</h3>
+</div>
+
+<xn-context-menu #contextmenu (buttonClick)="onContextMenuItemClick($event)">
+    <xn-context-menu-item [command]="'alert'">
+        <xn-icon class="mr-1" [iconClass]="'fa-shopping-cart'"></xn-icon>Alert Datenkontext</xn-context-menu-item>
+</xn-context-menu>

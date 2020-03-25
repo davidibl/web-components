@@ -21,6 +21,7 @@ import { InfoboxExampleComponent } from './infoboxExample/infoboxExample';
 import { DialogExampleComponent } from './dialogExample/dialogExample';
 import { NumberInputExampleComponent } from './numberInputExample/numberInputExample';
 import { TooltipExampleComponent } from './tooltipExample/tooltipExample';
+import { ContextMenuExampleComponent } from './contextMenuExample/contextMenuExample';
 
 export const routes: Routes = [
     { path: '', pathMatch: 'full', redirectTo: 'start' },
@@ -45,6 +46,7 @@ export const routes: Routes = [
     { component: DialogExampleComponent, path: 'dialog' },
     { component: NumberInputExampleComponent, path: 'number' },
     { component: TooltipExampleComponent, path: 'tooltip' },
+    { component: ContextMenuExampleComponent, path: 'context-menu' },
     { path: '**', redirectTo: 'start' },
 ];
 

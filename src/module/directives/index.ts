@@ -10,3 +10,4 @@ export * from './autofocus';
 export * from './analytics';
 export * from './formModel';
 export * from './tooltip';
+export * from './contextMenuConnect';

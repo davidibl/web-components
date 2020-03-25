@@ -33,6 +33,7 @@ import { InfoboxExampleComponent } from './infoboxExample/infoboxExample';
 import { DialogExampleComponent } from './dialogExample/dialogExample';
 import { NumberInputExampleComponent } from './numberInputExample/numberInputExample';
 import { TooltipExampleComponent } from './tooltipExample/tooltipExample';
+import { ContextMenuExampleComponent } from './contextMenuExample/contextMenuExample';
 
 export function startupServiceFactory(startupService: StartupService): Function {
     return () => startupService.load(environment.configuration);
@@ -62,6 +63,7 @@ export function startupServiceFactory(startupService: StartupService): Function 
         DialogExampleComponent,
         NumberInputExampleComponent,
         TooltipExampleComponent,
+        ContextMenuExampleComponent,
     ],
     imports: [
         BrowserModule,

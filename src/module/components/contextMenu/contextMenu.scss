@@ -1,0 +1,40 @@
+@import 'variables';
+@import 'mixins';
+
+:host {
+    display: block;
+    position: fixed;
+    z-index: 11000;
+    background-color: $context-menu-background-color;
+    @include shadow($context-menu-shadow);
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
+
+:host::ng-deep {
+    li {
+        color: $context-menu-item-color;
+        background-color: $context-menu-item-background-color;
+        min-width: 200px;
+        width: auto;
+        padding-left: $context-menu-item-padding-left;
+        padding-right: $context-menu-item-padding-right;
+        padding-top: $context-menu-item-padding-top;
+        padding-bottom: $context-menu-item-padding-bottom;
+        text-align: left;
+        display: block;
+        cursor: pointer;
+    }
+    li:hover {
+        background-color: $context-menu-item-hover-background-color;
+        transition: background-color 0.3s linear;
+        -webkit-transition: background-color 0.3s linear;
+        -moz-transition: background-color 0.3s linear;
+    }
+}
+
+

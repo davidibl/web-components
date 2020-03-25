@@ -24,3 +24,5 @@ export * from './accordion/accordion';
 export * from './button/levitatedButton';
 export * from './tabs/tabs';
 export * from './button/toggleSwitchButton';
+export * from './contextMenu/contextMenu';
+export * from './contextMenu/contextMenuItem';

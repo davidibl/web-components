@@ -11,6 +11,7 @@ import { NotEmptyValidatorDirective } from './validators/notEmptyValidator';
 import { IfNullDirective } from './ifNull';
 import { IfFalseDirective } from './ifFalse';
 import { TooltipDirective } from './tooltip';
+import { ContextMenuConnectDirective } from './contextMenuConnect';
 
 export const ALL_DIRECTIVES = [
     OutsideClickDirective,
@@ -26,4 +27,5 @@ export const ALL_DIRECTIVES = [
     IfNullDirective,
     IfFalseDirective,
     TooltipDirective,
+    ContextMenuConnectDirective,
 ];
