@@ -5,8 +5,9 @@ import { isStringNullOrEmpty } from '../../functions/stringUtils';
 import { filter } from 'rxjs/operators';
 
 @Component({
-    selector: 'path',
+    selector: 'xn-path',
     templateUrl: 'path.html',
+    styleUrls: ['path.scss'],
 })
 export class PathComponent implements OnInit {
 

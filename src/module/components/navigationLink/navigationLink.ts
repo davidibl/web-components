@@ -2,7 +2,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { NavigationItem } from '../../model/navigationItem';
 
 @Component({
-    selector: 'navigation-link',
+    selector: 'xn-navigation-link',
     templateUrl: 'navigationLink.html',
 })
 export class NavigationLinkComponent {
