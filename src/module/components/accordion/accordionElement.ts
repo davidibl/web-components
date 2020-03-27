@@ -31,7 +31,7 @@ import { isNull } from '../../functions/checks';
 })
 export class AccordionElementComponent implements AfterContentInit {
 
-    @ContentChild(NgForm)
+    @ContentChild(NgForm, {static: false})
     private _form: NgForm;
     private _open = false;
     private _stepNumber: number;

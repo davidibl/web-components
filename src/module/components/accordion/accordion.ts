@@ -12,7 +12,7 @@ import { AbstractWorkflowComponent } from '../workflow/abstractWorkflow';
 })
 export class AccordionComponent extends AbstractWorkflowComponent implements AfterContentInit {
 
-    @ContentChildren(AccordionElementComponent)
+    @ContentChildren(AccordionElementComponent, {static: false})
     private _elements: QueryList<AccordionElementComponent>;
 
     public elementsArray: AccordionElementComponent[];

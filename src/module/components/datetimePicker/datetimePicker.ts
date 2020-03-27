@@ -27,7 +27,7 @@ import { isNull } from '../../functions/checks';
 })
 export class DatetimePickerComponent extends ControlContainer implements ControlValueAccessor {
 
-    @ViewChild(InputFormComponent)
+    @ViewChild(InputFormComponent, {static: false})
     private _inputForm: InputFormComponent;
 
     private _dateValue: Date;

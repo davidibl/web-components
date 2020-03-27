@@ -21,7 +21,7 @@ import { ControlContainer, ControlValueAccessor, AbstractControl, NgControl } fr
 })
 export class InputFormComponent extends ControlContainer implements ControlValueAccessor {
 
-    @ViewChildren('input')
+    @ViewChildren('input', {static: false})
     private _inputs: QueryList<ElementRef>;
 
     private _value: string;

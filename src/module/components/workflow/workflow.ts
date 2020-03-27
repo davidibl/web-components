@@ -10,7 +10,7 @@ import { WorkflowState, WorkflowStateTypes } from './workflowState';
 })
 export class WorkflowComponent implements AfterContentInit {
 
-    @ContentChild(AbstractWorkflowComponent)
+    @ContentChild(AbstractWorkflowComponent, {static: false})
     private _workflowComponent: AbstractWorkflowComponent;
 
     private _currentStep = 1;

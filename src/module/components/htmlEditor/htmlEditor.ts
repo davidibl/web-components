@@ -26,7 +26,7 @@ import {
 })
 export class HtmlEditorComponent extends ControlContainer implements ControlValueAccessor, AfterViewInit {
 
-    @ViewChild('editorElement')
+    @ViewChild('editorElement', {static: false})
     private _editorElement: ElementRef;
     private _value: string;
     private _touched = false;
