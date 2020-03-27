@@ -344,6 +344,16 @@ $toggle-button-toggled-hover-border:         1px solid transparent !default;
 $toggle-button-toggled-hover-bg-color:       lighten($brand-teritiary, 20) !default;
 
 
+// Popup Button
+
+$popup-button-shadow:                                   0px 0px 18px 2px rgba(68, 68, 68, 0.5);
+$popup-button-border-radius:                            50%;
+$popup-button-background-color:                         #fff;
+$popup-button-menu-border-radius:                       0px;
+$popup-button-menu-button-text-align:                   right;
+$popup-button-menu-button-font-size:                    1rem;
+
+
 // dropdown
 
 $dropdown-menu-border-top:                      none;

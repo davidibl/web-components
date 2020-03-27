@@ -1,8 +1,9 @@
 import { Component, HostBinding, HostListener, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-    selector: 'popup-button',
+    selector: 'xn-popup-button',
     templateUrl: 'popupButton.html',
+    styleUrls: ['popupButton.scss'],
 })
 export class PopupButtonComponent {
 
