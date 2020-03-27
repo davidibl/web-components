@@ -1,7 +1,7 @@
-loading-indicator {
+:host {
     display:                                    none;
 }
 
-loading-indicator.open {
+:host.open {
     display:                                    block;
 }

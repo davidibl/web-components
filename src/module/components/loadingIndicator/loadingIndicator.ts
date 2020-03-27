@@ -3,8 +3,9 @@ import { LoadingIndicatorService } from '../../services/loadingIndicatorService'
 import { LoadingIndicatorEvent } from '../../model/loadingIndicatorEvent';
 
 @Component({
-    selector: 'loading-indicator',
+    selector: 'xn-loading-indicator',
     templateUrl: 'loadingIndicator.html',
+    styleUrls: ['loadingIndicator.scss'],
 })
 export class LoadingIndicatorComponent implements OnInit {
 

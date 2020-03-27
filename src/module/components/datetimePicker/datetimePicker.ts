@@ -23,6 +23,7 @@ import { isNull } from '../../functions/checks';
 @Component({
     selector: 'xn-datetime-picker',
     templateUrl: 'datetimePicker.html',
+    styleUrls: ['datetimePicker.scss'],
 })
 export class DatetimePickerComponent extends ControlContainer implements ControlValueAccessor {
 

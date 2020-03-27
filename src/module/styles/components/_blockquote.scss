@@ -1,22 +1,8 @@
-$blockquote-sign-font:                                      $tertiary-font;
-$blockquote-sign-font-size:                                 8rem;
-$blockquote-sign-margin-right:                              20px;
-$blockquote-sign-margin-bottom:                             0px;
-$blockquote-sign-margin-top:                                0px;
-$blockquote-sign-margin-right:                              20px;
-$blockquote-sign-margin-left:                               -20px;
+@import 'variables';
+@import 'mixins';
+
 $blockquote-sign-margin:                                    $blockquote-sign-margin-top $blockquote-sign-margin-right $blockquote-sign-margin-bottom $blockquote-sign-margin-left;
-$blockquote-sign-content:                                   "’​‌’​‌";
-$blockquote-sign-padding-top:                               0px;
-$blockquote-sign-padding-bottom:                            0px;
-$blockquote-sign-padding-right:                             0px;
-$blockquote-sign-padding-left:                              0px;
 $blockquote-sign-padding:                                   $blockquote-sign-padding-top $blockquote-sign-padding-right $blockquote-sign-padding-bottom $blockquote-sign-padding-left;
-$blockquote-sign-width:                                     60px;
-$blockquote-sign-height:                                    50px;
-$blockquote-sign-line-height:                               7rem;
-$blockquote-sign-color:                                     $brand-teritiary;
-$blockquote-sign-background-color:                          initial;
 
 blockquote {
     p {

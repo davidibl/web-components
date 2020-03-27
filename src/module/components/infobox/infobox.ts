@@ -1,9 +1,10 @@
-import { Component, Input, HostBinding } from '@angular/core';
+import { Component, Input, HostBinding, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
     selector: 'xn-infobox',
     templateUrl: 'infobox.html',
     styleUrls: ['infobox.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class InfoboxComponent {
 

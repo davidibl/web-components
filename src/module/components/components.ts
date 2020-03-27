@@ -10,7 +10,6 @@ import { NavigationLinkComponent } from './navigationLink/navigationLink';
 import { ScrollToTopComponent } from './scrollToTop/scrollToTop';
 import { ChipComponent } from './chip/chip';
 import { FeedbackJumbotronComponent } from './feedbackJumbotron/feedbackJumbotron';
-import { HelloSpinnerComponent } from './spinner/helloSpinner';
 import { BlockUiComponent } from './blockUi/blockUi';
 import { LoadingIndicatorComponent } from './loadingIndicator/loadingIndicator';
 import { DatetimePickerComponent } from './datetimePicker/datetimePicker';
@@ -19,7 +18,6 @@ import { CalendarComponent } from './calendar/calendar';
 import { PopupButtonComponent } from './popupButton/popupButton';
 import { PaginationComponent } from './pagination/pagination';
 import { HtmlContentComponent } from './htmlContent/htmlContent';
-import { ThreeDotsSpinnerComponent } from './spinner/threeDotsSpinner';
 import { LikeComponent } from './like/like';
 
 import { DialogComponent } from './dialog/dialog';
@@ -59,8 +57,6 @@ export const ALL_COMPONENTS = [
     ScrollToTopComponent,
     ChipComponent,
     FeedbackJumbotronComponent,
-    HelloSpinnerComponent,
-    ThreeDotsSpinnerComponent,
     BlockUiComponent,
     LoadingIndicatorComponent,
     DatetimePickerComponent,
