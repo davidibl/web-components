@@ -5,8 +5,9 @@ import { Year } from '../../model/year';
 import { CalendarService } from '../../services/calendarService';
 
 @Component({
-    selector: 'calendar',
+    selector: 'xn-calendar',
     templateUrl: 'calendar.html',
+    styleUrls: ['calendar.scss'],
 })
 export class CalendarComponent implements OnInit {
 

@@ -21,7 +21,7 @@
                 [class.nomargin]="nomargin"
                 [iconClass]="'fa-calendar'">
     </xn-input-form>
-    <calendar *ngIf="calendarOpen"
+    <xn-calendar *ngIf="calendarOpen"
             [selectedDate]="model"
-            (dateChanged)="onCalendarDateChange($event)"></calendar>
+            (dateChanged)="onCalendarDateChange($event)"></xn-calendar>
 </span>
