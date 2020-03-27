@@ -8,7 +8,7 @@ import { TabComponent } from './tab';
 })
 export class TabsComponent implements AfterContentInit {
 
-    @ContentChildren(TabComponent, {static: false})
+    @ContentChildren(TabComponent)
     private _tabs: QueryList<TabComponent>;
 
     public tabsArray: TabComponent[];

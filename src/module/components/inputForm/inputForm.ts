@@ -11,17 +11,21 @@ import {
     Self,
     ChangeDetectionStrategy,
 } from '@angular/core';
-import { ControlContainer, ControlValueAccessor, AbstractControl, NgControl } from '@angular/forms';
+import {
+    ControlContainer,
+    ControlValueAccessor,
+    AbstractControl,
+    NgControl
+} from '@angular/forms';
 
 @Component({
     selector: 'xn-input-form',
     templateUrl: 'inputForm.html',
     styleUrls: ['inputForm.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class InputFormComponent extends ControlContainer implements ControlValueAccessor {
 
-    @ViewChildren('input', {static: false})
+    @ViewChildren('input')
     private _inputs: QueryList<ElementRef>;
 
     private _value: string;

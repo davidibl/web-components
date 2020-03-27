@@ -12,7 +12,7 @@ import { getObjectProperty } from '../../functions/objectUtils';
 })
 export class DataTableComponent implements AfterViewInit  {
 
-    @ContentChildren(HeaderColumnDirective, {static: false})
+    @ContentChildren(HeaderColumnDirective)
     private _headerColumnElements: QueryList<HeaderColumnDirective>;
     private _headerColumns: HeaderColumnDirective[];
     private _data: Object[];

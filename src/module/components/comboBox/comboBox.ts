@@ -154,7 +154,7 @@ export class ComboBoxComponent extends ControlContainer implements ControlValueA
 
     public ngOnChanges(changes: SimpleChanges): void {
         if (changes['items'] || changes['model']) {
-            this.trySetSelectedItem(this._selectedItem);
+            this.trySetSelectedItem(changes.model.currentValue);
             this._items = this._filterService.filter(this._initialItems, this.displayText);
         }
     }

@@ -27,22 +27,21 @@
     "breakpoint-sass": "2.7.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.10.0",
-    "@angular/animations": "^8.2.14",
-    "@angular/cli": "^8.3.25",
-    "@angular/common": "^8.2.14",
-    "@angular/compiler": "^8.2.14",
-    "@angular/compiler-cli": "^8.2.14",
-    "@angular/core": "^8.2.14",
-    "@angular/forms": "^8.2.14",
-    "@angular/http": "^7.1.4",
-    "@angular/language-service": "^8.2.14",
-    "@angular/platform-browser": "^8.2.14",
-    "@angular/platform-browser-dynamic": "^8.2.14",
-    "@angular/router": "^8.2.14",
+    "@angular-devkit/build-angular": "~0.901.0",
+    "@angular/animations": "^9.1.0",
+    "@angular/cli": "^9.1.0",
+    "@angular/common": "^9.1.0",
+    "@angular/compiler": "^9.1.0",
+    "@angular/compiler-cli": "^9.1.0",
+    "@angular/core": "^9.1.0",
+    "@angular/forms": "^9.1.0",
+    "@angular/language-service": "^9.1.0",
+    "@angular/platform-browser": "^9.1.0",
+    "@angular/platform-browser-dynamic": "^9.1.0",
+    "@angular/router": "^9.1.0",
     "@types/jasmine": "~2.5.53",
     "@types/jasminewd2": "~2.0.2",
-    "@types/node": "~6.0.60",
+    "@types/node": "^12.11.1",
     "breakpoint-sass": "2.7.0",
     "core-js": "^2.4.1",
     "font-awesome": "4.7.0",
@@ -61,10 +60,10 @@
     "rxjs": "^6.5.4",
     "ts-node": "~3.2.0",
     "tslint": "~5.7.0",
-    "typescript": "~3.5.3",
-    "zone.js": "^0.9.1"
+    "typescript": "~3.8.3",
+    "zone.js": "~0.10.2"
   },
   "dependencies": {
-    "tslib": "^1.9.0"
+    "tslib": "^1.10.0"
   }
 }

@@ -21,7 +21,7 @@ import { ContextMenuItemComponent } from './contextMenuItem';
 })
 export class ContextMenuComponent implements AfterContentInit {
 
-    @ContentChildren(ContextMenuItemComponent, {static: false})
+    @ContentChildren(ContextMenuItemComponent)
     private items: QueryList<ContextMenuItemComponent>;
 
     private context: any;

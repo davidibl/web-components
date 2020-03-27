@@ -26,7 +26,7 @@ import {
 })
 export class HtmlEditorComponent extends ControlContainer implements ControlValueAccessor, AfterViewInit {
 
-    @ViewChild('editorElement', {static: false})
+    @ViewChild('editorElement')
     private _editorElement: ElementRef;
     private _value: string;
     private _touched = false;
@@ -164,7 +164,7 @@ export class HtmlEditorComponent extends ControlContainer implements ControlValu
 
         const currentSelection = document.getSelection();
         const currentText = currentSelection.anchorNode.textContent;
-        let i = currentSelection.baseOffset;
+        let i = currentSelection['baseOffset'];
         if (this._isIE) {
             const range = currentSelection.getRangeAt(0);
             i = range.startOffset;

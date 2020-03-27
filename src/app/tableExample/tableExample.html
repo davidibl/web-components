@@ -13,8 +13,10 @@
     </xn-data-table>
 
     <ng-template #columnDefinition let-item="item">
-        <td>{{item?.name}}</td>
-        <td>{{item?.alter | pad:'left':'00000'}}</td>
-        <td>{{item?.geburtstag | toDateString}}</td>
+        <tr>
+            <td>{{item?.name}}</td>
+            <td>{{item?.alter | pad:'left':'00000'}}</td>
+            <td>{{item?.geburtstag | toDateString}}</td>
+        </tr>
     </ng-template>
 </div>

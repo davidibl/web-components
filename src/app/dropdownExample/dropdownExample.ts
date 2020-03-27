@@ -14,5 +14,5 @@ export class DropdownExampleComponent {
         { key: 4, value: 'D' },
     ];
 
-    public selected: number;
+    public selected: number = 1;
 }
