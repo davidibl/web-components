@@ -1,6 +1,5 @@
 import { InfoboxComponent } from './infobox/infobox';
 import { MaterialSpinnerComponent } from './spinner/materialSpinner';
-import { FlyinMobileMenuComponent } from './flyinMobileMenu/flyinMobileMenu';
 import { MenuHeaderComponent } from './menuHeader/menuHeader';
 import { ContentTileComponent } from './content/contentTile';
 import { InputFormComponent } from './inputForm/inputForm';
@@ -9,7 +8,6 @@ import { ButtonComponent } from './button/button';
 import { NavigationLinkComponent } from './navigationLink/navigationLink';
 import { ScrollToTopComponent } from './scrollToTop/scrollToTop';
 import { ChipComponent } from './chip/chip';
-import { FeedbackJumbotronComponent } from './feedbackJumbotron/feedbackJumbotron';
 import { BlockUiComponent } from './blockUi/blockUi';
 import { LoadingIndicatorComponent } from './loadingIndicator/loadingIndicator';
 import { DatetimePickerComponent } from './datetimePicker/datetimePicker';
@@ -47,7 +45,6 @@ import { ContextMenuComponent } from './contextMenu/contextMenu';
 import { ContextMenuItemComponent } from './contextMenu/contextMenuItem';
 
 export const ALL_COMPONENTS = [
-    FlyinMobileMenuComponent,
     MenuHeaderComponent,
     ContentTileComponent,
     InputFormComponent,
@@ -56,7 +53,6 @@ export const ALL_COMPONENTS = [
     NavigationLinkComponent,
     ScrollToTopComponent,
     ChipComponent,
-    FeedbackJumbotronComponent,
     BlockUiComponent,
     LoadingIndicatorComponent,
     DatetimePickerComponent,

@@ -1,4 +1,3 @@
-export * from './flyinMobileMenu/flyinMobileMenu';
 export * from './menuHeader/menuHeader';
 export * from './content/contentTile';
 export * from './inputForm/inputForm';
@@ -6,7 +5,6 @@ export * from './path/path';
 export * from './button/button';
 export * from './scrollToTop/scrollToTop';
 export * from './chip/chip';
-export * from './feedbackJumbotron/feedbackJumbotron';
 export * from './blockUi/blockUi';
 export * from './loadingIndicator/loadingIndicator';
 export * from './datetimePicker/datetimePicker';
