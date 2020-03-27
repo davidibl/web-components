@@ -3,8 +3,9 @@ import { ScrollSpyService } from '../../services/scrollSpyService';
 import { ScrollService } from '../../services/scrollService';
 
 @Component({
-    selector: 'scroll-to-top',
+    selector: 'xn-scroll-to-top',
     templateUrl: 'scrollToTop.html',
+    styleUrls: ['scrollToTop.scss'],
 })
 export class ScrollToTopComponent {
 
