@@ -3,6 +3,7 @@ import { Component, Output, EventEmitter, Input, HostBinding } from '@angular/co
 @Component({
     selector: 'xn-dialog',
     templateUrl: 'dialog.html',
+    styleUrls: ['dialog.scss'],
 })
 export class DialogComponent {
 
