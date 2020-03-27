@@ -12,6 +12,7 @@ import { IfNullDirective } from './ifNull';
 import { IfFalseDirective } from './ifFalse';
 import { TooltipDirective } from './tooltip';
 import { ContextMenuConnectDirective } from './contextMenuConnect';
+import { FormModelDirective } from './formModel';
 
 export const ALL_DIRECTIVES = [
     OutsideClickDirective,
@@ -28,4 +29,5 @@ export const ALL_DIRECTIVES = [
     IfFalseDirective,
     TooltipDirective,
     ContextMenuConnectDirective,
+    FormModelDirective,
 ];
