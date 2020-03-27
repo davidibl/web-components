@@ -1,0 +1,45 @@
+@import 'variables';
+@import 'mixins';
+
+:host {
+    margin-right:                                           10px;
+    cursor:                                                 pointer;
+    display:                                                inline-block;
+    padding:                                                0 20px 0 2px;
+    height:                                                 30px;
+    font-size:                                              14px;
+    line-height:                                            30px;
+    border-radius:                                          25px;
+    color:                                                  $chip-color;
+    background-color:                                       $chip-background-color;
+}
+
+.chip-text {
+    float:                                              left;
+}
+
+.chip-image {
+    font-family:                                        $base-heading-font-family-alternate;
+    float:                                              left;
+    line-height:                                        1.6rem;
+    font-size:                                          1.2rem;
+    margin:                                             2px 2px 0 0px;
+    height:                                             26px;
+    width:                                              26px;
+    border-radius:                                      50%;
+    font-weight:                                        900;
+    text-align:                                         center;
+}
+
+.chip-action {
+    float:                                              left;
+}
+
+:host:hover {
+    color:                                                  $chip-hover-color;
+    background-color:                                       $chip-hover-backgroundcolor;
+}
+
+:host:last-child {
+    margin-right:                                           0px;
+}

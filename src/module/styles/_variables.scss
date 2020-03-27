@@ -441,3 +441,11 @@ $context-menu-item-padding-left:                    15px !default;
 $context-menu-item-padding-right:                   15px !default;
 $context-menu-item-padding-bottom:                  8px !default;
 $context-menu-item-padding-top:                     8px !default;
+
+
+// Chips
+
+$chip-background-color:                                     lighten($brand-teritiary, 10%) !default;
+$chip-color:                                                #f1f1f1 !default;
+$chip-hover-backgroundcolor:                                lighten($brand-teritiary, 40%) !default;
+$chip-hover-color:                                          $brand-primary !default;
