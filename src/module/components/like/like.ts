@@ -1,8 +1,10 @@
-import { Component, Input, Output, EventEmitter, HostListener } from '@angular/core';
+import { Component, Input, Output, EventEmitter, HostListener, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
     selector: 'xn-like',
     templateUrl: 'like.html',
+    styleUrls: ['like.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LikeComponent {
 
