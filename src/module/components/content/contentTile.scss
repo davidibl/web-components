@@ -1,0 +1,27 @@
+@import 'variables';
+@import 'mixins';
+
+:host {
+    @media (min-width: $breakpoint-m) {
+        height:                                     280px;
+        overflow:                                   hidden;
+    }
+
+    margin-bottom:                                  $content-tile-margin-bottom;
+    margin-top:                                     $content-tile-margin-top;
+}
+.paragraph {
+    h2 {
+        margin-bottom:                          $content-tile-title-margin-bottom;
+    }
+
+    h5 {
+        font-family:                                        $base-heading-font-family-alternate;
+        margin-bottom:                          $content-tile-subtitle-margin-bottom;
+        line-height:                            $content-tile-subtitle-line-height;
+    }
+
+    p {
+        text-align:                             $content-tile-text-align;
+    }
+}

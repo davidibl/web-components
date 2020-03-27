@@ -449,3 +449,13 @@ $chip-background-color:                                     lighten($brand-terit
 $chip-color:                                                #f1f1f1 !default;
 $chip-hover-backgroundcolor:                                lighten($brand-teritiary, 40%) !default;
 $chip-hover-color:                                          $brand-primary !default;
+
+
+// Content Tile
+
+$content-tile-text-align:                           justify !default;
+$content-tile-margin-top:                           15px !default;
+$content-tile-margin-bottom:                        15px !default;
+$content-tile-subtitle-margin-bottom:               10px !default;
+$content-tile-subtitle-line-height:                 1rem !default;
+$content-tile-title-margin-bottom:                  -1px !default;

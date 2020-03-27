@@ -1,7 +1,7 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-    selector: 'chip',
+    selector: 'xn-chip',
     templateUrl: 'chip.html',
     styleUrls: ['chip.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
