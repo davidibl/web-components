@@ -1,8 +1,8 @@
-import { URLSearchParams } from '@angular/http';
+import { HttpParams } from '@angular/common/http';
 
 export class UrlSearchParamsBuilder {
 
-    private _searchParams = new URLSearchParams();
+    private _searchParams = new HttpParams();
 
     public static with(name: string, value: string): UrlSearchParamsBuilder {
         return new UrlSearchParamsBuilder().with(name, value);
@@ -13,7 +13,7 @@ export class UrlSearchParamsBuilder {
         return this;
     }
 
-    public build(): URLSearchParams {
+    public build(): HttpParams {
         return this._searchParams;
     }
 

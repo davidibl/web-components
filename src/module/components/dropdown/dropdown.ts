@@ -190,7 +190,7 @@ export class DropdownComponent extends ControlContainer implements ControlValueA
 
     public ngOnChanges(changes: SimpleChanges): void {
         if (changes['items'] || changes['model']) {
-            this.trySetSelectedItem(changes.model.currentValue);
+            this.trySetSelectedItem(changes?.model?.currentValue);
         }
     }
 
