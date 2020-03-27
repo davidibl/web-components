@@ -17,12 +17,14 @@ export class ContextMenuConnectDirective {
 
 
     @HostListener('document:contextmenu', ['$event'])
-    public documentRClick(event: any): void {
+    public documentRClick(event: any): boolean {
+        event.preventDefault();
         const clickedInside = this._elementRef.nativeElement.contains(event.target);
         if (!clickedInside) {
             return;
         }
         this.xnContextMenuConnect.show(event.clientX, event.clientY, this.context);
+        return false;
     }
 
 }

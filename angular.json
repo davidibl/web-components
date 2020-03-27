@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "@xnoname/web-common": {
+    "@xnoname/web-components": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -32,7 +32,7 @@
             "styles": [
               "node_modules/font-awesome/scss/font-awesome.scss",
               "node_modules/breakpoint-sass/stylesheets/_breakpoint.scss",
-              "src/styles.scss"
+              "src/styles/styles.scss"
             ],
             "scripts": []
           },
@@ -59,18 +59,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "@xnoname/web-common:build"
+            "browserTarget": "@xnoname/web-components:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "@xnoname/web-common:build:production"
+              "browserTarget": "@xnoname/web-components:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "@xnoname/web-common:build"
+            "browserTarget": "@xnoname/web-components:build"
           }
         },
         "test": {
@@ -84,7 +84,7 @@
             "styles": [
               "node_modules/font-awesome/scss/font-awesome.scss",
               "node_modules/breakpoint-sass/stylesheets/_breakpoint.scss",
-              "src/styles.scss"
+              "src/styles/styles.scss"
             ],
             "assets": [
               "src/assets",
@@ -109,7 +109,7 @@
         }
       }
     },
-    "@xnoname/web-common-e2e": {
+    "@xnoname/web-components-e2e": {
       "root": "e2e",
       "sourceRoot": "e2e",
       "projectType": "application",
@@ -118,7 +118,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "./protractor.conf.js",
-            "devServerTarget": "@xnoname/web-common:serve"
+            "devServerTarget": "@xnoname/web-components:serve"
           }
         },
         "lint": {
@@ -135,7 +135,7 @@
       }
     }
   },
-  "defaultProject": "@xnoname/web-common",
+  "defaultProject": "@xnoname/web-components",
   "schematics": {
     "@schematics/angular:component": {
       "spec": false,

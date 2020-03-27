@@ -1,0 +1,15 @@
+$fa-font-path: '../../node_modules/font-awesome/fonts';
+@import "./_variables";
+@import "./_mixins";
+@import "../../node_modules/getbase/scss/base.scss";
+@import "../../node_modules/getbase/scss/base/_helpers.scss";
+@import "breakpoint";
+@import "../module/styles/core.scss";
+
+body {
+    padding-top: 40px;
+}
+
+.w300 {
+    width: 300px;
+}
