@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { ContentService } from '../../services/contentService';
 
 @Component({
-    selector: 'html-content',
+    selector: 'xn-html-content',
     templateUrl: 'htmlContent.html',
 })
 export class HtmlContentComponent {
