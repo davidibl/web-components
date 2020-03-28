@@ -87,6 +87,7 @@ $base-h3-font-weight:                           $base-header-weight !default;
 $base-h3-color:                                 $base-font-color !default;
 $base-h4-font-weight:                           $base-bold-alternate-weight !default;
 $base-h4-color:                                 $base-font-color !default;
+$base-h4-font-size:                             18 !default;
 $base-h5-font-weight:                           $base-header-weight !default;
 $base-h5-color:                                 $base-font-color !default;
 $base-h6-font-weight:                           $base-header-weight !default;
@@ -195,6 +196,8 @@ $brand-name-font:                                   $base-heading-font-family-al
 
 $menu-item-margin:                                  20px !default;
 $menu-item-color:                                   $brand-primary !default;
+$menu-item-weight:                                  $base-h4-font-weight;
+$menu-item-font-size:                               $base-h4-font-size;
 $menu-item-text-decoration:                         none !default;
 $menu-item-hover-color:                             lighten($menu-item-color, 30%) !default;
 $menu-item-hover-text-decoration:                   none !default;
