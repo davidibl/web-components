@@ -49,16 +49,17 @@
 }
 
 @media (min-width: $breakpoint-m - 1) {
-    .initial-height-m {
-        height:                             initial;
-    }
-
-    .full-height-m {
-        height: 100%;
-    }
-
-    .auto-height-m {
-        height: auto;
-    }
+    .initial-height-m { height: initial; }
+    .full-height-m { height: 100%; }
+    .auto-height-m { height: auto; }
 }
 
+// display
+
+@media (min-width: $breakpoint-m - 1) { .hide-m { display: none; }}
+@media (min-width: $breakpoint-l - 1) { .hide-l { display: none; }}
+.hide { display: none; }
+
+@media (min-width: $breakpoint-m - 1) { .show-m { display: initial; }}
+@media (min-width: $breakpoint-l - 1) { .show-l { display: initial; }}
+.show { display: initial; }
