@@ -1,9 +1,17 @@
-@import '../../styles/variables';
-@import '../../styles/mixins';
+@import 'variables';
+@import 'mixins';
 
 :host {
     text-align: right;
     display: block;
+}
+
+:host.centered {
+    text-align: center;
+}
+
+:host.left {
+    text-align: left;
 }
 
 .pagination {
@@ -12,15 +20,15 @@
 
 .page {
     display: block;
-    font-size: 1.1rem;
+    font-size: $pagination-buttons-font-size;
     line-height: 1.1rem;
     text-align: center;
-    width: 20px;
+    width: auto;
     height: 45px;
     cursor: pointer;
     @include disable-user-select();
     i {
-        font-size: 14px;
+        font-size: $pagination-buttons-font-size;
         color: $light-gray;
     }
 }
@@ -34,6 +42,7 @@
 .count-text {
     line-height: 1.2rem;
     color: $light-gray;
+    font-size: $pagination-count-text-font-size;
 }
 
 .pagedot.selected {

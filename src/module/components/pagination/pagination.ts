@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges, HostBinding } from '@angular/core';
 import { isNull } from '../../functions/checks';
 
 @Component({
@@ -13,6 +13,17 @@ export class PaginationComponent implements OnChanges {
     public pageCountNumber: number;
     public currentItemStart: number;
     public currentItemEnd: number;
+
+    @HostBinding('class.centered')
+    @Input()
+    public alignCenter = false;
+
+    @HostBinding('class.left')
+    @Input()
+    public alignLeft = false;
+
+    @Input()
+    public centeredCounter = false;
 
     @Input()
     public set currentPage(currentPage: number) {
