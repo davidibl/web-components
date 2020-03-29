@@ -2,7 +2,7 @@
 
 Web-components is a lightweight angular 9 compatible component library. It should provide the majority of heavy used components.
 
-## Benutzung
+## Usage
 
 The library has to be added to the package.json:
 
