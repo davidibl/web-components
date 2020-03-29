@@ -1,4 +1,5 @@
-@import '../../styles/variables.scss';
+@import 'variables';
+@import 'mixins';
 
 $table-sort-indicator-active-color:                     $brand-secondary;
 
