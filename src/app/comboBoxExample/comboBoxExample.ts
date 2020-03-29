@@ -6,7 +6,6 @@ import { debounceTime } from 'rxjs/operators';
 @Component({
     selector: 'xn-combo-box-example',
     templateUrl: 'comboBoxExample.html',
-    styleUrls: ['comboBoxExample.scss'],
 })
 export class ComboBoxExampleComponent {
 

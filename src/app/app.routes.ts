@@ -1,6 +1,6 @@
 import { RouterModule, Routes } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
-import { NavigationComponent } from './navigation/navigation';
+import { StartComponent } from './navigation/start';
 import { TableExampleComponent } from './tableExample/tableExample';
 import { ListSelectorExampleComponent } from './listSelectorExample/listSelectorExample';
 import { CheckboxExampleComponent } from './checkboxExample/checkboxExample';
@@ -22,10 +22,12 @@ import { DialogExampleComponent } from './dialogExample/dialogExample';
 import { NumberInputExampleComponent } from './numberInputExample/numberInputExample';
 import { TooltipExampleComponent } from './tooltipExample/tooltipExample';
 import { ContextMenuExampleComponent } from './contextMenuExample/contextMenuExample';
+import { ToggleButtonExampleComponent } from './buttonExample/toggleButtonExample';
+import { NavigationComponent } from './navigation/navigation';
 
 export const routes: Routes = [
     { path: '', pathMatch: 'full', redirectTo: 'start' },
-    { component: NavigationComponent, path: 'start'},
+    { component: StartComponent, path: 'start'},
     { component: TableExampleComponent, path: 'table'},
     { component: ListSelectorExampleComponent, path: 'listSelector' },
     { component: CheckboxExampleComponent, path: 'checkbox' },
@@ -47,6 +49,8 @@ export const routes: Routes = [
     { component: NumberInputExampleComponent, path: 'number' },
     { component: TooltipExampleComponent, path: 'tooltip' },
     { component: ContextMenuExampleComponent, path: 'context-menu' },
+    { component: ToggleButtonExampleComponent, path: 'toggle' },
+    { component: NavigationComponent, path: 'navigation' },
     { path: '**', redirectTo: 'start' },
 ];
 

@@ -1,17 +1,44 @@
-<h2 class="ml-2">Buttons</h2>
-<div class="pl-2 pt-2 pr-2">
-    <xn-infobox>
-        <span class="info-title">Info</span>
-        <span class="info-content">
-            Und hier steht dann ein Infotext
-        </span>
-    </xn-infobox>
-</div>
-<div class="pl-2 pt-2 pr-2">
-    <xn-infobox [error]="true">
-        <span class="info-title">Achtung</span>
-        <span class="info-content">
-            Ein Fehler ist aufgetreten!
-        </span>
-    </xn-infobox>
-</div>
+<h1 class="text-center">Infoboxen</h1>
+<xn-tabs>
+    <xn-tab [title]="'Beschreibung'"
+            [iconClass]="'fa-font'"
+            [id]="'a'">
+        <p>
+            Infoboxen werden verwendet um besondere Aufmerksamkeit auf bestimmten Content zu legen.
+        </p>
+        <p>
+            Das Styling kann über eine Anpassung der SCSS Variablen vorgenommen werden.
+        </p>
+        <p>
+            Die Infobox arbeit über Projektion. Der Content wird innerhalb des Infobox Tags definiert und
+            dann innerhalb der Infobox dargestellt. Es st zu beachten das ein Element die Klasse
+            <code class="inline-block">info-title</code> und das zweite die Klasse
+            <code class="inline-block">info-content</code> tragen müssen. Nur Elemente mit diesen Klassen
+            werden in die Infobox übernommen.
+        </p>
+        <p>Mit dem Attribut <code class="inline-block">error</code> wird definiert ob eine Error Infobox
+            angezeigt werden soll.</p>
+        <code>&lt;xn-infobox&gt;
+&lt;span class="info-title"&gt;Info&lt;/span&gt;
+&lt;span class="info-content"&gt;Infotext&lt;/span&gt;
+&lt;/xn-infobox&gt;
+        </code>
+    </xn-tab>
+    <xn-tab [title]="'Beispiele'"
+            [iconClass]="'fa-sitemap'"
+            [id]="'b'">
+            <h4>Spinner</h4>
+            <xn-infobox class="mb-2">
+                <span class="info-title">Info</span>
+                <span class="info-content">
+                    Und hier steht dann ein Infotext
+                </span>
+            </xn-infobox>
+            <xn-infobox [error]="true">
+                <span class="info-title">Achtung</span>
+                <span class="info-content">
+                    Ein Fehler ist aufgetreten!
+                </span>
+            </xn-infobox>
+    </xn-tab>
+</xn-tabs>

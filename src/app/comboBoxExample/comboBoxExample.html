@@ -1,30 +1,72 @@
-<h2 class="ml-2">Combobox</h2>
-<div class="pl-2 pt-2 pr-2">
-    <xn-section-divider class="block mt-2 mb-1" [label]="'unset combobox'"></xn-section-divider>
-    <xn-combo-box class="w300 block" [(ngModel)]="currentSelected" [items]="items" [displayPropertyPath]="'name'"></xn-combo-box>
-    <p>Aktuell gewählt: {{currentSelected?.name}}</p>
-    <xn-section-divider class="block mt-2 mb-1" [label]="'initial set combobox'"></xn-section-divider>
-    <xn-combo-box class="w300 block" [(ngModel)]="currentSelected2" [items]="items" [displayPropertyPath]="'name'"></xn-combo-box>
-    <p>Aktuell gewählt: {{currentSelected2?.name}}</p>
-    <xn-section-divider class="block mt-2 mb-1" [label]="'initial set combobox nur mit einem key'"></xn-section-divider>
-    <xn-combo-box class="w300 block" [(ngModel)]="currentSelected3" [items]="items" [idPropertyPath]="'alter'" [displayPropertyPath]="'name'"></xn-combo-box>
-    <p>Aktuell gewählt: {{currentSelected3}}</p>
-    <xn-section-divider class="block mt-2 mb-1" [label]="'combobox mit custom template'"></xn-section-divider>
-    <xn-combo-box class="w300 block" [template]="listTemplate" [(ngModel)]="currentSelected2" [items]="items" [displayPropertyPath]="'name'"></xn-combo-box>
-    <p>Aktuell gewählt: {{currentSelected2?.name}}</p>
-    <ng-template class="w300 block" #listTemplate let-item="item">
-        <h2>{{item?.name}}</h2>
-        <h3>{{item?.alter | pad:'left':'00000'}}</h3>
-    </ng-template>
-    <xn-section-divider class="block mt-2 mb-1" [label]="'combobox im input mode'"></xn-section-divider>
-    <xn-combo-box [inputMode]="true"
-                  [ngModel]="currentSelectedInput"
-                  class="w300 block"
-                  (ngModelChange)="textChanged($event)"
-                  [items]="variousItems"
-                  [idPropertyPath]="'name'"
-                  [displayPropertyPath]="'name'"></xn-combo-box>
-    <p>Aktuell selektiert: {{currentSelectedInput}}</p>
-    <xn-section-divider class="block mt-2 mb-1" [label]="'combobox required and validated'"></xn-section-divider>
-    <xn-combo-box class="w300 block" [label]="'Testlabel'" [(ngModel)]="currentSelected" xnRequired [items]="items" [displayPropertyPath]="'name'"></xn-combo-box>
-</div>
+<h1 class="text-center">Comboboxen</h1>
+<xn-tabs>
+    <xn-tab [title]="'Beschreibung'"
+            [iconClass]="'fa-font'"
+            [id]="'a'">
+        <p>
+            Im vergleich zu normalen Auswahlboxen erlauben Comboboxen stets die Suche nach einer bestimmten
+            Auswahl. Comboboxen können Standardmäßig validiert werden und teilen sich das Styling sowie die
+            Anpassbarkeit mit Eingabefeldern.<br />
+            Validierungsfehler werden analog zu Eingabefelder angezeigt.
+        </p>
+        <p>
+            Um Listenelemente gezielt zu stylen können Templates gebunden werden. Die einzelnen Items einer
+            Combobox können zudem Komplexe Objekte sein.
+        </p>
+        <p>
+            Werden Komplexe Objekte als Items in die Combobox gebunden können sowohl bei der Anzeige Auswahl
+            auch bei der Eingabebindung zwei Verfahren gewählt werden.<br />
+            Entweder der Pfad des Attributs das angezeigt bzw. als Eingabe gebunden werden sollen wird
+            mit einem Eingabeparemeter spezifiziert <code class="inline-block">idProertyPath</code> bzw
+            <code class="inline-block">displayPropertyPath</code>. Oder das Komplexe Objekt wird als
+            ganzes gebunden. Dann erwartet <code class="inline-block">ngModel</code> ein Objekt gleichen Typs
+            und wird bei Selektion dieses auch ausgeben.<br />
+            Bei der Anzeige kann ein template gebunden werden, das mit dem Komplexen Objekt umgehen kann.
+        </p>
+        <code><pre>&lt;xn-combo-box [inputMode]="true"
+    [(ngModel)]="einKey"
+    [items]="variousItemsAsKeyNamePairs"
+    [idPropertyPath]="'key'"
+    [displayPropertyPath]="'name'"&gt;&lt;/xn-combo-box&gt;
+</pre></code>
+    </xn-tab>
+    <xn-tab [title]="'Beispiele'"
+            [iconClass]="'fa-sitemap'"
+            [id]="'b'">
+            <h4>einfache Comboboxen</h4>
+            <div>
+                <xn-combo-box class="w300" [(ngModel)]="currentSelected" [items]="items" [displayPropertyPath]="'name'"></xn-combo-box>
+                <p>Aktuell gewählt: {{currentSelected?.name}}</p>
+            </div>
+            <div>
+                <xn-combo-box class="w300 inline-block" [(ngModel)]="currentSelected2" [items]="items" [displayPropertyPath]="'name'"></xn-combo-box>
+            </div>
+            <h4 class="mt-2">Combobox mit spezifiziertem Property (alter)</h4>
+            <div>
+                <xn-combo-box class="w300 inline-block" [(ngModel)]="currentSelected3" [items]="items" [idPropertyPath]="'alter'" [displayPropertyPath]="'name'"></xn-combo-box>
+                <p>Aktuell gewählt: {{currentSelected3}}</p>
+            </div>
+            <h4 class="mt-2">Combobox mit Custom Item-Template</h4>
+            <div>
+                <xn-combo-box class="w300 inline-block" [template]="listTemplate" [(ngModel)]="currentSelected2" [items]="items" [displayPropertyPath]="'name'"></xn-combo-box>
+                <p>Aktuell gewählt: {{currentSelected2?.name}}</p>
+            </div>
+            <ng-template class="w300 block" #listTemplate let-item="item">
+                <h2>{{item?.name}}</h2>
+                <h3>{{item?.alter | pad:'left':'00000'}}</h3>
+            </ng-template>
+            <h4 class="mt-2">Combobox im Input Mode. Eingaben werden wie gebundene Werte ausgegeben.</h4>
+            <div>
+                <xn-combo-box [inputMode]="true"
+                            [ngModel]="currentSelectedInput"
+                            class="w300 inline-block"
+                            (ngModelChange)="textChanged($event)"
+                            [items]="variousItems"
+                            [idPropertyPath]="'name'"
+                            [displayPropertyPath]="'name'"></xn-combo-box>
+                <p>Aktuell selektiert: {{currentSelectedInput}}</p>
+            </div>
+            <h4 class="mt-2">Combobox, gebunden und validiert</h4>
+            <xn-combo-box class="w300 block" [label]="'Testlabel'" [(ngModel)]="currentSelected" xnRequired [items]="items" [displayPropertyPath]="'name'"></xn-combo-box>
+    </xn-tab>
+</xn-tabs>

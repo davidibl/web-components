@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'xn-dropdown-example',
     templateUrl: 'dropdownExample.html',
-    styleUrls: ['dropdownExample.scss'],
 })
 export class DropdownExampleComponent {
 

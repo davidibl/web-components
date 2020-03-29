@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'xn-pagnation-example',
     templateUrl: 'paginationExample.html',
-    styleUrls: ['paginationExample.scss'],
 })
 export class PaginationExampleComponent {
 

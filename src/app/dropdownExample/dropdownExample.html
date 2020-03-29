@@ -1,10 +1,55 @@
-<h2 class="ml-2">Buttons</h2>
-<div class="pl-2 pt-2 pr-2">
-    <xn-section-divider class="block mt-2 mb-1" [label]="'Ein normales Dropdown'"></xn-section-divider>
-    <xn-dropdown class="w300 block" [items]="items" [placeholder]="'Bitte wählen'" [label]="'Ein Item'" [(ngModel)]="selected"></xn-dropdown>
-    Aktuell Selektiert: {{selected}}
+<h1 class="text-center">Auswahl (Dropdown)</h1>
+<xn-tabs>
+    <xn-tab [title]="'Beschreibung'"
+            [iconClass]="'fa-font'"
+            [id]="'a'">
+        <p>
+            Auswahlboxen stellen eine definierte Menge Items dar aus der ausgewählt werden kann.
+            Dropdowns können Standardmäßig validiert werden und teilen sich das Styling sowie die
+            Anpassbarkeit mit Eingabefeldern.<br />
+            Validierungsfehler werden analog zu Eingabefelder angezeigt.
+        </p>
+        <p>
+            Um Listenelemente gezielt zu stylen können Templates gebunden werden. Die einzelnen Items einer
+            Combobox können zudem Komplexe Objekte sein.
+        </p>
+        <p>
+            Werden Komplexe Objekte als Items in das Dropdown gebunden können sowohl bei der Anzeige Auswahl
+            auch bei der Eingabebindung zwei Verfahren gewählt werden.<br />
+            Entweder der Pfad des Attributs das angezeigt bzw. als Eingabe gebunden werden sollen wird
+            mit einem Eingabeparemeter spezifiziert <code class="inline-block">idProertyPath</code> bzw
+            <code class="inline-block">displayPropertyPath</code>. Oder das Komplexe Objekt wird als
+            ganzes gebunden. Dann erwartet <code class="inline-block">ngModel</code> ein Objekt gleichen Typs
+            und wird bei Selektion dieses auch ausgeben.<br />
+            Bei der Anzeige kann ein template gebunden werden, das mit dem Komplexen Objekt umgehen kann.
+        </p>
+        <code><pre>&lt;xn-dropdown
+    class="w300 block"
+    [items]="items"
+    [placeholder]="'Bitte wählen'"
+    [label]="'Ein Item'
+    [(ngModel)]="selected"&gt;&lt;/xn-dropdown&gt;
+        </pre></code>
+    </xn-tab>
+    <xn-tab [title]="'Beispiele'"
+            [iconClass]="'fa-sitemap'"
+            [id]="'b'">
+            <h4>Dropdown mit und ohne Icon</h4>
+            <xn-dropdown
+                class="w300 block"
+                [items]="items"
+                [placeholder]="'Bitte wählen'"
+                [label]="'Ein Item'"
+                [(ngModel)]="selected"></xn-dropdown>
+                Aktuell Selektiert: {{selected}}
 
-    <xn-section-divider class="block mt-2 mb-1" [label]="'Ein normales Dropdown mit icon'"></xn-section-divider>
-    <xn-dropdown class="w300 block" [items]="items" [iconClass]="'fa-bug'" [placeholder]="'Bitte wählen'" [label]="'Ein Item'" [(ngModel)]="selected"></xn-dropdown>
-    Aktuell Selektiert: {{selected}}
-</div>
+            <xn-dropdown
+                class="w300 block"
+                [items]="items"
+                [iconClass]="'fa-bug'"
+                [placeholder]="'Bitte wählen'"
+                [label]="'Ein Item'"
+                [(ngModel)]="selected"></xn-dropdown>
+                Aktuell Selektiert: {{selected}}
+    </xn-tab>
+</xn-tabs>

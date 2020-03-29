@@ -1,14 +1,45 @@
-<h2 class="ml-2">Tabs</h2>
-<div class="pl-2 pt-2 pr-2">
-    <xn-tabs>
-        <xn-tab [title]="'Tab A'">
-            Hier ist ein Tab ohne Überschrift
-        </xn-tab>
-        <xn-tab [title]="'Tab B'">
-            <h2>Überschrift</h2>Und hier einer Mit
-        </xn-tab>
-        <xn-tab [title]="'Tab B'" [iconClass]="'fa-bug'">
-            Tab mit Icon
-        </xn-tab>
-    </xn-tabs>
-</div>
+<h1 class="text-center">Tabs</h1>
+<xn-tabs>
+    <xn-tab [title]="'Beschreibung'"
+            [iconClass]="'fa-font'"
+            [id]="'a'">
+        <p>
+            Die Tabs Komponente ermöglicht die Darstellung von umschaltbaren Tabs. Die zugehörige
+            Menüleiste wird hierbei durch die Komponente erstellt. Jedes Tab Element ist eintweder ein
+            <code class="inline-block">xn-tab</code> oder leitet von <code class="inline-block">TabComponent</code>
+            ab.
+        </p>
+        <p>
+            Das Styling kann über eine Anpassung der SCSS Variablen vorgenommen werden.
+        </p>
+        <p>
+            Titel und Icon für das Mneüband können über API mitgegeben werden. Bei abgeleiteten Elementen können die
+            korrespondierenden Properties auch direkt gesetzt sein.
+        </p>
+        <code><pre>&lt;xn-tabs&gt;
+    &lt;xn-tab [title]="'Tab A'"&gt;
+        Content
+    &lt;/xn-tab&gt;
+    &lt;xn-tab [title]="'Tab B'"&gt;
+        &lt;h2&gt;Other Content&lt;/h2&gt;
+    &lt;/xn-tab&gt;
+&lt;/xn-tabs&gt;
+        </pre></code>
+    </xn-tab>
+    <xn-tab [title]="'Beispiele'"
+            [iconClass]="'fa-sitemap'"
+            [id]="'b'">
+            <h4>Tabs</h4>
+            <xn-tabs>
+                <xn-tab [title]="'Tab A'">
+                    Hier ist ein Tab ohne Überschrift
+                </xn-tab>
+                <xn-tab [title]="'Tab B'">
+                    <h2>Überschrift</h2>Und hier einer Mit
+                </xn-tab>
+                <xn-tab [title]="'Tab B'" [iconClass]="'fa-bug'">
+                    Tab mit Icon
+                </xn-tab>
+            </xn-tabs>
+    </xn-tab>
+</xn-tabs>

@@ -1,6 +1,27 @@
-<h2 class="ml-2">Workflow Navigation Bar</h2>
-<div class="pl-2 pt-2 pr-2 col col-12 col-6-m">
-    <xn-workflow-nav-bar [totalSteps]="5" [(currentStep)]="currentStep"></xn-workflow-nav-bar>
-
-    <p>Aktueller Schritt: {{currentStep}}</p>
-</div>
+<h1 class="text-center">Workflow Navigation</h1>
+<xn-tabs>
+    <xn-tab [title]="'Beschreibung'"
+            [iconClass]="'fa-font'"
+            [id]="'a'">
+        <p>
+            Die Workflow Navigation Komponente kann als Navigationskomponente in verschiedenen
+            Szenarien eingesetzt werden.
+        </p>
+        <p>
+            Das Styling kann über eine Anpassung der SCSS Variablen vorgenommen werden.
+        </p>
+        <p>
+            Die Komponente bekommt die Anzahl der Schritte übergeben und gibt den aktuellen Schritt aus.
+            Der Change triggert immer wenn der Benutzer weiter geht oder gehen möchte.
+        </p>
+        <code><pre>&lt;xn-workflow-nav-bar [totalSteps]="5" [(currentStep)]="currentStep"&gt;&lt;/xn-workflow-nav-bar&gt;
+        </pre></code>
+    </xn-tab>
+    <xn-tab [title]="'Beispiele'"
+            [iconClass]="'fa-sitemap'"
+            [id]="'b'">
+            <h4>Spinner</h4>
+            <xn-workflow-nav-bar [totalSteps]="5" [(currentStep)]="currentStep"></xn-workflow-nav-bar>
+            <p>Aktueller Schritt: {{currentStep}}</p>
+    </xn-tab>
+</xn-tabs>

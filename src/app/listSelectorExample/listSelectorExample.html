@@ -1,43 +1,72 @@
-<h2 class="ml-2">Selection Control</h2>
-<div class="pl-2 pt-2 pr-2">
-    <xn-section-divider [label]="'validierte multi select Liste'"></xn-section-divider>
-    <form #selectionForm="ngForm">
+<h1 class="text-center">Listenselektoren</h1>
+<xn-tabs>
+    <xn-tab [title]="'Beschreibung'"
+            [iconClass]="'fa-font'"
+            [id]="'a'">
+        <p>
+            Die Listenselektoren können verwendet werden um die Auswahl aus einer Reihe von
+            Möglichkeiten zu ermitteln. Das Element unterstützt die Bindung eines Custom Templates
+            zur Darstellung der Elemente. Zudem kann definiert werden ob nur ein einzelnes oder
+            mehrere Elemente gewählt werden dürfen und Standard Validatoren werden unterstützt.
+        </p>
+        <p>
+            Über <code class="inline-block">ngModel</code> wird das Model gebunden. Die Items werden
+            seperat gebunden. Ein Array an selektierten Items wird nach jeder Selektionsänderung wieder
+            ausgegeben.<br />
+            Die Anzige und die Definition der Dateneigenschaft die gebunden werden sollen können
+            analog der Combobox konfiguriert werden so das die direkte Bindung komplexer Objekte
+            unterstützt wird.
+        </p>
+        <code><pre>&lt;xn-list-selector [items]="items"
+    xnNotEmpty
+    name="selctionA"
+    [(ngModel)]="selectedItems"
+    [displayPropertyPath]="'name'"&gt;
+&lt;/xn-list-selector&gt;
+    </pre></code>
+    </xn-tab>
+    <xn-tab [title]="'Beispiele'"
+            [iconClass]="'fa-sitemap'"
+            [id]="'b'">
+        <h4>Mehrere Werte selektieren</h4>
+        <form #selectionForm="ngForm">
+            <xn-list-selector [items]="items"
+                            xnNotEmpty
+                            class="w300 block"
+                            name="selctionA"
+                            [(ngModel)]="selectedItems"
+                            [displayPropertyPath]="'name'">
+            </xn-list-selector>
+        </form>
+        <p>aktuell Selektiert:</p>
+        <ul>
+            <li *ngFor="let item of selectedItems">{{item.name}}</li>
+        </ul>
+        <xn-button class="button primary" [default]="true" [class.disabled]="!selectionForm.valid">Test</xn-button>
+        <h4 class="mt-2">Nur ein Wert selektierbar</h4>
         <xn-list-selector [items]="items"
-                        xnNotEmpty
+                        [(ngModel)]="selectedItemsSingle"
                         class="w300 block"
-                        name="selctionA"
-                        [(ngModel)]="selectedItems"
+                        [selectionMode]="'SINGLE'"
                         [displayPropertyPath]="'name'">
         </xn-list-selector>
-    </form>
-    <p>aktuell Selektiert:</p>
-    <ul>
-        <li *ngFor="let item of selectedItems">{{item.name}}</li>
-    </ul>
-    <xn-button class="button primary" [default]="true" [class.disabled]="!selectionForm.valid">Test</xn-button>
-    <xn-section-divider [label]="'single select Liste'"></xn-section-divider>
-    <xn-list-selector [items]="items"
-                    [(ngModel)]="selectedItemsSingle"
-                    class="w300 block"
-                    [selectionMode]="'SINGLE'"
-                    [displayPropertyPath]="'name'">
-    </xn-list-selector>
-    <p>aktuell Selektriert:</p>
-    <ul>
-        <li *ngFor="let item of selectedItemsSingle">{{item.name}}</li>
-    </ul>
-    <xn-section-divider [label]="'single select Liste mit custom templae'"></xn-section-divider>
-    <xn-list-selector [items]="items"
-                    [(ngModel)]="selectedItemsSingle"
-                    [selectionMode]="'SINGLE'"
-                    class="w300 block"
-                    [template]="listitem"
-                    [displayPropertyPath]="'name'">
-    </xn-list-selector>
-    <ng-template #listitem let-item="item">
-        <div>
-            <p class="mb-0">{{item.name}}</p>
-            <small>{{item.email}}</small>
-        </div>
-    </ng-template>
-</div>
+        <p>aktuell Selektriert:</p>
+        <ul>
+            <li *ngFor="let item of selectedItemsSingle">{{item.name}}</li>
+        </ul>
+        <h4 class="mt-2">Custom Item-Template</h4>
+        <xn-list-selector [items]="items"
+                        [(ngModel)]="selectedItemsSingle"
+                        [selectionMode]="'SINGLE'"
+                        class="w300 block"
+                        [template]="listitem"
+                        [displayPropertyPath]="'name'">
+        </xn-list-selector>
+        <ng-template #listitem let-item="item">
+            <div>
+                <p class="mb-0">{{item.name}}</p>
+                <small>{{item.email}}</small>
+            </div>
+        </ng-template>
+    </xn-tab>
+</xn-tabs>

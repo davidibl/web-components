@@ -1,0 +1,4 @@
+<xn-list>
+    <li class="title-item"><h5>{{navigationGroup?.title}}</h5></li>
+    <li *ngFor="let item of navigationGroup?.items"><small><a [routerLink]="item.link">{{item.name}}</a></small></li>
+</xn-list>

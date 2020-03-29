@@ -1,11 +1,31 @@
-<h2 class="ml-2">Pagination</h2>
-<div class="pl-2 pt-2 pr-2">
-    <div class="col col-12 col-6-m">
-        <xn-pagination [(currentPage)]="currentPage" [itemCount]="totalCount" [pageSize]="pageSize"></xn-pagination>
-        <div class="clear"></div>
-        <p class="mt-1">Aktuelle Seite: {{currentPage}}</p>
-        <xn-section-divider [label]="'gesamtzahl kleiner Seitengröße'"></xn-section-divider>
-        <xn-pagination [(currentPage)]="currentPage2" [itemCount]="totalCount2" [pageSize]="pageSize"></xn-pagination>
-    </div>
-</div>
+<h1 class="text-center">Pagination</h1>
+<xn-tabs>
+    <xn-tab [title]="'Beschreibung'"
+            [iconClass]="'fa-font'"
+            [id]="'a'">
+        <p>
+            Die Pagination Komponente stellt eine visuelle Komponente dar, die Pages zwischen zwei Zahlen
+            berechnet und umschaltbar macht.<br />
+            Zusammen mit der Paging Pipe kann sie verwendet werden um mit ein paar wenigen Variablen
+            Paging für unterschiedlichste Daten zu realisieren.
+        </p>
+        <p>
+            Das Styling kann über eine Anpassung der SCSS Variablen vorgenommen werden.
+        </p>
+        <p>
+            Die Komponente erwartet Parameter für die Gesamtzahl und die Seitengröße. Zudem kann die
+            aktuelle Seite doppelseitig gebunden werden.
+        </p>
+        <code><pre>&lt;xn-pagination [(currentPage)]="currentPage" [itemCount]="totalCount" [pageSize]="pageSize"&gt;&lt;/xn-pagination&gt;
+        </pre></code>
+    </xn-tab>
+    <xn-tab [title]="'Beispiele'"
+            [iconClass]="'fa-sitemap'"
+            [id]="'b'">
+            <h4>Pagination</h4>
+            <xn-pagination [(currentPage)]="currentPage" [itemCount]="totalCount" [pageSize]="pageSize"></xn-pagination>
+            <div class="clear"></div>
+            <p class="mt-1">Aktuelle Seite: {{currentPage}}</p>
+    </xn-tab>
+</xn-tabs>
 

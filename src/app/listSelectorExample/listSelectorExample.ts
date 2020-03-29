@@ -8,7 +8,6 @@ declare interface ITestItem {
 @Component({
     selector: 'xn-list-selector-example',
     templateUrl: 'listSelectorExample.html',
-    styleUrls: ['listSelectorExample.scss'],
 })
 export class ListSelectorExampleComponent {
 

@@ -1,11 +1,29 @@
-<h2 class="ml-2">Checkbox</h2>
-<div class="pl-2 pt-2 pr-2">
-    <xn-section-divider [label]="'einfache Checkbox'"></xn-section-divider>
-    <xn-checkbox [(ngModel)]="value">Testtext</xn-checkbox>
-    <br />
-    <p>Aktuell ist die Checkbox markiert: {{value}}</p>
-    <xn-section-divider [label]="'disabled Checkbox'"></xn-section-divider>
-    <xn-checkbox [ngModel]="true" [isDisabled]="true"></xn-checkbox>
-</div>
+<h1 class="text-center">Checkbox</h1>
+<xn-tabs>
+    <xn-tab [title]="'Beschreibung'"
+            [iconClass]="'fa-font'"
+            [id]="'a'">
+        <p>
+            Checkboxen
+        </p>
+        <p>
+            Das Styling kann über eine Anpassung der SCSS Variablen vorgenommen werden.
+            Über <code class="inline-block">ngModel</code> wird einfache in <code class="inline-block">Boolean</code>
+            gebunden. Das Label wird über Projektion eingefügt.
+        </p>
+        <code><pre>&lt;xn-checkbox [(ngModel)]="value"&gt;Testtext&lt;/xn-checkbox&gt;
+        </pre></code>
+    </xn-tab>
+    <xn-tab [title]="'Beispiele'"
+            [iconClass]="'fa-sitemap'"
+            [id]="'b'">
+            <h4>Checkbox</h4>
+            <xn-checkbox [(ngModel)]="value">Testtext</xn-checkbox>
+            <br />
+            <p>gebundener Wert: {{value}}</p>
+            <h4 class="mt-2">Checkbox disabled</h4>
+            <xn-checkbox [ngModel]="true" [isDisabled]="true"></xn-checkbox>
+    </xn-tab>
+</xn-tabs>
 
 

@@ -1,9 +1,44 @@
-<h2 class="ml-2">Pagination</h2>
-<div class="pl-2 pt-2 pr-2">
-    <h3 [xnContextMenuConnect]="contextmenu" [context]="1">Ich habe ein Kontext Menü mit '1' als Datenkontext</h3>
-</div>
+<h1 class="text-center">Kontextmenü</h1>
+<xn-tabs>
+    <xn-tab [title]="'Beschreibung'"
+            [iconClass]="'fa-font'"
+            [id]="'a'">
+        <p>
+            das Kontextmenü kann über eine Direktive direkt an jedes Element gebunden werden.
+            Das jeweilige Element hat dann ein eigenes Rechts-Klick Menü. Der Direktive wird hierbei
+            ein Datenkontext übergeben, der bei jedem Klick innerhalb des Kontextmenüs mit ausgegeben wird.<br />
+            So kann ein Kontextmenü etwa in einer Tabelle oder Liste verwendet werden und liefert das
+            Element auf das geklickt wurde direkt mit.
+        </p>
+        <p>
+            Das Styling kann über eine Anpassung der SCSS Variablen vorgenommen werden.
+        </p>
+        <p>
+            Das API erwartet für jeden Menüeintrag ein Command das auf Klick zusammen mit dem Datenkontext
+            wieder ausgesendet wird.
+        </p>
+        <p>Die Direktive an einem Element</p>
+        <code><pre>&lt;h3 [xnContextMenuConnect]="contextmenu" [context]="1"&gt;Irgendwas&lt;/h3&gt;
+        </pre></code>
+        <p>Die Definition des Menüs</p>
+        <code><pre>&lt;xn-context-menu #contextmenu (buttonClick)="onContextMenuItemClick($event)"&gt;
+    &lt;xn-context-menu-item [command]="'alert'"&gt;
+    &lt;xn-icon class="mr-1" [iconClass]="'fa-shopping-cart'"&gt;&lt;/xn-icon&gt;Alert Datenkontext&lt;/xn-context-menu-item&gt;
+&lt;/xn-context-menu&gt;
+        </pre></code>
+    </xn-tab>
+    <xn-tab [title]="'Beispiele'"
+            [iconClass]="'fa-sitemap'"
+            [id]="'b'">
+            <h4>Spinner</h4>
+            <ul>
+                <li [xnContextMenuConnect]="contextmenu" [context]="1">Eintrag 1 mit Datenkontext '1'</li>
+                <li [xnContextMenuConnect]="contextmenu" [context]="2">Eintrag 1 mit Datenkontext '2'</li>
+            </ul>
 
-<xn-context-menu #contextmenu (buttonClick)="onContextMenuItemClick($event)">
-    <xn-context-menu-item [command]="'alert'">
-        <xn-icon class="mr-1" [iconClass]="'fa-shopping-cart'"></xn-icon>Alert Datenkontext</xn-context-menu-item>
-</xn-context-menu>
+            <xn-context-menu #contextmenu (buttonClick)="onContextMenuItemClick($event)">
+                <xn-context-menu-item [command]="'alert'">
+                    <xn-icon class="mr-1" [iconClass]="'fa-shopping-cart'"></xn-icon>Alert Datenkontext</xn-context-menu-item>
+            </xn-context-menu>
+    </xn-tab>
+</xn-tabs>

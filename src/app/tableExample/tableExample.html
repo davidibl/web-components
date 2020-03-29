@@ -1,22 +1,63 @@
-<h2 class="ml-2">Datentabelle</h2>
-<div class="pl-2 pt-2 pr-2">
-    <xn-section-divider [label]="'Tabelle mit Filterung und Pagination'"></xn-section-divider>
-    <input [(ngModel)]="filter" />
-    <xn-data-table [pageSize]="2"
-                [currentPage]="currentPage"
-                [data]="items"
-                [filter]="filter"
-                [templateRef]="columnDefinition">
-        <th xnHeaderColumn [propertyPath]="'name'">Name</th>
-        <th xnHeaderColumn [propertyPath]="'alter'">Alter</th>
-        <th xnHeaderColumn>Geburtstag</th>
-    </xn-data-table>
+<h1 class="text-center">Datentabelle</h1>
+<xn-tabs>
+    <xn-tab [title]="'Beschreibung'"
+            [iconClass]="'fa-font'"
+            [id]="'a'">
+        <p>
+            Datentabellen stellen Informationen in Tabellen dar. Es können beliebige Arrays gebunden werden.
+            Mit Hilfe eines gebundenen Templates wird aussehen und Form der Zeilen definiert.
+            Die Komponente bietet Methoden um die Zeieln zu filtern oder zu sortieren.
+        </p>
+        <p>
+            Das Styling der Komponente kann über SCSS Variablen vorgenommen werden.
+        </p>
+        <p>
+            In den Spaltendefinitionen kann ein Property definiert werden, das angiebt nach welchem Property
+            der Eingabeobjekte sortiert wird wenn der Nutzer den Spaltenkopf anklickt.
+        </p>
+        <p>
+            Das API bietet als Parameter zudem einen Filterbegriff und die Seitengröße ab der gepaged wird.
+        </p>
+        <code><pre>&lt;xn-data-table [pageSize]="2"
+    [currentPage]="currentPage"
+    [data]="items"
+    [filter]="filter"
+    [templateRef]="columnDefinition"&gt;
+        &lt;th xnHeaderColumn [propertyPath]="'name'"&gt;Name&lt;/th&gt;
+        &lt;th xnHeaderColumn [propertyPath]="'alter'"&gt;Alter&lt;/th&gt;
+        &lt;th xnHeaderColumn&gt;Geburtstag&lt;/th&gt;
+&lt;/xn-data-table&gt;
 
-    <ng-template #columnDefinition let-item="item">
-        <tr>
-            <td>{{item?.name}}</td>
-            <td>{{item?.alter | pad:'left':'00000'}}</td>
-            <td>{{item?.geburtstag | toDateString}}</td>
-        </tr>
-    </ng-template>
-</div>
+&lt;ng-template #columnDefinition let-item="item"&gt;
+    &lt;tr&gt;
+        &lt;td&gt;item?.name}&lt;/td&gt;
+        &lt;td&gt;item?.alter | pad:'left':'00000'&lt;/td&gt;
+        &lt;td&gt;item?.geburtstag | toDateString&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/ng-template&gt;
+        </pre></code>
+    </xn-tab>
+    <xn-tab [title]="'Beispiele'"
+            [iconClass]="'fa-sitemap'"
+            [id]="'b'">
+            <h4>Tabelle mit Filter und Pagination</h4>
+            <input [(ngModel)]="filter" />
+            <xn-data-table [pageSize]="2"
+                        [currentPage]="currentPage"
+                        [data]="items"
+                        [filter]="filter"
+                        [templateRef]="columnDefinition">
+                <th xnHeaderColumn [propertyPath]="'name'">Name</th>
+                <th xnHeaderColumn [propertyPath]="'alter'">Alter</th>
+                <th xnHeaderColumn>Geburtstag</th>
+            </xn-data-table>
+
+            <ng-template #columnDefinition let-item="item">
+                <tr>
+                    <td>{{item?.name}}</td>
+                    <td>{{item?.alter | pad:'left':'00000'}}</td>
+                    <td>{{item?.geburtstag | toDateString}}</td>
+                </tr>
+            </ng-template>
+    </xn-tab>
+</xn-tabs>

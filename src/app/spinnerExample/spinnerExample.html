@@ -1,7 +1,22 @@
-<h2 class="ml-2">{{'label.spinner' | translate | async}}</h2>
-<div class="pl-2 pt-2 pr-2">
-    <div>
-        <xn-section-divider class="block mb-1 mt-2" [label]="'label.material_spinner' | translate | async"></xn-section-divider>
-        <xn-material-spinner></xn-material-spinner>
-    </div>
-</div>
+<h1 class="text-center">Spinner (Warteanimation)</h1>
+<xn-tabs>
+    <xn-tab [title]="'Beschreibung'"
+            [iconClass]="'fa-font'"
+            [id]="'a'">
+        <p>
+            Der Spinner und der Loadingindicator zweigen Warteanimationen.<br />
+            Der Loadingindicator wird hierbei von einem Service gesteuert und wie ein Dialog eingebunden.
+        </p>
+        <p>
+            Das Styling kann über eine Anpassung der SCSS Variablen vorgenommen werden.
+        </p>
+        <code><pre>&lt;xn-material-spinner&gt;&lt;/xn-material-spinner&gt;
+        </pre></code>
+    </xn-tab>
+    <xn-tab [title]="'Beispiele'"
+            [iconClass]="'fa-sitemap'"
+            [id]="'b'">
+            <h4>Spinner</h4>
+            <xn-material-spinner></xn-material-spinner>
+    </xn-tab>
+</xn-tabs>

@@ -1,0 +1,42 @@
+<h2>Benutzung</h2>
+<p>Die Bibliothek wird einfach als npm package eingebunden:</p>
+<code>"@xnoname/web-components": "1.0.0",</code>
+<p>Um die Bibliothek in die Applikation einzubinden muss das Core Modul als Modul der Angular
+    Applikation bekannt gemacht werdeb:
+</p>
+<code>@NgModule({
+    bootstrap: [...],
+    declarations: [...],
+    imports: [
+        CoreModule,
+    ],
+    providers: [
+        ConfigurationService,
+        LanguageService,
+        TranslationService,
+        StartupService,
+        {
+            provide: APP_INITIALIZER,
+            useFactory: startupServiceFactory,
+            deps: [StartupService],
+            multi: true
+        },
+        ...
+    ],
+})
+</code>
+<p>Hierbei ist zu bachten das die Library Konfiguriert werden muss um I18n und den Translation Service
+    zuverwenden. Dazu muss ein StartupService bereitgestellt werden.</p>
+<code>
+    export function startupServiceFactory(startupService: StartupService): Function {
+        return () => startupService.load(environment.configuration);
+    }
+</code>
+<p>
+    Folgende Attribute müssen direkt im Root des Konfigurationsobjekts konfiguriert sein:
+</p>
+<code>language: {
+    default: 'DE',
+    supported: 'DE'
+}
+</code>

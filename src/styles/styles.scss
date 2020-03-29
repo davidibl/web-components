@@ -1,4 +1,4 @@
-$fa-font-path: '../../node_modules/font-awesome/fonts';
+$fa-font-path: "../../node_modules/font-awesome/fonts";
 @import "./_variables";
 @import "./_mixins";
 @import "../../node_modules/getbase/scss/base.scss";
@@ -6,8 +6,13 @@ $fa-font-path: '../../node_modules/font-awesome/fonts';
 @import "breakpoint";
 @import "../module/styles/core.scss";
 
+html {
+    height: 100%;
+}
+
 body {
     padding-top: 40px;
+    overflow-x: hidden;
 }
 
 .w300 {

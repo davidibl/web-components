@@ -1,43 +1,48 @@
-<h2 class="ml-2">Buttons</h2>
-<div class="pl-2 pt-2 pr-2">
-    <xn-section-divider [label]="'Normaler Button'"></xn-section-divider>
-    <xn-button>Normaler Button</xn-button>
-    <xn-section-divider [label]="'Default Button'"></xn-section-divider>
-    <xn-button [default]="true">Default Button</xn-button>
-    <xn-section-divider [label]="'Disabled Button'"></xn-section-divider>
-    <xn-button class="mr-2" [disabled]="true">Disabled Button</xn-button>
-    <xn-button class="mr-2" [default]="true" [disabled]="true">Disabled Primary Button</xn-button>
-    <xn-section-divider [label]="'Spinning Button'"></xn-section-divider>
-    <xn-button [default]="true" [showSpinner]="true">Spinning default Button</xn-button>
-    <xn-button [showSpinner]="true">Spinning Button</xn-button>
-    <xn-section-divider [label]="'Toggle Button'"></xn-section-divider>
-    <xn-toggle-button class="mr-2" [(ngModel)]="notToggled">Aus</xn-toggle-button>
-    <xn-toggle-button [(ngModel)]="toggled">An</xn-toggle-button>
-    <p>
-        Button 1 togglestate: {{notToggled}}<br />
-        Button 2 togglestate: {{toggled}}
-    </p>
-    <xn-section-divider [label]="'Toggle Button mit Alternativem Label'"></xn-section-divider>
-    <xn-toggle-button class="mr-2" [(ngModel)]="notToggled" [showAlternateLabel]="true">
-        <ng-container>Eingeschaltet</ng-container>
-        <ng-container alternate-label>Ausgeschaltet</ng-container></xn-toggle-button>
-    <xn-section-divider [label]="'Toggle Button mit Alternativem Label'"></xn-section-divider>
-    <xn-levitated-button><i class="fa fa-bars"></i></xn-levitated-button>
-    <xn-levitated-button [showSpinner]="true"><i class="fa fa-bars"></i></xn-levitated-button>
-    <xn-levitated-button [default]="true">
-        <i class="white fa fa-bars"></i>
-        <div class="button-content white">Ein Menüpunkt</div>
-    </xn-levitated-button>
-    <xn-levitated-button [bgColorClass]="'bg-brand-light'"><i class="fa fa-bars white"></i></xn-levitated-button>
-    <xn-levitated-button class="right" [bgColorClass]="'bg-brand-light'"><i class="fa fa-bars white"></i></xn-levitated-button>
+<h1 class="text-center">Standard Buttons</h1>
+<xn-tabs>
+    <xn-tab [title]="'Beschreibung'"
+            [iconClass]="'fa-font'"
+            [id]="'a'">
+        <p>
+            Den Button gibt es in unterschiedlichen Varianten. Als Secondary oder Primary Button,
+            als Fliegender Button und als Button der einen Spinner anzeigen kann.
+        </p>
+        <p>
+            Über das API kann ein Button deaktiviert werden.
+        </p>
+        <code>&lt;xn-button [default]="true"&gt;Default Button&lt;/xn-button&gt;
+        </code>
+        <p>
+            Fliegender Button
+        </p>
+        <code><pre>&lt;xn-levitated-button [default]="true"&gt;
+            &lt;i class="white fa fa-bars"&gt;&lt;/i&gt;
+            &lt;div class="button-content white"&gt;Ein Menüpunkt&lt;/div&gt;
+        &lt;/xn-levitated-button&gt;
+    </pre></code>
+    </xn-tab>
+    <xn-tab [title]="'Beispiele'"
+            [iconClass]="'fa-sitemap'"
+            [id]="'b'">
+            <h4>Standard Button</h4>
+            <xn-button class="mr-1 mb-1">Normaler Button</xn-button>
+            <xn-button class="mr-1 mb-1" [default]="true">Default Button</xn-button>
+            <xn-button class="mr-1 mb-1" [disabled]="true">Disabled Button</xn-button>
+            <xn-button class="mr-1 mb-1" [default]="true" [disabled]="true">Disabled Primary Button</xn-button>
 
-    <xn-section-divider [label]="'Toggle Button Switch'"></xn-section-divider>
-    <xn-toggle-switch-button [toggleItems]="[{text: 'ja', value: true}, {text: 'nein', value: false}]"
-                            [(ngModel)]="toggleButtonValue"></xn-toggle-switch-button>
-    <p>Wert des Togglers: {{toggleButtonValue}}</p>
-    <xn-section-divider [label]="'Toggle Button Switch mit Required Validation'"></xn-section-divider>
-    <xn-toggle-switch-button [toggleItems]="[{text: 'ja', value: 'huch'}, {text: 'nein', value: 'bla'}]"
-                            xnRequired
-                            [(ngModel)]="togglerZweiValue"></xn-toggle-switch-button>
-    <p>Wert des Togglers: {{togglerZweiValue}}</p>
-</div>
+            <h4 class="mt-2">Button mit Spinner</h4>
+
+            <xn-button class="mr-1 mb-1" [default]="true" [showSpinner]="true">Spinning default Button</xn-button>
+            <xn-button class="mr-1 mb-1" [showSpinner]="true">Spinning Button</xn-button>
+
+            <h4 class="mt-2">Fliegender Button</h4>
+            <xn-levitated-button><i class="fa fa-bars"></i></xn-levitated-button>
+            <xn-levitated-button [showSpinner]="true"><i class="fa fa-bars"></i></xn-levitated-button>
+            <xn-levitated-button [default]="true">
+                <i class="white fa fa-bars"></i>
+                <div class="button-content white">Ein Menüpunkt</div>
+            </xn-levitated-button>
+            <xn-levitated-button [bgColorClass]="'bg-brand-light'"><i class="fa fa-bars white"></i></xn-levitated-button>
+            <xn-levitated-button class="right" [bgColorClass]="'bg-brand-light'"><i class="fa fa-bars white"></i></xn-levitated-button>
+    </xn-tab>
+</xn-tabs>

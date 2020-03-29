@@ -1,22 +1,44 @@
-<h2 class="ml-2">{{'datetimer_samples' | translate | async}}</h2>
-<div class="pl-2 pt-2 pr-2">
-    <xn-section-divider class="mb-1 mt-2 block" [label]="'simple Datetime Picker'"></xn-section-divider>
-    <xn-datetime-picker [(ngModel)]="currentDate"
-                        [placeholder]="'placeholder_date' | translate | async"
-                        class="w300 block"
-                        [label]="'label.birthday' | translate | async">
-    </xn-datetime-picker>
-    <p>Datum gewählt: {{currentDate | toDateString}}</p>
-    <xn-section-divider class="mb-1 mt-2 block" [label]="'required Datetime Picker'"></xn-section-divider>
-    <form #dateform="ngForm">
-        <xn-datetime-picker [(ngModel)]="unsetDate"
+<h1 class="text-center">Datumseingabe</h1>
+<xn-tabs>
+    <xn-tab [title]="'Beschreibung'"
+            [iconClass]="'fa-font'"
+            [id]="'a'">
+        <p>
+            Der Datetimepicker kann Eingaben als Text entgegen nehmen oder mit einer Kalenderauswahl
+            verwendet werden. Um die Kalenderauswahl zu öffnen muss das Kalender Icon angeklickt
+            werden.
+        </p>
+        <p>
+            Das API und die Möglichkeiten zu stylen teilt sich die Komponente mit allen anderen
+            Eingabefeldern. Ein <code class="inline-block">Date</code> Objekt wird als gebundenes
+            Datenmodell erwartet und auch wieder zurück gegeben.
+        </p>
+        <code><pre>&lt;xn-datetime-picker [(ngModel)]="currentDate"
+    [placeholder]="'placeholder'"
+    [label]="'label'"&gt;
+        </pre></code>
+    </xn-tab>
+    <xn-tab [title]="'Beispiele'"
+            [iconClass]="'fa-sitemap'"
+            [id]="'b'">
+        <h4>Einfache Datumseingabe</h4>
+        <xn-datetime-picker [(ngModel)]="currentDate"
                             [placeholder]="'placeholder_date' | translate | async"
                             class="w300 block"
-                            xnRequired
-                            name="datepickerA"
-                            [requiredMessage]="'Bitte geben Sie ein Datum ein!'"
                             [label]="'label.birthday' | translate | async">
         </xn-datetime-picker>
-    </form>
-    <xn-button class="button" [default]="true" [class.disabled]="!dateform.valid">{{'label.button_next' | translate | async}}</xn-button>
-</div>
+        <p>Mit Datetstring Pipe ausgegeben: {{currentDate | toDateString}}</p>
+        <h4 class="mt-2">Datumseingabe validiert und gebunden</h4>
+        <form #dateform="ngForm">
+            <xn-datetime-picker [(ngModel)]="unsetDate"
+                                [placeholder]="'placeholder_date' | translate | async"
+                                class="w300 block"
+                                xnRequired
+                                name="datepickerA"
+                                [requiredMessage]="'Bitte geben Sie ein Datum ein!'"
+                                [label]="'label.birthday' | translate | async">
+            </xn-datetime-picker>
+        </form>
+        <xn-button class="button" [default]="true" [class.disabled]="!dateform.valid">{{'label.button_next' | translate | async}}</xn-button>
+    </xn-tab>
+</xn-tabs>

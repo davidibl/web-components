@@ -1,32 +1,69 @@
-<h2 class="ml-2">Workflow UX</h2>
-<div class="pl-2 pt-2 pr-2 col col-12 col-6-m">
-    <xn-workflow (workflowStateChange)="onWorkflowState($event)">
-        <xn-accordion [preventStepWhenInvalid]="true">
-            <xn-accordion-element [title]="'Schritt 1'">
-                <div step-body>
-                    <p>Test 1</p>
-                </div>
-            </xn-accordion-element>
-            <xn-accordion-element [title]="'Schritt 2'">
-                <div step-body>
-                    <form #step2form="ngForm">
-                        <xn-input-form [label]="'testinput'" name="test" [(ngModel)]="bla" xnRequired></xn-input-form>
-                    </form>
-                </div>
-            </xn-accordion-element>
-            <xn-accordion-element [title]="'Schritt 3'">
-                <div step-body>
-                    <p>Test 3</p>
-                </div>
-            </xn-accordion-element>
-            <xn-accordion-element [title]="'Letzter Schritt'">
-                <div step-body>
-                    <h1>Blabla</h1>
-                    <P>Ein grö0erere Schritt eben</P>
-                </div>
-            </xn-accordion-element>
-        </xn-accordion>
-    </xn-workflow>
-    <p *ngIf="!finished">Der Workflow läuft</p>
-    <p *ngIf="finished">Der Workflow wurde beendet: {{bla}}</p>
-</div>
+<h1 class="text-center">Workflow</h1>
+<xn-tabs>
+    <xn-tab [title]="'Beschreibung'"
+            [iconClass]="'fa-font'"
+            [id]="'a'">
+        <p>
+            Die Workflow Komponente verbindet Workflow Navigation und Accordion zu einem UI
+            Worflow Element.
+        </p>
+        <p>
+            Das Styling kann über eine Anpassung der SCSS Variablen vorgenommen werden.
+        </p>
+        <p>
+            Das API der Komponente gibt den aktuellen Workflow State aus.
+        </p>
+        <code><pre>&lt;xn-workflow (workflowStateChange)="onWorkflowState($event)"&gt;
+    &lt;xn-accordion [preventStepWhenInvalid]="true"&gt;
+        &lt;xn-accordion-element [title]="'Schritt 1'"&gt;
+            &lt;div step-body&gt;
+                &lt;p&gt;Test 1&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/xn-accordion-element&gt;
+        &lt;xn-accordion-element [title]="'Schritt 2'"&gt;
+            &lt;div step-body&gt;
+                &lt;form #step2form="ngForm"&gt;
+                    &lt;xn-input-form [label]="'testinput'" name="test" [(ngModel)]="bla" xnRequired&gt;&lt;/xn-input-form&gt;
+                &lt;/form&gt;
+            &lt;/div&gt;
+        &lt;/xn-accordion-element&gt;
+    &lt;/xn-accordion&gt;
+&lt;/xn-workflow&gt;
+        </pre>
+        </code>
+    </xn-tab>
+    <xn-tab [title]="'Beispiele'"
+            [iconClass]="'fa-sitemap'"
+            [id]="'b'">
+            <h4>Spinner</h4>
+            <xn-workflow (workflowStateChange)="onWorkflowState($event)">
+                <xn-accordion [preventStepWhenInvalid]="true">
+                    <xn-accordion-element [title]="'Schritt 1'">
+                        <div step-body>
+                            <p>Test 1</p>
+                        </div>
+                    </xn-accordion-element>
+                    <xn-accordion-element [title]="'Schritt 2'">
+                        <div step-body>
+                            <form #step2form="ngForm">
+                                <xn-input-form [label]="'testinput'" name="test" [(ngModel)]="bla" xnRequired></xn-input-form>
+                            </form>
+                        </div>
+                    </xn-accordion-element>
+                    <xn-accordion-element [title]="'Schritt 3'">
+                        <div step-body>
+                            <p>Test 3</p>
+                        </div>
+                    </xn-accordion-element>
+                    <xn-accordion-element [title]="'Letzter Schritt'">
+                        <div step-body>
+                            <h1>Blabla</h1>
+                            <P>Ein grö0erere Schritt eben</P>
+                        </div>
+                    </xn-accordion-element>
+                </xn-accordion>
+            </xn-workflow>
+            <p *ngIf="!finished">Der Workflow läuft</p>
+            <p *ngIf="finished">Der Workflow wurde beendet: {{bla}}</p>
+    </xn-tab>
+</xn-tabs>

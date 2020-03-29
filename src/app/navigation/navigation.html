@@ -1,46 +1,7 @@
-<h2 class="ml-2">Links zu den Komponenten</h2>
-<div class="row">
-    <div class="col col-12 col-6-m p-2">
-        <h3>Forms</h3>
-        <xn-list>
-            <li><a [routerLink]="'/input'">Inputs</a></li>
-            <li><a [routerLink]="'/number'">Number Input</a></li>
-            <li><a [routerLink]="'/checkbox'">Checkbox</a></li>
-            <li><a [routerLink]="'/taginput'">Tag Input</a></li>
-            <li><a [routerLink]="'/datetime'">Datetime Picker</a></li>
-            <li><a [routerLink]="'/combobox'">Combobox</a></li>
-            <li><a [routerLink]="'/dropdown'">Dropdown</a></li>
-            <li><a [routerLink]="'/listSelector'">Listen Selektor</a></li>
-            <li><a [routerLink]="'/editor'">HTML Editor</a></li>
-        </xn-list>
-    </div>
-    <div class="col col-12 col-6-m p-2">
-        <h3>Allgemein</h3>
-        <xn-list>
-            <li><a [routerLink]="'/buttons'">Buttons</a></li>
-            <li><a [routerLink]="'/spinner'">Spinner</a></li>
-            <li><a [routerLink]="'/pagination'">Pagination</a></li>
-        </xn-list>
-    </div>
-</div>
-<div class="row">
-    <div class="col col-12 col-6-m p-2">
-        <h3>Content</h3>
-        <xn-list>
-            <li><a [routerLink]="'/table'">Tabellen</a></li>
-            <li><a [routerLink]="'/tabs'">Tabs</a></li>
-            <li><a [routerLink]="'/accordion'">Accordion</a></li>
-            <li><a [routerLink]="'/workflownav'">Workflow Navigation</a></li>
-            <li><a [routerLink]="'/workflow'">Workflow</a></li>
-        </xn-list>
-    </div>
-    <div class="col col-12 col-6-m p-2">
-        <h3>Building Blocks</h3>
-        <xn-list>
-            <li><a [routerLink]="'/dialog'">Dialoge</a></li>
-            <li><a [routerLink]="'/infobox'">Infobox</a></li>
-            <li><a [routerLink]="'/tooltip'">Tooltip</a></li>
-            <li><a [routerLink]="'/context-menu'">Kontextmenü</a></li>
-        </xn-list>
-    </div>
-</div>
+<xn-scroll-panel class="full-height">
+    <xn-list>
+        <li [routerLink]="'/'"><a><h5>Startseite</h5></a></li>
+    </xn-list>
+    <xn-navigation-group class="mt-1 block" *ngFor="let group of navigationGroups"
+        [navigationGroup]="navigationDefinition[group]"></xn-navigation-group>
+</xn-scroll-panel>

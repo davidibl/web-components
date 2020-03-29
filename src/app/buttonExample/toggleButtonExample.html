@@ -1,0 +1,46 @@
+<h1 class="text-center">Standard Buttons</h1>
+<xn-tabs>
+    <xn-tab [title]="'Beschreibung'"
+            [iconClass]="'fa-font'"
+            [id]="'a'">
+        <p>
+            Der Togglebutton ermöglicht die Abfrage von Ja/Nein werten oder bildet als Gruppe die FUnktionalität
+            von Radiobuttons nach.
+        </p>
+        <p>
+            Über das API kann über <code class="inline-block">ngModel</code> Boolean Werte binden und ausgeben.
+            Als Toggle Switch Button können Objekte gebunden werden, die dann selekiert werden müssen.
+        </p>
+        <code><pre>&lt;xn-toggle-button class="mr-2" [(ngModel)]="notToggled"&gt;Aus&lt;/xn-toggle-button&gt;
+        </pre></code>
+        <code><pre>&lt;xn-toggle-switch-button
+    [toggleItems]="itemsArray"
+    xnRequired
+    [(ngModel)]="togglerZweiValue"&gt;&lt;/xn-toggle-switch-button&gt;
+</pre></code>
+    </xn-tab>
+    <xn-tab [title]="'Beispiele'"
+            [iconClass]="'fa-sitemap'"
+            [id]="'b'">
+            <h4>Toggle Button</h4>
+            <xn-toggle-button class="mr-2" [(ngModel)]="notToggled">Aus</xn-toggle-button>
+            <xn-toggle-button [(ngModel)]="toggled">An</xn-toggle-button>
+            <p>
+                Button 1 togglestate: {{notToggled}}<br />
+                Button 2 togglestate: {{toggled}}
+            </p>
+            <h4 class="mt-2">Toggle Button mit umschaltendem Label</h4>
+            <xn-toggle-button class="mr-2" [(ngModel)]="notToggled" [showAlternateLabel]="true">
+                <ng-container>Eingeschaltet</ng-container>
+                <ng-container alternate-label>Ausgeschaltet</ng-container></xn-toggle-button>
+
+            <h4 class="mt-2">Toggle Button Switch mit und ohne Validierung</h4>
+            <xn-toggle-switch-button [toggleItems]="[{text: 'ja', value: true}, {text: 'nein', value: false}]"
+                                    [(ngModel)]="toggleButtonValue"></xn-toggle-switch-button>
+            <p>gebundener Wert: {{toggleButtonValue}}</p>
+            <xn-toggle-switch-button [toggleItems]="[{text: 'ja', value: 'huch'}, {text: 'nein', value: 'bla'}]"
+                                    xnRequired
+                                    [(ngModel)]="togglerZweiValue"></xn-toggle-switch-button>
+            <p>gebundener Wert: {{togglerZweiValue}}</p>
+    </xn-tab>
+</xn-tabs>

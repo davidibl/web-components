@@ -1,28 +1,61 @@
-<h2 class="ml-2">Accordion</h2>
-<div class="pl-2 pt-2 pr-2">
-    <xn-accordion [preventStepWhenInvalid]="false" [linearStepping]="true">
-        <xn-accordion-element [title]="'Schritt 1'">
-            <div step-body>
-                <p>Test 1</p>
-            </div>
-        </xn-accordion-element>
-        <xn-accordion-element [title]="'Schritt 2'">
-            <div step-body>
-                <form #step2form="ngForm">
-                    <xn-input-form [label]="'testinput'" name="test" [(ngModel)]="bla" xnRequired></xn-input-form>
-                </form>
-            </div>
-        </xn-accordion-element>
-        <xn-accordion-element [title]="'Schritt 3'">
-            <div step-body>
-                <p>Test 3</p>
-            </div>
-        </xn-accordion-element>
-        <xn-accordion-element [title]="'Letzter Schritt'">
-            <div step-body>
-                <h1>Blabla</h1>
-                <P>Ein grö0erere Schritt eben</P>
-            </div>
-        </xn-accordion-element>
-    </xn-accordion>
-</div>
+<h1 class="text-center">Accordion</h1>
+<xn-tabs>
+    <xn-tab [title]="'Beschreibung'"
+            [iconClass]="'fa-font'"
+            [id]="'a'">
+        <p>
+            Das Accordion wird verwendet um einacfher Workflows im UI abzubilden.
+            Hierbei kann zur Entwicklungszeit festgelegt werden ob alle Schritte der Reihe nach oder
+            durcheinander erledigt werden können.
+        </p>
+        <p>
+            Das Styling kann über eine Anpassung der SCSS Variablen vorgenommen werden.
+        </p>
+        <p>
+            Das Accorion setzt sich aus einer äußeren Komponente <code class="inline-block">xn-accordion</code>
+            und den Accordion Schritten <code class="inline-block">xn-accordion-element</code> zusammen.
+        </p>
+        <p>
+            Die einzelnen Schritte nutzen den Validitätsstatus jedes enthaltenen Formulars und/oder eines
+            über Parameter übergebenen zusätzlichen Validitätsparameters.
+        </p>
+        <code><pre>&lt;xn-accordion [preventStepWhenInvalid]="false" [linearStepping]="true"&gt;
+    &lt;xn-accordion-element [title]="'Schritt 1'"&gt;
+        &lt;div step-body&gt;
+            &lt;p&gt;Test 1&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/xn-accordion-element&gt;
+&lt;/xn-accordion&gt;
+    </pre></code>
+    </xn-tab>
+    <xn-tab [title]="'Beispiele'"
+            [iconClass]="'fa-sitemap'"
+            [id]="'b'">
+            <h4>Accordion</h4>
+            <xn-accordion [preventStepWhenInvalid]="false" [linearStepping]="true">
+                <xn-accordion-element [title]="'Schritt 1'">
+                    <div step-body>
+                        <p>Test 1</p>
+                    </div>
+                </xn-accordion-element>
+                <xn-accordion-element [title]="'Schritt 2'">
+                    <div step-body>
+                        <form #step2form="ngForm">
+                            <xn-input-form [label]="'testinput'" name="test" [(ngModel)]="bla" xnRequired></xn-input-form>
+                        </form>
+                    </div>
+                </xn-accordion-element>
+                <xn-accordion-element [title]="'Schritt 3'">
+                    <div step-body>
+                        <p>Test 3</p>
+                    </div>
+                </xn-accordion-element>
+                <xn-accordion-element [title]="'Letzter Schritt'">
+                    <div step-body>
+                        <h1>Blabla</h1>
+                        <P>Ein grö0erere Schritt eben</P>
+                    </div>
+                </xn-accordion-element>
+            </xn-accordion>
+    </xn-tab>
+</xn-tabs>

@@ -1,13 +1,13 @@
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
 import { NAVIGATION_DEFINITION } from '../navigationDefinition';
 
 @Component({
-    selector: 'xn-navigation',
-    templateUrl: 'navigation.html',
+    selector: 'xn-start',
+    templateUrl: 'start.html',
+    styleUrls: ['start.scss'],
 })
-export class NavigationComponent {
+export class StartComponent {
 
     public navigationGroups = Object.keys(NAVIGATION_DEFINITION);
     public navigationDefinition = NAVIGATION_DEFINITION;
-
 }

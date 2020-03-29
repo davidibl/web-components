@@ -1,12 +1,44 @@
-<h2 class="ml-2">Dialoge</h2>
-<div class="pl-2 pt-2 pr-2">
-    <xn-button (click)="showDialog()">Einfachen Dialog Öffnen</xn-button>
-</div>
-<xn-dialog [(open)]="simpleDialogOpen" [showDefaultButtons]="true">
-    <span class="dialog-title">Dialogtitel</span>
-    <span class="dialog-body">
-        <p>Der Dialogtext ist frei definierbar</p>
-        <p>Auch Komponenten können projeziert werden.</p>
-        <blockquote>Und natürlich beliebige HTML Elemente</blockquote>
-    </span>
-</xn-dialog>
+<h1 class="text-center">Dialoge</h1>
+<xn-tabs>
+    <xn-tab [title]="'Beschreibung'"
+            [iconClass]="'fa-font'"
+            [id]="'a'">
+        <p>
+            Die Dialog Komponente wird verwendet um Modale Dialoge anzuzeigen. Hierbei wird der Hintergrund
+            automatisch verdunkelt. Ob ein Klick ausserhalb des Dialogs den Dialog schließt kann explizit
+            festgelegt werden.
+        </p>
+        <p>
+            Das Styling kann über eine Anpassung der SCSS Variablen vorgenommen werden.
+        </p>
+        <p>
+            Die Dialogkomponente stellt Standardmäßig einen Abbrechen- einen OK-Knopf und
+            ein X zum schließen dar. An alle drei Events kann man sich dediziert binden. Es
+            ist möglich alle Buttons auszublenden und eine vollständige Knopfleiste mitzugeben.
+            Der Dialog nimmt einen State entgegen anhand dessen sich steuern lässt ob der OK
+            Button aktuell gedrückt werden darf.
+        </p>
+        <p>
+            Inhalte wie Titel und Content werden über HTML Elemente projeziert.
+        </p>
+        <code><pre>&lt;xn-dialog [(open)]="simpleDialogOpen" [showDefaultButtons]="true"&gt;
+    &lt;span class="dialog-title"&gt;Dialogtitel&lt;/span&gt;
+    &lt;span class="dialog-body"&gt;Content&lt;/span&gt;
+&lt;/xn-dialog&gt;
+    </pre></code>
+    </xn-tab>
+    <xn-tab [title]="'Beispiele'"
+            [iconClass]="'fa-sitemap'"
+            [id]="'b'">
+            <h4>Spinner</h4>
+            <xn-button (click)="showDialog()">Einfachen Dialog Öffnen</xn-button>
+            <xn-dialog [(open)]="simpleDialogOpen" [showDefaultButtons]="true">
+                <span class="dialog-title">Dialogtitel</span>
+                <span class="dialog-body">
+                    <p>Der Dialogtext ist frei definierbar</p>
+                    <p>Auch Komponenten können projeziert werden.</p>
+                    <blockquote>Und natürlich beliebige HTML Elemente</blockquote>
+                </span>
+            </xn-dialog>
+    </xn-tab>
+</xn-tabs>

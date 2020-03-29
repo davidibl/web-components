@@ -4,7 +4,6 @@ import { WorkflowState, WorkflowStateTypes } from '../../module/components/workf
 @Component({
     selector: 'xn-workflow-example',
     templateUrl: 'workflowExample.html',
-    styleUrls: ['workflowExample.scss'],
 })
 export class WorkflowExampleComponent {
 

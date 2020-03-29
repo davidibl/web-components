@@ -1,7 +1,28 @@
-<h2 class="ml-2">Buttons</h2>
-<div class="pl-2 pt-2 pr-2">
-    <xn-button class="inline-block mr-2" [xnTooltip]="'Ein Knopf'" [placement]="'right'">Test</xn-button>
-    <xn-button class="inline-block mr-2" [xnTooltip]="'Ein Knopf'" [placement]="'bottom'">Test</xn-button>
-    <xn-button class="inline-block mr-2" [xnTooltip]="'Ein Knopf'" [placement]="'left'">Test</xn-button>
-    <xn-button class="inline-block mr-2" [xnTooltip]="'Ein Knopf'" [placement]="'top'">Test</xn-button>
-</div>
+<h1 class="text-center">Tooltip</h1>
+<xn-tabs>
+    <xn-tab [title]="'Beschreibung'"
+            [iconClass]="'fa-font'"
+            [id]="'a'">
+        <p>
+            Tooltips werden durch eine Directive realisiert. Die Anwendung ist einfach. Directive an Element
+            hängen und Tooltip Text angeben.
+        </p>
+        <p>
+            Das Styling kann über eine Anpassung der SCSS Variablen vorgenommen werden.
+        </p>
+        <p>
+            In welche Richtung der Tooltip aufpoppen soll wird über ein Attribut festgelegt.
+        </p>
+        <code><pre>&lt;xn-button class="inline-block mr-2" [xnTooltip]="'Ein Knopf'" [placement]="'right'"&gt;Test&lt;/xn-button&gt;
+        </pre></code>
+    </xn-tab>
+    <xn-tab [title]="'Beispiele'"
+            [iconClass]="'fa-sitemap'"
+            [id]="'b'">
+            <h4>Tooltips in allen Richtungen</h4>
+            <xn-button class="inline-block mr-2" [xnTooltip]="'Ein Knopf'" [placement]="'right'">Test</xn-button>
+            <xn-button class="inline-block mr-2" [xnTooltip]="'Ein Knopf'" [placement]="'bottom'">Test</xn-button>
+            <xn-button class="inline-block mr-2" [xnTooltip]="'Ein Knopf'" [placement]="'left'">Test</xn-button>
+            <xn-button class="inline-block mr-2" [xnTooltip]="'Ein Knopf'" [placement]="'top'">Test</xn-button>
+    </xn-tab>
+</xn-tabs>

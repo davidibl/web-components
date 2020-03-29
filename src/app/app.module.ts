@@ -5,7 +5,7 @@ import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { AppComponent } from './app.component';
 import { CoreModule } from '../module/core.module';
 import { RouterModule } from '@angular/router';
-import { NavigationComponent } from './navigation/navigation';
+import { StartComponent } from './navigation/start';
 import { routing } from './app.routes';
 import { TableExampleComponent } from './tableExample/tableExample';
 import { ListSelectorExampleComponent } from './listSelectorExample/listSelectorExample';
@@ -34,6 +34,9 @@ import { DialogExampleComponent } from './dialogExample/dialogExample';
 import { NumberInputExampleComponent } from './numberInputExample/numberInputExample';
 import { TooltipExampleComponent } from './tooltipExample/tooltipExample';
 import { ContextMenuExampleComponent } from './contextMenuExample/contextMenuExample';
+import { NavigationGroupComponent } from './navigation/navigationGroup';
+import { ToggleButtonExampleComponent } from './buttonExample/toggleButtonExample';
+import { NavigationComponent } from './navigation/navigation';
 
 export function startupServiceFactory(startupService: StartupService): Function {
     return () => startupService.load(environment.configuration);
@@ -42,7 +45,7 @@ export function startupServiceFactory(startupService: StartupService): Function 
 @NgModule({
     declarations: [
         AppComponent,
-        NavigationComponent,
+        StartComponent,
         TableExampleComponent,
         ListSelectorExampleComponent,
         CheckboxExampleComponent,
@@ -64,6 +67,9 @@ export function startupServiceFactory(startupService: StartupService): Function 
         NumberInputExampleComponent,
         TooltipExampleComponent,
         ContextMenuExampleComponent,
+        NavigationGroupComponent,
+        ToggleButtonExampleComponent,
+        NavigationComponent,
     ],
     imports: [
         BrowserModule,

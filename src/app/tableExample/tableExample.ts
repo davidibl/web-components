@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'xn-table-example',
     templateUrl: 'tableExample.html',
-    styleUrls: ['tableExample.scss'],
 })
 export class TableExampleComponent {
 

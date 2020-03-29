@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'xn-tag-input-example',
     templateUrl: 'tagInputExample.html',
-    styleUrls: ['tagInputExample.scss'],
 })
 export class TagInputExampleComponent {
 

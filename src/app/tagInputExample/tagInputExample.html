@@ -1,10 +1,31 @@
-<h2 class="ml-2">Tag Input</h2>
-<div class="pl-2 pt-2 pr-2">
-    <xn-section-divider [label]="'standard Tag Input'"></xn-section-divider>
-    <xn-tag-input [(ngModel)]="tags"></xn-tag-input>
-    <ul>
-        <li *ngFor="let tag of tags">{{tag}}</li>
-    </ul>
-    <xn-section-divider [label]="'Tag Input vorbefüllt'"></xn-section-divider>
-    <xn-tag-input [(ngModel)]="predifinedTags"></xn-tag-input>
-</div>
+<h1 class="text-center">Tag Eingabe</h1>
+<xn-tabs>
+    <xn-tab [title]="'Beschreibung'"
+            [iconClass]="'fa-font'"
+            [id]="'a'">
+        <p>
+            Das Tag-Eingabe Element ermöglicht die Eingabe mehrerer abgegrenzter Texte.
+        </p>
+        <p>
+            Die Komponente unterstützt Standardvalidatoren. So kann Beispielsweise validiert werden das
+            mindestens eine Angabe gemacht wurde.<br />
+            Über <code class="inline-block">ngModel</code> wird ein String-Array rein und raus gebunden.
+        </p>
+        <p>
+            Das Styling der Komponente übernimmt bei der Eingabebox das Styling der Standard-Texteingabe.
+            Alle anderen Parameter können über SCSS Variablen gesteuert werden.
+        </p>
+        <code><pre>&lt;xn-tag-input [(ngModel)]="tags"&gt;&lt;/xn-tag-input&gt;
+        </pre></code>
+    </xn-tab>
+    <xn-tab [title]="'Beispiele'"
+            [iconClass]="'fa-sitemap'"
+            [id]="'b'">
+        <h4>Tag-Eingabe mit und ohne vorab definierten Tags</h4>
+        <xn-tag-input [(ngModel)]="tags"></xn-tag-input>
+        <ul>
+            <li *ngFor="let tag of tags">{{tag}}</li>
+        </ul>
+        <xn-tag-input [(ngModel)]="predifinedTags"></xn-tag-input>
+    </xn-tab>
+</xn-tabs>

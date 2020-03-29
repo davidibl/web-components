@@ -1,8 +1,17 @@
-<xn-menu-header [brandName]="'web components'" [brandLogoSource]="'assets/xn_logo_symbol_gray.png'"></xn-menu-header>
-<div class="pl-2 pt-2 pr-2 pb-2">
-    <p>
-        {{'text.description' | translate | async}}
-    </p>
+<xn-menu-header [brandName]="'web components'" [brandLogoSource]="'assets/xn_logo_symbol_gray.png'">
+    <div class="menu-s">
+        <a [routerLink]="'/navigation'"><xn-icon [iconClass]="'fa-bars'"></xn-icon></a>
+    </div>
+</xn-menu-header>
+<div class="page-container flex full-height">
+    <div class="left-menu full-height hide show-m">
+        <xn-navigation></xn-navigation>
+    </div>
+    <div class="main-site full-height full-width">
+        <xn-scroll-panel class="full-height" style="overflow-x: hidden;">
+            <div class="pl-1 pr-1 pt-2">
+                <router-outlet></router-outlet>
+            </div>
+        </xn-scroll-panel>
+    </div>
 </div>
-<router-outlet></router-outlet>
-

@@ -1,47 +1,72 @@
-<h2 class="ml-2">{{'title.input_samples' | translate | async}}</h2>
-<div class="pl-2 pt-2 pr-2 pb-2">
-    <form #inputForm="ngForm">
-        <xn-section-divider class="block mt-2 mb-1" [label]="'label.input_simple' | translate | async"></xn-section-divider>
-        <xn-input-form [label]="'label.input_label' | translate | async"
-                        name="a"
-                        class="w300 block"
-                        [(ngModel)]="input"></xn-input-form>
-        <xn-section-divider class="block mt-2 mb-1" [label]="'label.input_placeholder' | translate | async"></xn-section-divider>
-        <xn-input-form [label]="'label.input_label' | translate | async"
-                        [placeholder]="'label.placeholder' | translate | async"
-                        [iconClass]="'fa-bug'"
-                        class="w300 block"
-                        name="b"
-                        [(ngModel)]="input"></xn-input-form>
-        <xn-section-divider class="block mt-2 mb-1" [label]="'label.input_iconafter' | translate | async"></xn-section-divider>
-        <xn-input-form [label]="'label.input_label' | translate | async"
-                        [placeholder]="'label.placeholder' | translate | async"
-                        [iconAfterClass]="'fa-bug'"
-                        class="w300 block"
-                        name="c"
-                        xnRequired
-                        [(ngModel)]="inputRequired"></xn-input-form>
-        <xn-section-divider class="block mt-2 mb-1" [label]="'label.multiline_label' | translate | async"></xn-section-divider>
-        <xn-input-form [label]="'label.input_label' | translate | async"
-                        [placeholder]="'label.placeholder' | translate | async"
-                        [iconClass]="'fa-bug'"
-                        class="w300 block"
-                        name="d"
-                        [multiline]="true"
-                        xnRequired
-                        [(ngModel)]="inputValue"></xn-input-form>
-        <xn-section-divider class="block mt-2 mb-1" [label]="'label.input_emailvalidated' | translate | async"></xn-section-divider>
-        <xn-input-form [label]="'label.input_label' | translate | async"
-                        [placeholder]="'label.placeholder' | translate | async"
-                        [iconClass]="'fa-envelope-o'"
-                        class="w300 block"
-                        name="e"
-                        xnRequired
-                        [requiredMessage]="'validation.message.requiredemail' | translate | async"
-                        xnEmailValidator
-                        [(ngModel)]="mailinput"></xn-input-form>
-        <xn-button class="left mb-3" [class.disabled]="!inputForm.valid" [default]="true">
-            {{'label.button_next' | translate | async}}
-        </xn-button>
-    </form>
-</div>
+<h1 class="text-center">Text Input</h1>
+<xn-tabs>
+    <xn-tab [title]="'Beschreibung'"
+            [iconClass]="'fa-font'"
+            [id]="'a'">
+        <p>
+            Eingabefelder können innerhalb von Angular Formularen oder Standalone verwendet werden.
+            Im Kern Verhalten sie sich identisch zu gewöhnlichen Eingabefeldern.
+        </p>
+        <p>
+            Das Styling kann über eine Anpassung der SCSS Variablen vorgenommen werden.
+            Das API bietet zudem Möglichkeiten Funktionen ein- oder auszuschalten. Natürlich können
+            Standard Validatoren verwendet werden. Die Komponenten sind in der Lage Validierungsfehler
+            direkt anzuzeigen.
+        </p>
+        <code><pre>&lt;xn-input-form [label]="'label.input_label' | translate | async"
+    [placeholder]="'Placeholder'"
+    [iconAfterClass]="'fa-bug'"
+    [iconClass]="'fa-bug'"
+    name="c"
+    [(ngModel)]="model"&gt;
+&lt;/xn-input-form&gt;
+        </pre></code>
+    </xn-tab>
+    <xn-tab [title]="'Beispiele'"
+            [iconClass]="'fa-sitemap'"
+            [id]="'b'">
+
+        <form #inputForm="ngForm">
+            <h4>Einfaches Eingabefeld mit und ohne Icon</h4>
+            <xn-input-form [label]="'label.input_label' | translate | async"
+                            name="a"
+                            class="w300 block"
+                            [(ngModel)]="input"></xn-input-form>
+            <xn-input-form [label]="'label.input_label' | translate | async"
+                            [placeholder]="'label.placeholder' | translate | async"
+                            [iconClass]="'fa-bug'"
+                            class="w300 block"
+                            name="b"
+                            [(ngModel)]="input"></xn-input-form>
+            <xn-input-form [label]="'label.input_label' | translate | async"
+                            [placeholder]="'label.placeholder' | translate | async"
+                            [iconAfterClass]="'fa-bug'"
+                            class="w300 block"
+                            name="c"
+                            xnRequired
+                            [(ngModel)]="inputRequired"></xn-input-form>
+            <h5 class="mt-2">Ein Mehrzeiliges EIngabefeld</h5>
+            <xn-input-form [label]="'label.input_label' | translate | async"
+                            [placeholder]="'label.placeholder' | translate | async"
+                            [iconClass]="'fa-bug'"
+                            class="w300 block"
+                            name="d"
+                            [multiline]="true"
+                            xnRequired
+                            [(ngModel)]="inputValue"></xn-input-form>
+            <h5 class="mt-2">Validiertes Eingabefeld mit gebundenem Status</h5>
+            <xn-input-form [label]="'label.input_label' | translate | async"
+                            [placeholder]="'label.placeholder' | translate | async"
+                            [iconClass]="'fa-envelope-o'"
+                            class="w300 block"
+                            name="e"
+                            xnRequired
+                            [requiredMessage]="'validation.message.requiredemail' | translate | async"
+                            xnEmailValidator
+                            [(ngModel)]="mailinput"></xn-input-form>
+            <xn-button class="left mb-3" [class.disabled]="!inputForm.valid" [default]="true">
+                {{'label.button_next' | translate | async}}
+            </xn-button>
+        </form>
+    </xn-tab>
+</xn-tabs>

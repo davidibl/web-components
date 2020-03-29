@@ -10,25 +10,13 @@
         }
     },
     "label": {
-        "input_simple": "Einfaches Input",
-        "input_placeholder": "Input mit Icon und Platzhalter",
-        "input_iconafter": "Input mit Icon rechts als Pflichtfeld",
-        "input_emailvalidated": "Input für Email Adresse",
-        "input_label": "Ein Input Control",
-        "multiline_label": "Ein Multiline Input Control",
         "placeholder": "Ein Platzhalter vom feinsten",
         "placeholder_date": "Datum eingeben",
         "birthday": "Geburtsdatum",
         "spinner": "Warteanimationen",
         "threedots": "Drei Punkte",
         "material_spinner": "Material like Warteanimation",
-        "button_next": "Weiter"
-    },
-    "title": {
-        "input_samples": "Standard Text Input Controls",
+        "button_next": "Weiter",
         "datetimer_samples": "Datetime Picker Controls"
-    },
-    "text": {
-        "description": "Web components ist eine leichtgewichtige Komponentenbibliothek für angular ab version 5."
     }
 }
