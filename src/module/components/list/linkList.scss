@@ -36,7 +36,7 @@ ul {
         border-left: $list-border-left-last;
     }
 
-    li:hover {
+    li:not(.title-item):hover {
         background-color: $list-hover-color;
         a {
             color: $list-link-hover-color;
