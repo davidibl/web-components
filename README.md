@@ -1,10 +1,58 @@
-# Angular component library
+# ng web-components
 
-This project provides some basic angular components.
-Everything styled with scss and variables.
+Web-components is a lightweight angular 9 compatible component library. It should provide the majority of heavy used components.
 
+## Benutzung
 
-## Setup
+The library has to be added to the package.json:
+
+```json
+"@xnoname/web-components": "1.0.0",
+```
+
+To use the library the core module has to be added to the module of the host application.
+
+```typescript
+@NgModule({
+    bootstrap: [...],
+    declarations: [...],
+    imports: [
+        CoreModule,
+    ],
+    providers: [
+        ConfigurationService,
+        LanguageService,
+        TranslationService,
+        StartupService,
+        {
+            provide: APP_INITIALIZER,
+            useFactory: startupServiceFactory,
+            deps: [StartupService],
+            multi: true
+        },
+        ...
+    ],
+})
+```
+
+Watch out to provide a startup service with some configuration values.
+
+```typescript
+    export function startupServiceFactory(startupService: StartupService): Function {
+        return () => startupService.load(environment.configuration);
+    }
+```
+
+At least the following configuration object is needed in order to get I18n to work and use features with text and labels involved.
+
+```javascript
+language: {
+    default: 'DE',
+    supported: 'DE'
+}
+```
+
+As an alternative one can link the source repository directly in his angular app. Then these steps have to be followed:
 
 ```
 npm install
@@ -26,7 +74,7 @@ Find a demo of some of the components here:
 https://webcomponents.xnoname.com
 
 
-## Components:
+### Components:
 
 - accordion
 - blocking overlay
@@ -41,14 +89,13 @@ https://webcomponents.xnoname.com
 - datetime picker form control supporting languages
 - modal dialog
 - dropdown form control
-- jumbotron
 - html content element interacting with contentservice to display remote html content
 - html editor is a basic html editor form control supporting headings, paragraphs and lists, formatting and auto-complete
 - infobox is a big infobox with a icon
-- input form form control with validation result display
+- input form control with validation result display
 - like control
 - list selector form control to select values of a list supporting custom templates for items
-- different loading indicators
+- a loading indicator
 - menu header
 - navigation link
 - pagination control
@@ -64,13 +111,13 @@ https://webcomponents.xnoname.com
 - workflow control
 - context menu
 
-## Directives
+### Directives
 
 - google analytocs directive
 - autofocus directive
 - outside click directive
 
-## Validators
+### Validators
 
 - date format validator
 - email validator
@@ -78,7 +125,7 @@ https://webcomponents.xnoname.com
 - not empty validator
 - required validator
 
-## Pipes
+### Pipes
 
 - pipe a configuration value
 - filter objects
@@ -93,14 +140,14 @@ https://webcomponents.xnoname.com
 - to timespan
 - translation pipe
 
-## Services
+### Services
 
 - analytics service
 - calendar service
 - content service resolving remote content
 - filter objects array service
 - language service
-- loading indicator service to control global loading indicator
+- loading indicator service to control global loading indication
 - moment service to abstract moment library
 - scroll service
 - scroll spy service
