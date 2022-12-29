@@ -27,7 +27,7 @@
     "breakpoint-sass": "2.7.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.901.0",
+    "@angular-devkit/build-angular": "~15.0.4",
     "@angular/animations": "^9.1.0",
     "@angular/cli": "^9.1.0",
     "@angular/common": "^9.1.0",
